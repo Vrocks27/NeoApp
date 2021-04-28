@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@drawable/chat_incoming_layer"
+    android:elevation="4dp">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:orientation="vertical"
+        android:layout_margin="4dp"
+        android:padding="2dp"
+        android:layout_alignParentLeft="true">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/text_view_message"
+            style="@style/chat_text_message_style"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="4dp"
+            android:padding="2dp"
+            android:text="Rahul Agrawal is ahat he wants." />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/text_view_time"
+            style="@style/chat_timings"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="4dp"
+            android:padding="2dp"
+            android:text="11:15 PM" />
+
+    </LinearLayout>
+
+    <!--  <FrameLayout
+          android:id="@+id/incoming_layout_bubble"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_alignParentStart="true">
+
+      </FrameLayout>-->
+
+</RelativeLayout>
