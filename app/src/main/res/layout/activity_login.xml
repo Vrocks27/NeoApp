@@ -8,14 +8,7 @@
     android:padding="@dimen/padding_8dp"
     tools:context=".presentation.login.LoginActivity">
 
-    <include
-        android:layout_marginTop="@dimen/padding_24dp"
-        layout="@layout/layout_welcome_content"
-        android:layout_height="wrap_content"
-        android:layout_width="match_parent" />
-
-
-    <!--    <include-->
+<!--    <include-->
 <!--        android:id="@+id/toolbar"-->
 <!--        layout="@layout/toolbar"-->
 <!--        app:layout_constraintStart_toStartOf="parent"-->
@@ -35,6 +28,4 @@
 <!--        app:layout_constraintStart_toStartOf="parent"-->
 <!--        app:layout_constraintTop_toTopOf="parent" />-->
 
-
-
-</RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
