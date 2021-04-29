@@ -1,0 +1,4 @@
+#Wed Apr 28 17:30:11 IST 2021
+base.0=F\:\\FlutterProjects\\NeoApp\\app\\build\\intermediates\\dex\\debug\\minifyDebugWithR8\\classes.dex
+path.0=classes.dex
+renamed.0=classes.dex

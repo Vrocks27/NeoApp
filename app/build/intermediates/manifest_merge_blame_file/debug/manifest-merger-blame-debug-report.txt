@@ -1,0 +1,128 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.va.neoapp"
+4    android:versionCode="1"
+5    android:versionName="1.0" >
+6
+7    <uses-sdk
+8        android:minSdkVersion="21"
+8-->F:\FlutterProjects\NeoApp\app\src\main\AndroidManifest.xml
+9        android:targetSdkVersion="30" />
+9-->F:\FlutterProjects\NeoApp\app\src\main\AndroidManifest.xml
+10
+11    <uses-permission android:name="android.permission.INTERNET" />
+11-->F:\FlutterProjects\NeoApp\app\src\main\AndroidManifest.xml:6:5-67
+11-->F:\FlutterProjects\NeoApp\app\src\main\AndroidManifest.xml:6:22-64
+12    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+12-->F:\FlutterProjects\NeoApp\app\src\main\AndroidManifest.xml:7:5-79
+12-->F:\FlutterProjects\NeoApp\app\src\main\AndroidManifest.xml:7:22-76
+13    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+13-->F:\FlutterProjects\NeoApp\app\src\main\AndroidManifest.xml:8:5-76
+13-->F:\FlutterProjects\NeoApp\app\src\main\AndroidManifest.xml:8:22-73
+14    <uses-permission android:name="android.permission.CALL_PHONE" />
+14-->F:\FlutterProjects\NeoApp\app\src\main\AndroidManifest.xml:9:5-69
+14-->F:\FlutterProjects\NeoApp\app\src\main\AndroidManifest.xml:9:22-66
+15    <uses-permission android:name="android.permission.VIBRATE" />
+15-->F:\FlutterProjects\NeoApp\app\src\main\AndroidManifest.xml:10:5-66
+15-->F:\FlutterProjects\NeoApp\app\src\main\AndroidManifest.xml:10:22-63
+16    <uses-permission android:name="android.permission.WAKE_LOCK" />
+16-->F:\FlutterProjects\NeoApp\app\src\main\AndroidManifest.xml:11:5-68
+16-->F:\FlutterProjects\NeoApp\app\src\main\AndroidManifest.xml:11:22-65
+17
+18    <supports-screens
+18-->F:\FlutterProjects\NeoApp\app\src\main\AndroidManifest.xml:14:5-19:39
+19        android:anyDensity="true"
+19-->F:\FlutterProjects\NeoApp\app\src\main\AndroidManifest.xml:15:9-34
+20        android:largeScreens="true"
+20-->F:\FlutterProjects\NeoApp\app\src\main\AndroidManifest.xml:16:9-36
+21        android:normalScreens="true"
+21-->F:\FlutterProjects\NeoApp\app\src\main\AndroidManifest.xml:17:9-37
+22        android:resizeable="true"
+22-->F:\FlutterProjects\NeoApp\app\src\main\AndroidManifest.xml:18:9-34
+23        android:smallScreens="true" />
+23-->F:\FlutterProjects\NeoApp\app\src\main\AndroidManifest.xml:19:9-36
+24
+25    <application
+25-->F:\FlutterProjects\NeoApp\app\src\main\AndroidManifest.xml:21:5-62:19
+26        android:name="com.va.neoapp.AppApplication"
+26-->F:\FlutterProjects\NeoApp\app\src\main\AndroidManifest.xml:22:9-39
+27        android:allowBackup="true"
+27-->F:\FlutterProjects\NeoApp\app\src\main\AndroidManifest.xml:23:9-35
+28        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+28-->[androidx.core:core:1.3.1] C:\Users\Naveen Kumar\.gradle\caches\transforms-2\files-2.1\b234a824af7fd98a5c54fc0522824a91\core-1.3.1\AndroidManifest.xml:24:18-86
+29        android:debuggable="true"
+30        android:icon="@mipmap/ic_launcher"
+30-->F:\FlutterProjects\NeoApp\app\src\main\AndroidManifest.xml:24:9-43
+31        android:label="@string/app_name"
+31-->F:\FlutterProjects\NeoApp\app\src\main\AndroidManifest.xml:25:9-41
+32        android:roundIcon="@mipmap/ic_launcher_round"
+32-->F:\FlutterProjects\NeoApp\app\src\main\AndroidManifest.xml:26:9-54
+33        android:supportsRtl="true"
+33-->F:\FlutterProjects\NeoApp\app\src\main\AndroidManifest.xml:27:9-35
+34        android:testOnly="true"
+35        android:theme="@style/Theme.NeoApp" >
+35-->F:\FlutterProjects\NeoApp\app\src\main\AndroidManifest.xml:28:9-44
+36        <activity
+36-->F:\FlutterProjects\NeoApp\app\src\main\AndroidManifest.xml:30:9-39:20
+37            android:name="com.va.neoapp.presentation.splash.SplashActivity"
+37-->F:\FlutterProjects\NeoApp\app\src\main\AndroidManifest.xml:30:19-69
+38            android:configChanges="orientation|keyboardHidden|screenSize"
+38-->F:\FlutterProjects\NeoApp\app\src\main\AndroidManifest.xml:31:13-74
+39            android:screenOrientation="portrait"
+39-->F:\FlutterProjects\NeoApp\app\src\main\AndroidManifest.xml:32:13-49
+40            android:windowSoftInputMode="adjustResize" >
+40-->F:\FlutterProjects\NeoApp\app\src\main\AndroidManifest.xml:33:13-55
+41            <intent-filter>
+41-->F:\FlutterProjects\NeoApp\app\src\main\AndroidManifest.xml:34:13-38:29
+42                <action android:name="android.intent.action.MAIN" />
+42-->F:\FlutterProjects\NeoApp\app\src\main\AndroidManifest.xml:35:17-69
+42-->F:\FlutterProjects\NeoApp\app\src\main\AndroidManifest.xml:35:25-66
+43
+44                <category android:name="android.intent.category.LAUNCHER" />
+44-->F:\FlutterProjects\NeoApp\app\src\main\AndroidManifest.xml:37:17-77
+44-->F:\FlutterProjects\NeoApp\app\src\main\AndroidManifest.xml:37:27-74
+45            </intent-filter>
+46        </activity>
+47        <activity
+47-->F:\FlutterProjects\NeoApp\app\src\main\AndroidManifest.xml:41:9-44:57
+48            android:name="com.va.neoapp.presentation.chat.ChatActivity"
+48-->F:\FlutterProjects\NeoApp\app\src\main\AndroidManifest.xml:41:19-65
+49            android:configChanges="orientation|keyboardHidden|screenSize"
+49-->F:\FlutterProjects\NeoApp\app\src\main\AndroidManifest.xml:42:13-74
+50            android:screenOrientation="portrait"
+50-->F:\FlutterProjects\NeoApp\app\src\main\AndroidManifest.xml:43:13-49
+51            android:windowSoftInputMode="adjustResize" />
+51-->F:\FlutterProjects\NeoApp\app\src\main\AndroidManifest.xml:44:13-55
+52        <activity
+52-->F:\FlutterProjects\NeoApp\app\src\main\AndroidManifest.xml:46:9-49:57
+53            android:name="com.va.neoapp.presentation.chat.MessagingAct"
+53-->F:\FlutterProjects\NeoApp\app\src\main\AndroidManifest.xml:46:19-65
+54            android:configChanges="orientation|keyboardHidden|screenSize"
+54-->F:\FlutterProjects\NeoApp\app\src\main\AndroidManifest.xml:47:13-74
+55            android:screenOrientation="portrait"
+55-->F:\FlutterProjects\NeoApp\app\src\main\AndroidManifest.xml:48:13-49
+56            android:windowSoftInputMode="adjustResize" />
+56-->F:\FlutterProjects\NeoApp\app\src\main\AndroidManifest.xml:49:13-55
+57        <activity
+57-->F:\FlutterProjects\NeoApp\app\src\main\AndroidManifest.xml:51:9-54:57
+58            android:name="com.va.neoapp.presentation.login.LoginActivity"
+58-->F:\FlutterProjects\NeoApp\app\src\main\AndroidManifest.xml:51:19-67
+59            android:configChanges="orientation|keyboardHidden|screenSize"
+59-->F:\FlutterProjects\NeoApp\app\src\main\AndroidManifest.xml:52:13-74
+60            android:screenOrientation="portrait"
+60-->F:\FlutterProjects\NeoApp\app\src\main\AndroidManifest.xml:53:13-49
+61            android:windowSoftInputMode="adjustResize" />
+61-->F:\FlutterProjects\NeoApp\app\src\main\AndroidManifest.xml:54:13-55
+62        <activity
+62-->F:\FlutterProjects\NeoApp\app\src\main\AndroidManifest.xml:56:9-59:57
+63            android:name="com.va.neoapp.presentation.registration.RegistrationActivity"
+63-->F:\FlutterProjects\NeoApp\app\src\main\AndroidManifest.xml:56:19-81
+64            android:configChanges="orientation|keyboardHidden|screenSize"
+64-->F:\FlutterProjects\NeoApp\app\src\main\AndroidManifest.xml:57:13-74
+65            android:screenOrientation="portrait"
+65-->F:\FlutterProjects\NeoApp\app\src\main\AndroidManifest.xml:58:13-49
+66            android:windowSoftInputMode="adjustResize" />
+66-->F:\FlutterProjects\NeoApp\app\src\main\AndroidManifest.xml:59:13-55
+67    </application>
+68
+69</manifest>
