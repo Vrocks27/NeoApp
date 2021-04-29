@@ -15,7 +15,7 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginTop="@dimen/padding_50dp" />
+        android:layout_marginTop="@dimen/padding_60dp" />
 
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
@@ -38,11 +38,11 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="@dimen/padding_2dp"
-                android:fontFamily="sans-serif-condensed"
+                android:fontFamily="@font/sfuitext_regular"
                 android:padding="@dimen/padding_4dp"
                 android:text="@string/text_email_mobile"
                 android:textColor="@color/default_text_color"
-                android:textSize="@dimen/text_size_16sp"
+                android:textSize="@dimen/text_size_14sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -61,17 +61,33 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/logo">
 
-                <androidx.appcompat.widget.AppCompatSpinner
+                <com.rilixtech.widget.countrycodepicker.CountryCodePicker
                     android:id="@+id/code_mob_spinner"
-                    android:layout_width="30dp"
-                    android:layout_height="match_parent" />
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="@dimen/padding_10dp"
+                    android:gravity="center"
+                    android:padding="@dimen/padding_10dp"
+                    android:textAlignment="center"
+                    app:ccp_arrowSize="@dimen/padding_30dp"
+                    app:ccp_hideNameCode="true"
+                    app:ccp_showFlag="false"
+                    app:ccp_textColor="@color/code_color"
+                    app:ccp_textSize="@dimen/text_size_14sp" />
 
                 <androidx.appcompat.widget.AppCompatEditText
                     android:id="@+id/email_edit_text"
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
+                    android:background="@android:color/transparent"
+                    android:fontFamily="@font/sfuitext_light"
                     android:inputType="textEmailAddress"
-                    android:padding="@dimen/padding_10dp" />
+                    android:maxLines="1"
+                    android:minLines="1"
+                    android:padding="@dimen/padding_10dp"
+                    android:textColor="@color/default_main_color"
+                    android:textColorHint="@color/default_main_color" />
 
             </LinearLayout>
 
@@ -81,10 +97,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="end"
-                android:layout_margin="@dimen/padding_4dp"
-                android:fontFamily="sans-serif-condensed"
+                android:layout_margin="@dimen/padding_8dp"
+                android:fontFamily="@font/sfuitext_semibold"
                 android:gravity="end"
-                android:padding="@dimen/padding_4dp"
+                android:padding="@dimen/padding_8dp"
                 android:text="@string/text_new_user"
                 android:textColor="@color/yellow_text_color"
                 android:textSize="@dimen/text_size_14sp" />
@@ -100,23 +116,26 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_margin="@dimen/padding_8dp"
         android:gravity="center"
+        android:layout_marginBottom="@dimen/padding_30dp"
         android:orientation="vertical"
         android:padding="@dimen/padding_4dp">
 
-        <com.google.android.material.floatingactionbutton.FloatingActionButton
+        <androidx.appcompat.widget.AppCompatImageButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="@dimen/padding_8dp"
-            android:backgroundTint="@color/default_main_color"
-            android:contentDescription="@string/app_name"
+            android:layout_gravity="center"
+            android:padding="@dimen/padding_20dp"
+            android:layout_marginBottom="@dimen/padding_10dp"
+            android:background="@drawable/next_button"
             android:src="@drawable/front_arrow" />
+
 
         <androidx.appcompat.widget.AppCompatTextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/text_next"
+            android:layout_marginTop="@dimen/padding_10dp"
             android:textColor="@color/default_text_color"
             android:textSize="@dimen/text_size_14sp" />
 

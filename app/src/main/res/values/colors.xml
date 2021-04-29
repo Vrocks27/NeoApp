@@ -17,5 +17,6 @@
     <color name="yellow_text_color">#FFFDC827</color>
 
     <color name="default_back">#F4F5F9</color>
+    <color name="code_color">#FF979797</color>
 
 </resources>
