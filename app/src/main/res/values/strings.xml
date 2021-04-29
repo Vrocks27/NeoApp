@@ -9,7 +9,7 @@
 
     <string name="text_input_email">Enter Email ID</string>
     <string name="text_input_mobile">Enter Mobile Number</string>
-    <string name="text_email_mobile">Register Email or Mobile Number</string>
+    <string name="text_email_mobile">Registered Email or Mobile Number</string>
     <string name="text_new_user">New User?</string>
 
     <string name="text_otp_enter">Enter the OTP sent to</string>
