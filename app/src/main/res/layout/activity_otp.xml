@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?android:attr/actionBarSize"
+        android:layout_alignParentTop="true"/>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_below="@+id/toolbar"
+        android:layout_above="@+id/bottom_layout">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_margin="@dimen/padding_4dp"
+            android:padding="@dimen/padding_8dp">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/text_main"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-condensed"
+                android:text="@string/text_otp_enter"
+                android:textColor="@color/default_text_color"
+                android:textSize="@dimen/text_size_18sp"
+                android:layout_margin="@dimen/padding_2dp"
+                android:padding="@dimen/padding_2dp"/>
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/text_trigger_email"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-condensed"
+                android:text="XXXX@gmaill.com"
+                android:textColor="@color/default_text_color"
+                android:textSize="@dimen/text_size_14sp"
+                android:layout_margin="@dimen/padding_2dp"
+                android:padding="@dimen/padding_2dp"/>
+
+            <com.va.neoapp.custom.pinentry.PinEntryView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="@dimen/padding_8dp"
+                app:digitBackground="@drawable/background_border"
+                app:digitHeight="@dimen/padding_50dp"
+                app:digitWidth="@dimen/padding_50dp"
+                app:digitTextSize="@dimen/text_size_22sp"
+                app:digitTextColor="@color/default_main_color"
+                app:mask=""
+                app:pinInputType="number"/>
+            <!-- app:numDigits="6"
+ app:digitSpacing="4dp"-->
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/text_resend_otp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-condensed"
+                android:text="@string/text_resend_otp"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:textColor="@color/red_text_color"
+                android:textSize="@dimen/text_size_12sp"
+                android:layout_marginTop="@dimen/padding_8dp"
+                android:padding="@dimen/padding_4dp"/>
+
+
+        </LinearLayout>
+
+
+    </androidx.core.widget.NestedScrollView>
+
+    <LinearLayout
+        android:id="@+id/bottom_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_margin="@dimen/padding_8dp"
+        android:padding="@dimen/padding_4dp"
+        android:orientation="vertical"
+        android:gravity="center">
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/padding_8dp"
+            android:src="@drawable/front_arrow"
+            android:backgroundTint="@color/default_main_color"
+            android:contentDescription="@string/app_name" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/text_next"
+            android:textColor="@color/default_text_color"
+            android:textSize="@dimen/text_size_14sp"/>
+
+    </LinearLayout>
+</RelativeLayout>

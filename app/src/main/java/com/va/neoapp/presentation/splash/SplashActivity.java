@@ -9,6 +9,7 @@ import android.os.Looper;
 import com.va.neoapp.R;
 import com.va.neoapp.presentation.BaseActivity;
 import com.va.neoapp.presentation.login.LoginActivity;
+import com.va.neoapp.presentation.otp.OtpActivity;
 import com.va.neoapp.presentation.registration.RegistrationActivity;
 import com.va.neoapp.util.Constants;
 import com.va.neoapp.util.GlobalMethods;
@@ -34,7 +35,7 @@ public class SplashActivity extends BaseActivity {
 //                       // startActivity(new Intent(SplashActivity.this, xyz.class));
 //                        finish();
 //                    } else {
-                        Intent intent = new Intent(SplashActivity.this, RegistrationActivity.class);
+                        Intent intent = new Intent(SplashActivity.this, OtpActivity.class);
                         startActivity(intent);
 //                        finish();
 //                    }
