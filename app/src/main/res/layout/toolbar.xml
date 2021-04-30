@@ -9,8 +9,8 @@
 
     <androidx.appcompat.widget.AppCompatImageView
         android:id="@+id/toolbar_back"
-        android:layout_width="28dp"
-        android:layout_height="28dp"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
         android:layout_centerVertical="true"
         android:layout_marginStart="@dimen/padding_8dp"
         android:src="@drawable/back_arrow"/>
