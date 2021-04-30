@@ -15,7 +15,7 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginTop="@dimen/padding_60dp" />
+        android:layout_marginTop="@dimen/padding_50dp" />
 
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
@@ -29,20 +29,13 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:orientation="vertical"
             android:padding="@dimen/padding_8dp">
 
             <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/text_sub_main"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="@dimen/padding_2dp"
-                android:fontFamily="@font/sfuitext_regular"
-                android:padding="@dimen/padding_4dp"
+                style="@style/text_tag_style"
                 android:text="@string/text_email_mobile"
-                android:textColor="@color/default_text_color"
-                android:textSize="@dimen/text_size_14sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -50,12 +43,12 @@
 
 
             <LinearLayout
-                android:id="@+id/layout_email_id"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="1"
                 android:background="@drawable/background_border"
                 android:orientation="horizontal"
+                android:layout_margin="@dimen/padding_2dp"
                 android:padding="@dimen/padding_4dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -64,52 +57,71 @@
                 <com.rilixtech.widget.countrycodepicker.CountryCodePicker
                     android:id="@+id/code_mob_spinner"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_height="match_parent"
                     android:layout_gravity="center"
-                    android:layout_marginStart="@dimen/padding_10dp"
+                    android:layout_margin="@dimen/padding_4dp"
                     android:gravity="center"
-                    android:padding="@dimen/padding_10dp"
+                    android:padding="@dimen/padding_4dp"
                     android:textAlignment="center"
-                    app:ccp_arrowSize="@dimen/padding_30dp"
+                    app:ccp_arrowSize="@dimen/padding_24dp"
                     app:ccp_hideNameCode="true"
                     app:ccp_showFlag="false"
-                    app:ccp_textColor="@color/code_color"
+                    android:visibility="gone"
+                    app:ccp_textColor="@color/disabled_color"
                     app:ccp_textSize="@dimen/text_size_14sp" />
 
                 <androidx.appcompat.widget.AppCompatEditText
-                    android:id="@+id/email_edit_text"
-                    android:layout_width="match_parent"
-                    android:layout_height="50dp"
-                    android:background="@android:color/transparent"
-                    android:fontFamily="@font/sfuitext_light"
-                    android:inputType="textEmailAddress"
-                    android:maxLines="1"
-                    android:minLines="1"
-                    android:padding="@dimen/padding_10dp"
-                    android:textColor="@color/default_main_color"
-                    android:textColorHint="@color/default_main_color" />
+                    android:id="@+id/email_mobile_edit_text"
+                    style="@style/edit_text_style"
+                    android:inputType="textEmailAddress|textNoSuggestions"
+                    android:importantForAutofill="no"/>
 
             </LinearLayout>
 
-
-            <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/text_new_user"
-                android:layout_width="wrap_content"
+            <RelativeLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_gravity="end"
-                android:layout_margin="@dimen/padding_8dp"
-                android:fontFamily="@font/sfuitext_semibold"
-                android:gravity="end"
-                android:padding="@dimen/padding_8dp"
-                android:text="@string/text_new_user"
-                android:textColor="@color/yellow_text_color"
-                android:textSize="@dimen/text_size_14sp" />
+                android:layout_gravity="center">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/text_error"
+                    style="@style/text_base_style"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_centerInParent="true"
+                    android:layout_gravity="center_vertical"
+                    android:gravity="start"
+                    android:text=""
+                    android:visibility="gone"
+                    android:textColor="@color/red_text_color" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/text_new_user"
+                    style="@style/text_base_style"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerInParent="true"
+                    android:gravity="end"
+                    android:text="@string/text_new_user"
+                    android:textColor="@color/yellow_text_color" />
+
+            </RelativeLayout>
 
         </LinearLayout>
 
     </androidx.core.widget.NestedScrollView>
 
-    <LinearLayout
+    <include
+        layout="@layout/layout_bottom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="@dimen/padding_4dp"
+        android:padding="@dimen/padding_2dp" />
+
+    <!--<LinearLayout
         android:id="@+id/bottom_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -122,23 +134,20 @@
         android:padding="@dimen/padding_4dp">
 
         <androidx.appcompat.widget.AppCompatImageButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
             android:layout_gravity="center"
             android:padding="@dimen/padding_20dp"
-            android:layout_marginBottom="@dimen/padding_10dp"
             android:background="@drawable/next_button"
             android:src="@drawable/front_arrow" />
-
 
         <androidx.appcompat.widget.AppCompatTextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/text_next"
-            android:layout_marginTop="@dimen/padding_10dp"
             android:textColor="@color/default_text_color"
             android:textSize="@dimen/text_size_14sp" />
 
-    </LinearLayout>
+    </LinearLayout>-->
 
 </RelativeLayout>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:layout_margin="@dimen/padding_4dp"
+    android:padding="@dimen/padding_2dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/bottom_fab_button"
+        android:layout_margin="@dimen/padding_2dp"
+        android:tint="@color/white"
+        app:tint="@color/white"
+        android:src="@drawable/ic_baseline_arrow_forward_ios_24"
+        app:backgroundTint="@color/default_main_color"
+        app:fabSize="normal"
+        app:elevation="@dimen/padding_4dp"
+        android:contentDescription="@string/app_name" />
+<!--    app:tint="@android:color/white"-->
+    <androidx.appcompat.widget.AppCompatTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/text_next"
+        android:padding="@dimen/padding_2dp"
+        android:layout_margin="@dimen/padding_2dp"
+        android:text="@string/text_next"
+        android:textColor="@color/default_text_color"
+        android:textSize="@dimen/text_size_14sp"/>
+
+</LinearLayout>

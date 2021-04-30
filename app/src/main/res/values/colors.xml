@@ -12,11 +12,12 @@
     <color name="default_background">#0D1F2F98</color>
     <color name="default_text_color">#FF444444</color>
 
+    <color name="default_disabled">#141F2F98</color>
     <color name="red_text_color">#FFF995AB</color>
 
     <color name="yellow_text_color">#FFFDC827</color>
 
     <color name="default_back">#F4F5F9</color>
-    <color name="code_color">#FF979797</color>
+    <color name="disabled_color">#FF979797</color>
 
 </resources>

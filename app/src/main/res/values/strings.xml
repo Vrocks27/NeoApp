@@ -15,4 +15,7 @@
     <string name="text_otp_enter">Enter the OTP sent to</string>
     <string name="text_resend_otp">Resend OTP</string>
 
+    <string name="text_invalid_email">Invalid Email</string>
+    <string name="text_invalid_mobile">Invalid Mobile Number</string>
+
 </resources>

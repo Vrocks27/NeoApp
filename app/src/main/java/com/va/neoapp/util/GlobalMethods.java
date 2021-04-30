@@ -5,6 +5,7 @@ import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.res.ColorStateList;
 import android.content.res.Resources;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
@@ -23,6 +24,7 @@ import androidx.core.content.ContextCompat;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 //import com.va.neoapp.BuildConfig;
 import com.va.neoapp.R;
@@ -136,6 +138,20 @@ public class GlobalMethods {
         return mobilePattern.matcher(mobileNumber).matches();
     }
 
+    public static boolean isNumber(String number) {
+        Pattern mobilePattern = Pattern.compile("^[0-9]");
+        return mobilePattern.matcher(number).matches();
+    }
+
+    public static boolean isValidInternationalMobileNumber(String mobileNumber) {
+       // send along with the +country code, if using the below pattern
+//        Pattern mobilePattern = Pattern.compile("^\\+[0-9]{1,3}\\.[0-9]{4,14}(?:x.+)?$");
+//        return !(mobileNumber.length() < 6 || mobileNumber.length() > 13)
+//                && mobilePattern.matcher(mobileNumber).matches();
+        return !(mobileNumber.length() < 4 || mobileNumber.length() > 13)
+                && android.util.Patterns.PHONE.matcher(mobileNumber).matches();
+    }
+
     public static boolean isValidJson(String test) {
         try {
             new JSONObject(test);
@@ -155,7 +171,6 @@ public class GlobalMethods {
     }
 
     public static void loadImageWithDefault(final Context context, final String url, final AppCompatImageView viewById) {
-
         //Picasso.with(context).load(url).into(viewById);
       /*  Picasso.get()
                 .load(url)
@@ -222,6 +237,7 @@ public class GlobalMethods {
 
             // SimpleDateFormat dateFormat1 = new SimpleDateFormat("hh:mm:ss");
             SimpleDateFormat dateFormat1 = new SimpleDateFormat("hh:mm aa");
+            assert d != null;
             dateconverted = dateFormat1.format(d);
         } catch (ParseException e) {
             //e.printStackTrace();
@@ -244,6 +260,35 @@ public class GlobalMethods {
         if (isActivityFinish)
             ((Activity) context).finish();
     }
+    public static void callFinishForBackWordActivity(Context context, boolean isForwardAnimation) {
+        try {
+
+            ((Activity) context).finish();
+            if (isForwardAnimation) {
+                ((Activity) context).overridePendingTransition(R.anim.slide_left_in, R.anim.slide_out_left);
+            } else {
+                ((Activity) context).overridePendingTransition(R.anim.slide_out_right, R.anim.slide_right_in);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    public static void enableBottomNext(Context context, FloatingActionButton bottom_fab_button, AppCompatTextView text_next) {
+        bottom_fab_button.setEnabled(true);
+        bottom_fab_button.setClickable(true);
+        bottom_fab_button.setImageTintList(ColorStateList.valueOf(context.getResources().getColor(R.color.white)));
+        bottom_fab_button.setBackgroundTintList(ColorStateList.valueOf(context.getResources().getColor(R.color.default_main_color)));
+        text_next.setTextColor(context.getResources().getColor(R.color.default_text_color));
+    }
+
+    public static void disableBottomNext(Context context, FloatingActionButton bottom_fab_button, AppCompatTextView text_next) {
+        bottom_fab_button.setEnabled(false);
+        bottom_fab_button.setClickable(false);
+        bottom_fab_button.setImageTintList(ColorStateList.valueOf(context.getResources().getColor(R.color.disabled_color)));
+        bottom_fab_button.setBackgroundTintList(ColorStateList.valueOf(context.getResources().getColor(R.color.default_disabled)));
+        text_next.setTextColor(context.getResources().getColor(R.color.disabled_color));
+    }
   /*
 
     public static void callBackWordActivity(Context context, Class forwardClass, Bundle bundle, boolean isActivityFinish, boolean isForwardAnimation) {
@@ -262,19 +307,7 @@ public class GlobalMethods {
             ((Activity) context).finish();
     }
 
-    public static void callFinishForBackWordActivity(Context context, boolean isForwardAnimation) {
-        try {
 
-            ((Activity) context).finish();
-            if (isForwardAnimation) {
-                ((Activity) context).overridePendingTransition(R.anim.slide_left_in, R.anim.slide_out_left);
-            } else {
-                ((Activity) context).overridePendingTransition(R.anim.slide_out_right, R.anim.slide_right_in);
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
 
     public static void callForWordActivityForResult(Context context, Class forwardClass, Bundle bundle, int ResultCode, boolean isForwardAnimation) {
 

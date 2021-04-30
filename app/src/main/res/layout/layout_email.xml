@@ -1,9 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="@dimen/padding_8dp">
 
+    <androidx.appcompat.widget.AppCompatTextView
+        style="@style/text_tag_style"
+        android:text="@string/text_input_email"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text_main" />
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/background_border"
+        android:orientation="horizontal"
+        android:layout_margin="@dimen/padding_2dp"
+        android:padding="@dimen/padding_2dp">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <androidx.appcompat.widget.AppCompatEditText
+            style="@style/edit_text_style"
+            android:id="@+id/edit_text_email"
+            android:gravity="center"
+            android:inputType="textEmailAddress|textNoSuggestions"
+            android:importantForAutofill="no"/>
+
+    </LinearLayout>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        style="@style/text_base_style"
+        android:id="@+id/text_email_error"
+        android:text="@string/text_invalid_email"
+        android:visibility="gone"
+        android:textColor="@color/red_text_color" />
+
+</LinearLayout>

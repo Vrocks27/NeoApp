@@ -25,8 +25,6 @@
         <item name="android:padding">@dimen/padding_2dp</item>
     </style>
 
-
-
     <style name="chat_text_message_style">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
@@ -40,5 +38,41 @@
         <item name="android:textSize">12sp</item>
         <item name="android:textColor">#a6abad</item>
     </style>
+
+    <style name="text_tag_style">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_margin">@dimen/padding_2dp</item>
+        <item name="android:padding">@dimen/padding_4dp</item>
+        <item name="fontFamily">@font/sfuitext_regular</item>
+        <item name="android:textSize">@dimen/text_size_14sp</item>
+        <item name="android:textColor">@color/default_text_color</item>
+    </style>
+
+    <style name="edit_text_style">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/padding_50dp</item>
+        <item name="android:layout_margin">@dimen/padding_4dp</item>
+        <item name="android:padding">@dimen/padding_4dp</item>
+        <item name="fontFamily">@font/sfuitext_light</item>
+        <item name="android:background">@android:color/transparent</item>
+        <item name="android:textSize">@dimen/text_size_18sp</item>
+        <item name="android:textColor">@color/default_main_color</item>
+        <item name="android:textColorHint">@color/default_main_color</item>
+        <item name="android:lines">1</item>
+        <item name="android:maxLines">1</item>
+<!--        <item name="android:ems">10</item>-->
+    </style>
+
+
+    <style name="text_base_style">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_margin">@dimen/padding_4dp</item>
+        <item name="android:padding">@dimen/padding_4dp</item>
+        <item name="fontFamily">@font/sfuitext_regular</item>
+        <item name="android:textSize">@dimen/text_size_14sp</item>
+    </style>
+
 
 </resources>
