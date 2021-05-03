@@ -18,4 +18,10 @@
     <string name="text_invalid_email">Invalid Email</string>
     <string name="text_invalid_mobile">Invalid Mobile Number</string>
 
+
+    <string name="text_home">Home</string>
+    <string name="text_chat">Chat</string>
+    <string name="text_support">Support</string>
+    <string name="text_profile">Profile</string>
+
 </resources>

@@ -19,7 +19,6 @@ public abstract class BaseFragment extends Fragment {
         initGUI(savedInstanceState);
         initData();
         return view;
-
     }
 
     @Override

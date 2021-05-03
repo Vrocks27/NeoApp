@@ -12,6 +12,7 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.va.neoapp.R;
 import com.va.neoapp.custom.pinentry.PinEntryView;
 import com.va.neoapp.presentation.BaseActivity;
+import com.va.neoapp.presentation.home.activities.HomeActivity;
 import com.va.neoapp.presentation.onboarding.OnBoardingAct;
 import com.va.neoapp.util.GlobalMethods;
 
@@ -97,7 +98,7 @@ public class OtpActivity extends BaseActivity {
 //                } else {
                // bundle.putString("emailMobile", edit_text_email.getText().toString().trim() +" or "+getMobileNumber());
                 //}
-                GlobalMethods.callForWordActivity(OtpActivity.this, OnBoardingAct.class, bundle, false, true);
+                GlobalMethods.callForWordActivity(OtpActivity.this, HomeActivity.class, bundle, false, true);
             }
         });
 
