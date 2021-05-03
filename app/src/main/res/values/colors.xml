@@ -11,6 +11,7 @@
     <color name="default_main_color">#FF1F2F98</color>
     <color name="default_background">#0D1F2F98</color>
     <color name="default_text_color">#FF444444</color>
+    <color name="line_color">#FFDADADA</color>
 
     <color name="default_disabled">#141F2F98</color>
     <color name="red_text_color">#FFF995AB</color>
@@ -19,5 +20,8 @@
 
     <color name="default_back">#F4F5F9</color>
     <color name="disabled_color">#FF979797</color>
+    <color name="home_card_color">#6096FD</color>
+    <color name="homepage_tabs_bg">#101F2F98</color>
+    <color name="ratingcolor">#FFFDC827</color>
 
 </resources>

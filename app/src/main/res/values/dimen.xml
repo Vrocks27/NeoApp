@@ -39,6 +39,9 @@
     <dimen name="padding_50dp">50dp</dimen>
     <dimen name="padding_55dp">55dp</dimen>
     <dimen name="padding_60dp">60dp</dimen>
+    <dimen name="padding_100dp">100dp</dimen>
+    <dimen name="padding_200dp">200dp</dimen>
+    <dimen name="padding_300dp">300dp</dimen>
 
     <dimen name="text_size_2sp">2sp</dimen>
     <dimen name="text_size_4sp">4sp</dimen>

@@ -24,4 +24,24 @@
     <string name="text_support">Support</string>
     <string name="text_profile">Profile</string>
 
+    <string name="address">27 King’s College Circle,\nToronto ON M5S 1A1 \nToronto Ontario</string>
+    <string name="know_more">KNOW MORE</string>
+    <string name="updates">UPDATES</string>
+    <string name="courses">COURSES</string>
+    <string name="photocount">57 \nPhotos</string>
+    <string name="overview">OVERVIEW</string>
+    <string name="faq">FAQ</string>
+    <string name="type">Type</string>
+    <string name="text_private">PRIVATE</string>
+    <string name="scholarship">Scholarship</string>
+    <string name="yes">Yes</string>
+    <string name="in_take">Intake</string>
+    <string name="sept_oct">SEPT/OCT</string>
+    <string name="year_of_establish">Year of Establishment: </string>
+    <string name="website">Website: </string>
+    <string name="contact_number">Contact Number: </string>
+    <string name="accomdation">Accommodation: </string>
+    <string name="acceptance_criteria">Acceptance Criteria: </string>
+    <string name="staff">Staff: </string>
+
 </resources>

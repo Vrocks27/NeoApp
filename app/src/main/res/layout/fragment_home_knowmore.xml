@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <!--first cards-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/padding_10dp"
+                android:orientation="horizontal"
+                android:weightSum="2">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_margin="@dimen/padding_10dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/text_background"
+                    android:fontFamily="@font/sfuitext_semibold"
+                    android:gravity="center"
+                    android:letterSpacing="0.6"
+                    android:text="@string/overview"
+                    android:textAlignment="center"
+                    android:textColor="@color/default_main_color"
+                    android:textSize="@dimen/text_size_12sp" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_margin="@dimen/padding_10dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/text_background"
+                    android:fontFamily="@font/sfuitext_semibold"
+                    android:gravity="center"
+                    android:letterSpacing="0.6"
+                    android:text="@string/faq"
+                    android:textAlignment="center"
+                    android:textColor="@color/default_text_color"
+                    android:textSize="@dimen/text_size_12sp" />
+            </LinearLayout>
+
+            <!--second cards-->
+            <LinearLayout
+                android:id="@+id/second_type_of_cards"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="3">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/padding_10dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/type_background"
+                    android:orientation="vertical"
+                    android:padding="@dimen/padding_10dp">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:fontFamily="@font/sfuitext_regularg2"
+                        android:gravity="center"
+                        android:maxLines="1"
+                        android:minLines="1"
+                        android:singleLine="true"
+                        android:text="@string/type"
+                        android:textAlignment="center"
+                        android:textColor="@color/default_text_color"
+                        android:textSize="@dimen/text_size_12sp" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:fontFamily="@font/sfuitext_regularg2"
+                        android:gravity="center"
+                        android:maxLines="1"
+                        android:minLines="1"
+                        android:singleLine="true"
+                        android:text="@string/text_private"
+                        android:textAlignment="center"
+                        android:textAllCaps="true"
+                        android:textColor="@color/default_main_color"
+                        android:textSize="@dimen/text_size_14sp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/padding_10dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/type_background"
+                    android:orientation="vertical"
+                    android:padding="@dimen/padding_10dp">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:fontFamily="@font/sfuitext_regularg2"
+                        android:gravity="center"
+                        android:maxLines="1"
+                        android:minLines="1"
+                        android:singleLine="true"
+                        android:text="@string/scholarship"
+                        android:textAlignment="center"
+                        android:textColor="@color/default_text_color"
+                        android:textSize="@dimen/text_size_12sp" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:fontFamily="@font/sfuitext_regularg2"
+                        android:gravity="center"
+                        android:maxLines="1"
+                        android:minLines="1"
+                        android:singleLine="true"
+                        android:text="@string/yes"
+                        android:textAlignment="center"
+                        android:textAllCaps="true"
+                        android:textColor="@color/default_main_color"
+                        android:textSize="@dimen/text_size_14sp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/padding_10dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/type_background"
+                    android:orientation="vertical"
+                    android:padding="@dimen/padding_10dp">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:fontFamily="@font/sfuitext_regularg2"
+                        android:gravity="center"
+                        android:maxLines="1"
+                        android:minLines="1"
+                        android:singleLine="true"
+                        android:text="@string/in_take"
+                        android:textAlignment="center"
+                        android:textColor="@color/default_text_color"
+                        android:textSize="@dimen/text_size_12sp" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:fontFamily="@font/sfuitext_regularg2"
+                        android:gravity="center"
+                        android:maxLines="1"
+                        android:minLines="1"
+                        android:singleLine="true"
+                        android:text="@string/sept_oct"
+                        android:textAlignment="center"
+                        android:textAllCaps="true"
+                        android:textColor="@color/default_main_color"
+                        android:textSize="@dimen/text_size_14sp" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <include layout="@layout/layout_overview" />
+
+           <androidx.recyclerview.widget.RecyclerView
+               android:layout_width="match_parent"
+               android:layout_height="match_parent"
+               android:layout_margin="@dimen/padding_10dp"/>
+
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

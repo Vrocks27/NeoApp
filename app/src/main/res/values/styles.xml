@@ -61,7 +61,7 @@
         <item name="android:textColorHint">@color/default_main_color</item>
         <item name="android:lines">1</item>
         <item name="android:maxLines">1</item>
-<!--        <item name="android:ems">10</item>-->
+        <!--        <item name="android:ems">10</item>-->
     </style>
 
 
@@ -74,5 +74,13 @@
         <item name="android:textSize">@dimen/text_size_14sp</item>
     </style>
 
+    <style name="CustomTabText" parent="TextAppearance.Design.Tab">
+        <item name="android:textSize">@dimen/text_size_14sp</item>
+        <item name="fontFamily">@font/sfuitext_regular</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textAlignment">center</item>
+    </style>
 
-</resources>
+
+    </resources>

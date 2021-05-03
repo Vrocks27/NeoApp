@@ -1,0 +1,320 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/im_university"
+            android:layout_width="@dimen/padding_50dp"
+            android:layout_height="@dimen/padding_50dp"
+            android:layout_alignParentStart="true"
+            android:layout_centerInParent="true"
+            android:layout_margin="@dimen/padding_10dp"
+            android:src="@drawable/icon_university" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_marginStart="@dimen/padding_10dp"
+            android:layout_toEndOf="@id/im_university"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/sfuitext_regularg2"
+                    android:text="@string/year_of_establish"
+                    android:textColor="@color/default_text_color"
+                    android:textSize="@dimen/text_size_12sp" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/sfuitext_regularg2"
+                    android:text="1992"
+                    android:textColor="@color/default_main_color"
+                    android:textSize="@dimen/text_size_12sp" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/padding_2dp"
+                android:layout_marginTop="@dimen/padding_10dp"
+                android:layout_marginEnd="@dimen/padding_10dp"
+                android:background="@drawable/view_home_line" />
+        </LinearLayout>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/im_staff"
+            android:layout_width="@dimen/padding_50dp"
+            android:layout_height="@dimen/padding_50dp"
+            android:layout_alignParentStart="true"
+            android:layout_centerInParent="true"
+            android:layout_margin="@dimen/padding_10dp"
+            android:src="@drawable/staff_icon" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_marginStart="@dimen/padding_10dp"
+            android:layout_toEndOf="@id/im_staff"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/sfuitext_regularg2"
+                    android:text="@string/staff"
+                    android:textColor="@color/default_text_color"
+                    android:textSize="@dimen/text_size_12sp" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/sfuitext_regularg2"
+                    android:text="1200(approx)"
+                    android:textColor="@color/default_main_color"
+                    android:textSize="@dimen/text_size_12sp" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/padding_2dp"
+                android:layout_marginTop="@dimen/padding_10dp"
+                android:layout_marginEnd="@dimen/padding_10dp"
+                android:background="@drawable/view_home_line" />
+        </LinearLayout>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/im_criteria"
+            android:layout_width="@dimen/padding_50dp"
+            android:layout_height="@dimen/padding_50dp"
+            android:layout_alignParentStart="true"
+            android:layout_centerInParent="true"
+            android:layout_margin="@dimen/padding_10dp"
+            android:src="@drawable/icon_criteria" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_marginStart="@dimen/padding_10dp"
+            android:layout_toEndOf="@id/im_criteria"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/sfuitext_regularg2"
+                    android:text="@string/acceptance_criteria"
+                    android:textColor="@color/default_text_color"
+                    android:textSize="@dimen/text_size_12sp" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/sfuitext_regularg2"
+                    android:text="Profile Dependent"
+                    android:textColor="@color/default_main_color"
+                    android:textSize="@dimen/text_size_12sp" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/padding_2dp"
+                android:layout_marginTop="@dimen/padding_10dp"
+                android:layout_marginEnd="@dimen/padding_10dp"
+                android:background="@drawable/view_home_line" />
+        </LinearLayout>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/im_accomdation"
+            android:layout_width="@dimen/padding_50dp"
+            android:layout_height="@dimen/padding_50dp"
+            android:layout_alignParentStart="true"
+            android:layout_centerInParent="true"
+            android:layout_margin="@dimen/padding_10dp"
+            android:src="@drawable/accomdation" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_marginStart="@dimen/padding_10dp"
+            android:layout_toEndOf="@id/im_accomdation"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/sfuitext_regularg2"
+                    android:text="@string/accomdation"
+                    android:textColor="@color/default_text_color"
+                    android:textSize="@dimen/text_size_12sp" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/sfuitext_regularg2"
+                    android:text="Yes"
+                    android:textColor="@color/default_main_color"
+                    android:textSize="@dimen/text_size_12sp" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/padding_2dp"
+                android:layout_marginTop="@dimen/padding_10dp"
+                android:layout_marginEnd="@dimen/padding_10dp"
+                android:background="@drawable/view_home_line" />
+        </LinearLayout>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/im_website"
+            android:layout_width="@dimen/padding_50dp"
+            android:layout_height="@dimen/padding_50dp"
+            android:layout_alignParentStart="true"
+            android:layout_centerInParent="true"
+            android:layout_margin="@dimen/padding_10dp"
+            android:src="@drawable/website" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_marginStart="@dimen/padding_10dp"
+            android:layout_toEndOf="@id/im_website"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/sfuitext_regularg2"
+                    android:text="@string/website"
+                    android:textColor="@color/default_text_color"
+                    android:textSize="@dimen/text_size_12sp" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/sfuitext_regularg2"
+                    android:text="www.universitytoronto.com"
+                    android:textColor="@color/default_main_color"
+                    android:textSize="@dimen/text_size_12sp" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/padding_2dp"
+                android:layout_marginTop="@dimen/padding_10dp"
+                android:layout_marginEnd="@dimen/padding_10dp"
+                android:background="@drawable/view_home_line" />
+        </LinearLayout>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/im_phone"
+            android:layout_width="@dimen/padding_50dp"
+            android:layout_height="@dimen/padding_50dp"
+            android:layout_alignParentStart="true"
+            android:layout_centerInParent="true"
+            android:layout_margin="@dimen/padding_10dp"
+            android:src="@drawable/icon_phone" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_marginStart="@dimen/padding_10dp"
+            android:layout_toEndOf="@id/im_phone"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/sfuitext_regularg2"
+                    android:text="@string/contact_number"
+                    android:textColor="@color/default_text_color"
+                    android:textSize="@dimen/text_size_12sp" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/sfuitext_regularg2"
+                    android:text="+011 6745487564"
+                    android:textColor="@color/default_main_color"
+                    android:textSize="@dimen/text_size_12sp" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/padding_2dp"
+                android:layout_marginTop="@dimen/padding_10dp"
+                android:layout_marginEnd="@dimen/padding_10dp"
+                android:background="@drawable/view_home_line" />
+        </LinearLayout>
+    </RelativeLayout>
+
+
+</LinearLayout>
