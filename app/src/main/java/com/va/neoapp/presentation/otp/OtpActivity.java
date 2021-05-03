@@ -2,12 +2,17 @@ package com.va.neoapp.presentation.otp;
 
 import android.os.Bundle;
 import android.os.CountDownTimer;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.View;
 
 import androidx.appcompat.widget.AppCompatTextView;
 
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.va.neoapp.R;
+import com.va.neoapp.custom.pinentry.PinEntryView;
 import com.va.neoapp.presentation.BaseActivity;
+import com.va.neoapp.presentation.onboarding.OnBoardingAct;
 import com.va.neoapp.util.GlobalMethods;
 
 public class OtpActivity extends BaseActivity {
@@ -21,9 +26,30 @@ public class OtpActivity extends BaseActivity {
 
     @Override
     protected void initGUI(Bundle savedInstanceState) {
+        readBundle();
         login_otp_resend_timer = findViewById(R.id.login_otp_resend_timer);
         text_resend_otp = findViewById(R.id.text_resend_otp);
-        readBundle();
+        disableBottomNext();
+        ((PinEntryView) findViewById(R.id.pin_entry_view)).addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                if (s.length() == 4) {
+                    enableBottomNext();
+                } else {
+                    disableBottomNext();
+                }
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
+            }
+        });
         getTimerCount();
     }
 
@@ -58,6 +84,22 @@ public class OtpActivity extends BaseActivity {
                 getTimerCount();
             }
         });
+        findViewById(R.id.bottom_fab_button).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // check the otp validation from server and navigate to next screen
+                String send_otp = ((PinEntryView) findViewById(R.id.pin_entry_view)).getText().toString().trim();
+
+
+                Bundle bundle = new Bundle();
+//                if (isMobileNumber) {
+//                    bundle.putString("emailMobile", getMobileNumber());
+//                } else {
+               // bundle.putString("emailMobile", edit_text_email.getText().toString().trim() +" or "+getMobileNumber());
+                //}
+                GlobalMethods.callForWordActivity(OtpActivity.this, OnBoardingAct.class, bundle, false, true);
+            }
+        });
 
     }
 
@@ -76,5 +118,17 @@ public class OtpActivity extends BaseActivity {
             }
 
         }.start();
+    }
+
+    private void disableBottomNext() {
+        GlobalMethods.disableBottomNext(getBaseContext(),
+                ((FloatingActionButton) findViewById(R.id.bottom_fab_button)),
+                ((AppCompatTextView) findViewById(R.id.text_next)));
+    }
+
+    private void enableBottomNext() {
+        GlobalMethods.enableBottomNext(getBaseContext(),
+                ((FloatingActionButton) findViewById(R.id.bottom_fab_button)),
+                ((AppCompatTextView) findViewById(R.id.text_next)));
     }
 }

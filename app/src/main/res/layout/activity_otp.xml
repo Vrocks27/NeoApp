@@ -9,7 +9,9 @@
         layout="@layout/toolbar"
         android:layout_width="match_parent"
         android:layout_height="?android:attr/actionBarSize"
-        android:layout_alignParentTop="true" />
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true" />
 
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
@@ -54,8 +56,9 @@
             <com.va.neoapp.custom.pinentry.PinEntryView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:id="@+id/pin_entry_view"
                 android:layout_gravity="center_horizontal"
-                android:layout_marginTop="@dimen/padding_10dp"
+                android:layout_marginTop="@dimen/padding_12dp"
                 app:digitBackground="@drawable/background_border"
                 app:digitHeight="@dimen/padding_50dp"
                 app:digitTextColor="@color/default_main_color"

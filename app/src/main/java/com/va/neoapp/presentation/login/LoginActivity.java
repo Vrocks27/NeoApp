@@ -1,6 +1,5 @@
 package com.va.neoapp.presentation.login;
 
-import android.content.res.ColorStateList;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextUtils;
@@ -15,7 +14,6 @@ import com.rilixtech.widget.countrycodepicker.CountryCodePicker;
 import com.va.neoapp.R;
 import com.va.neoapp.presentation.BaseActivity;
 import com.va.neoapp.presentation.otp.OtpActivity;
-
 import com.va.neoapp.presentation.registration.RegistrationActivity;
 import com.va.neoapp.util.GlobalMethods;
 
@@ -72,8 +70,9 @@ public class LoginActivity extends BaseActivity {
                             disableBottomNext();
                         }
                     }
-                }else if (s.length() <=1){
+                } else if (s.length() <= 1) {
                     // set nothing, hide error
+                    isMobileNumber = false;
                     countryCodePicker.setVisibility(View.GONE);
                     //disableBottomNext();
                     findViewById(R.id.text_error).setVisibility(View.GONE);
@@ -133,12 +132,13 @@ public class LoginActivity extends BaseActivity {
     private void disableBottomNext() {
         GlobalMethods.disableBottomNext(getBaseContext(),
                 ((FloatingActionButton) findViewById(R.id.bottom_fab_button)),
-                ((AppCompatTextView) findViewById(R.id.text_next)) );
+                ((AppCompatTextView) findViewById(R.id.text_next)));
     }
+
     private void enableBottomNext() {
         GlobalMethods.enableBottomNext(getBaseContext(),
                 ((FloatingActionButton) findViewById(R.id.bottom_fab_button)),
-                ((AppCompatTextView) findViewById(R.id.text_next)) );
+                ((AppCompatTextView) findViewById(R.id.text_next)));
     }
 
    /* private void enableBottomNext() {
