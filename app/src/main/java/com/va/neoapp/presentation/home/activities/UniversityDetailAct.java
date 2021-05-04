@@ -12,8 +12,6 @@ import com.va.neoapp.adapters.HomeViewPagerAdapter;
 import com.va.neoapp.presentation.BaseActivity;
 import com.va.neoapp.presentation.home.fragments.childfragment.CoursesFragment;
 import com.va.neoapp.presentation.home.fragments.childfragment.KnowMoreFragment;
-import com.va.neoapp.presentation.home.fragments.childfragment.UpdateFragment;
-import com.va.neoapp.presentation.registration.RegistrationActivity;
 import com.va.neoapp.util.GlobalMethods;
 
 public class UniversityDetailAct extends BaseActivity {
@@ -34,7 +32,6 @@ public class UniversityDetailAct extends BaseActivity {
         tabLayout = findViewById(R.id.tabLayout);
 
         tabLayout.addTab(tabLayout.newTab().setText(mContext.getResources().getString(R.string.know_more)));
-        tabLayout.addTab(tabLayout.newTab().setText(mContext.getResources().getString(R.string.updates)));
         tabLayout.addTab(tabLayout.newTab().setText(mContext.getResources().getString(R.string.courses)));
         tabLayout.setTabGravity(TabLayout.GRAVITY_FILL);
 
@@ -44,9 +41,8 @@ public class UniversityDetailAct extends BaseActivity {
 //        viewPager.setAdapter(adapter);
 
         HomeViewPagerAdapter homeViewPagerAdapter = new HomeViewPagerAdapter(getSupportFragmentManager());
-        homeViewPagerAdapter.addFrag(new KnowMoreFragment(), getString(R.string.text_support));
-        homeViewPagerAdapter.addFrag(new UpdateFragment(), getString(R.string.text_support));
-        homeViewPagerAdapter.addFrag(new CoursesFragment(), getString(R.string.text_home));
+        homeViewPagerAdapter.addFrag(new KnowMoreFragment(), getString(R.string.know_more));
+        homeViewPagerAdapter.addFrag(new CoursesFragment(), getString(R.string.courses));
         viewPager.setAdapter(homeViewPagerAdapter);
 
         //Adding onTabSelectedListener to swipe views

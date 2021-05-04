@@ -8,7 +8,6 @@ import androidx.fragment.app.FragmentStatePagerAdapter;
 
 import com.va.neoapp.presentation.home.fragments.childfragment.CoursesFragment;
 import com.va.neoapp.presentation.home.fragments.childfragment.KnowMoreFragment;
-import com.va.neoapp.presentation.home.fragments.childfragment.UpdateFragment;
 
 public class FragmentAdapter extends FragmentStatePagerAdapter {
 
@@ -29,8 +28,6 @@ public class FragmentAdapter extends FragmentStatePagerAdapter {
                 return new KnowMoreFragment();
                // ((BaseActivity)myContext).replaceFragment(KnowMoreFragment.class, R.id.pager,null);
             case 1:
-                return new UpdateFragment();
-            case 2:
                 return new CoursesFragment();
             default:
                 return null;
