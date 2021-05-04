@@ -1,4 +1,4 @@
-package com.va.neoapp.presentation.home.fragments;
+package com.va.neoapp.adapters;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -11,13 +11,13 @@ import androidx.viewpager.widget.ViewPager;
 
 import com.va.neoapp.R;
 
-public class ViewPagerAdapter extends PagerAdapter {
+public class ImagesViewPagerAdapter extends PagerAdapter {
 
     private Context context;
     private LayoutInflater layoutInflater;
     private Integer[] images = {R.drawable.default_university, R.drawable.default_university, R.drawable.default_university};
 
-    public ViewPagerAdapter(Context context) {
+    public ImagesViewPagerAdapter(Context context) {
         this.context = context;
     }
 

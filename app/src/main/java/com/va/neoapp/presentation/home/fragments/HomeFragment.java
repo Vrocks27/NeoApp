@@ -1,7 +1,6 @@
 package com.va.neoapp.presentation.home.fragments;
 
 import android.content.Context;
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -16,8 +15,9 @@ import androidx.fragment.app.Fragment;
 import androidx.viewpager.widget.ViewPager;
 
 import com.va.neoapp.R;
-import com.va.neoapp.presentation.BaseActivity;
-import com.va.neoapp.presentation.home.activities.HomeUniversityDetails;
+import com.va.neoapp.adapters.ImagesViewPagerAdapter;
+import com.va.neoapp.presentation.home.activities.UniversityDetailAct;
+import com.va.neoapp.util.GlobalMethods;
 
 public class HomeFragment extends Fragment {
 
@@ -41,14 +41,16 @@ public class HomeFragment extends Fragment {
         initData();
         actionEvents(view);
         return view;
-       // return super.onCreateView(inflater, container, savedInstanceState);
+        // return super.onCreateView(inflater, container, savedInstanceState);
     }
 
     private void actionEvents(View view) {
         view.findViewById(R.id.cardview).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(getActivity(),HomeUniversityDetails.class));
+                // startActivity(new Intent(getActivity(), UniversityDetailAct.class));
+                GlobalMethods.callForWordActivity(getActivity(), UniversityDetailAct.class, null, false, true);
+
             }
         });
     }
@@ -58,18 +60,18 @@ public class HomeFragment extends Fragment {
     }
 
     private void initGUI(View view) {
-        mContext=getActivity();
-        viewPager=view.findViewById(R.id.viewpager);
-        sliderDots=view.findViewById(R.id.sliderDots);
+        mContext = getActivity();
+        viewPager = view.findViewById(R.id.viewpager);
+        sliderDots = view.findViewById(R.id.sliderDots);
 
-        ViewPagerAdapter viewPagerAdapter = new ViewPagerAdapter(mContext);
+        ImagesViewPagerAdapter viewPagerAdapter = new ImagesViewPagerAdapter(mContext);
         viewPagerAdapter.notifyDataSetChanged();
         viewPager.setAdapter(viewPagerAdapter);
 
         dotscount = viewPagerAdapter.getCount();
         dots = new ImageView[dotscount];
 
-        for(int i = 0; i < dotscount; i++){
+        for (int i = 0; i < dotscount; i++) {
 
             dots[i] = new ImageView(mContext);
             dots[i].setImageDrawable(ContextCompat.getDrawable(getContext(), R.drawable.non_active_dot));
@@ -93,7 +95,7 @@ public class HomeFragment extends Fragment {
             @Override
             public void onPageSelected(int position) {
 
-                for(int i = 0; i< dotscount; i++){
+                for (int i = 0; i < dotscount; i++) {
                     dots[i].setImageDrawable(ContextCompat.getDrawable(getContext(), R.drawable.non_active_dot));
                 }
 

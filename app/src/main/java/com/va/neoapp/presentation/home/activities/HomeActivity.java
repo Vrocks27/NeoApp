@@ -35,7 +35,7 @@ public class HomeActivity extends BaseActivity {
         setupViewPager(viewPager);
         tabLayout = findViewById(R.id.tab_layout);
         tabLayout.setupWithViewPager(viewPager);
-        tabLayout.setSelectedTabIndicatorHeight(0);
+        //tabLayout.setSelectedTabIndicatorHeight(0);
         actionEvents();
         setupTabIcons();
     }

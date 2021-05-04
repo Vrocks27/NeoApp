@@ -24,7 +24,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.NeoApp">
-        <activity android:name=".presentation.home.activities.HomeUniversityDetails"></activity>
+        <activity android:name=".presentation.home.activities.UniversityDetailAct"></activity>
         <activity
             android:name=".presentation.splash.SplashActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
