@@ -116,13 +116,12 @@
                     </FrameLayout>
 
                     <androidx.appcompat.widget.AppCompatImageView
-                        android:layout_width="@dimen/padding_100dp"
+                        android:layout_width="@dimen/padding_60dp"
                         android:layout_height="@dimen/padding_50dp"
-                        android:layout_gravity="end|center"
-                        android:layout_marginTop="5dp"
-                        android:layout_marginBottom="5dp"
-                        android:background="@drawable/background_border"
-                        app:srcCompat="@drawable/ic_mobilepng" />
+                        android:layout_gravity="end"
+                        android:layout_marginTop="@dimen/padding_8dp"
+                        android:layout_marginBottom="@dimen/padding_8dp"
+                        app:srcCompat="@drawable/ic_phone_icon" />
 
                 </LinearLayout>
             </RelativeLayout>
