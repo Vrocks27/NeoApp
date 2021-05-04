@@ -11,7 +11,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.va.neoapp.R;
 import com.va.neoapp.models.TermsConditions;
-import com.va.neoapp.models.UpdateModel;
+import com.va.neoapp.models.HomeGrid;
 
 import java.util.List;
 
@@ -68,7 +68,7 @@ public class TermsNConditionsAdapter extends RecyclerView.Adapter<TermsNConditio
     }
 
     public interface OnItemViewListener {
-        void selectedItem(UpdateModel updateModel);
+        void selectedItem(HomeGrid homeGrid);
     }
     public void SetOnItemClickListener(final TermsNConditionsAdapter.OnItemViewListener OnItemViewListener) {
         this.OnItemViewListener = OnItemViewListener;

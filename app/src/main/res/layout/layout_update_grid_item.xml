@@ -1,22 +1,65 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
+<androidx.cardview.widget.CardView
     xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    android:layout_margin="@dimen/padding_8dp"
+    android:padding="@dimen/padding_4dp"
+    app:cardCornerRadius="@dimen/padding_12dp">
 
-    <androidx.appcompat.widget.AppCompatTextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/text_grid"
-        android:text=""
-        android:gravity="center"
-        android:textSize="12sp"
-        android:padding="@dimen/padding_2dp"
-        android:layout_margin="@dimen/padding_4dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@color/default_background">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="@dimen/padding_2dp"
+            android:gravity="center"
+            android:layout_margin="@dimen/padding_4dp">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/image_grid_home"
+                android:layout_width="@dimen/padding_50dp"
+                android:layout_height="@dimen/padding_50dp"
+                android:layout_margin="@dimen/padding_8dp"
+                android:padding="@dimen/padding_2dp"
+                android:layout_gravity="center"
+                android:src="@drawable/ic_student_services"/>
+            <View
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_weight="1"/>
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="@dimen/padding_30dp"
+                android:layout_height="@dimen/padding_30dp"
+                android:layout_margin="@dimen/padding_8dp"
+                android:padding="@dimen/padding_2dp"
+                android:layout_gravity="center"
+                android:src="@drawable/ic_yellow_forward_arrow"/>
+
+        </LinearLayout>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/text_grid"
+            android:text="yfuyjifyfuyfufh"
+            android:textAlignment="textEnd"
+            android:gravity="center|end"
+            android:layout_gravity="end"
+            android:maxLines="2"
+            android:textSize="@dimen/text_size_12sp"
+            android:fontFamily="@font/sfuitext_regularg2"
+            android:textColor="@color/default_text_color"
+            android:padding="@dimen/padding_2dp"
+            android:layout_margin="@dimen/padding_4dp" />
+    </LinearLayout>
+
+
+</androidx.cardview.widget.CardView>

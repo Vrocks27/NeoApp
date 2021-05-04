@@ -55,9 +55,9 @@
                     android:layout_height="wrap_content"
                     android:layout_margin="@dimen/padding_4dp"
                     android:fontFamily="@font/sfuitext_regularg2"
+                    android:textColor="@color/default_text_color"
                     android:padding="@dimen/padding_2dp"
                     android:text="University of Oxford"
-                    android:textColor="@color/default_text_color"
                     android:textSize="@dimen/text_size_20sp" />
 
                 <androidx.appcompat.widget.AppCompatTextView
@@ -91,7 +91,6 @@
                     android:layout_weight="1"
                     android:buttonTint="@color/default_main_color"
                     android:fontFamily="@font/sfuitext_regularg2"
-
                     android:padding="@dimen/padding_2dp"
                     android:text="@string/text_isolation_personal_space"
                     android:textSize="@dimen/text_size_14sp" />

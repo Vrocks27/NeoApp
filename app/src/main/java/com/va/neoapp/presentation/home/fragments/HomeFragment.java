@@ -19,10 +19,9 @@ import com.va.neoapp.R;
 import com.va.neoapp.adapters.HomeGridAdapter;
 import com.va.neoapp.adapters.ImagesViewPagerAdapter;
 import com.va.neoapp.custom.recyclerviewitemspace.SpacesItemDecoration;
-import com.va.neoapp.models.UpdateModel;
 import com.va.neoapp.presentation.home.activities.UniversityDetailAct;
 import com.va.neoapp.util.GlobalMethods;
-
+import com.va.neoapp.models.HomeGrid;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -50,7 +49,7 @@ public class HomeFragment extends Fragment {
     }
 
     private void actionEvents(View view) {
-        view.findViewById(R.id.tv_know_more).setOnClickListener(new View.OnClickListener() {
+        view.findViewById(R.id.text_know_more).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 // startActivity(new Intent(getActivity(), UniversityDetailAct.class));
@@ -112,14 +111,12 @@ public class HomeFragment extends Fragment {
         home_grid_list.setHasFixedSize(true);
         home_grid_list.addItemDecoration(new SpacesItemDecoration(0));
 
-        List<UpdateModel> updateModelList = new ArrayList<>();
-        updateModelList.add(new UpdateModel("Student Services Update"));
-        updateModelList.add(new UpdateModel("Health & Safety Measures"));
-        updateModelList.add(new UpdateModel("Latest News & Update"));
-        updateModelList.add(new UpdateModel("Student Life at Campus"));
-        updateModelList.add(new UpdateModel("Health & Safety Measures"));
-        updateModelList.add(new UpdateModel("Student Life at Campus"));
-        HomeGridAdapter homeGridAdapter = new HomeGridAdapter(getActivity(), updateModelList);
+        List<HomeGrid> homeGridList = new ArrayList<>();
+        homeGridList.add(new HomeGrid(getResources().getDrawable(R.drawable.ic_student_services), "Student Services Update"));
+        homeGridList.add(new HomeGrid(getResources().getDrawable(R.drawable.ic_health_safety),"Health and Safety Measures"));
+        homeGridList.add(new HomeGrid(getResources().getDrawable(R.drawable.ic_latest_update),"Latest News & Update"));
+        homeGridList.add(new HomeGrid(getResources().getDrawable(R.drawable.ic_student_life),"Student Life at Campus"));
+        HomeGridAdapter homeGridAdapter = new HomeGridAdapter(getActivity(), homeGridList);
         home_grid_list.setAdapter(homeGridAdapter);
 
     }

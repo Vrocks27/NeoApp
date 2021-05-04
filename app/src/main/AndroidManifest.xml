@@ -24,7 +24,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.NeoApp">
-        <activity android:name=".presentation.home.activities.UniversityDetailAct"></activity>
+
         <activity
             android:name=".presentation.splash.SplashActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
@@ -73,6 +73,11 @@
             android:windowSoftInputMode="adjustResize" />
 
         <activity android:name=".presentation.termsnconditions.activities.TermNConditionsAct"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize"/>
+
+        <activity android:name=".presentation.home.activities.UniversityDetailAct"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustResize"/>

@@ -6,23 +6,24 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.widget.AppCompatImageView;
 import androidx.appcompat.widget.AppCompatTextView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.va.neoapp.R;
-import com.va.neoapp.models.UpdateModel;
+import com.va.neoapp.models.HomeGrid;
 
 import java.util.List;
 
 public class HomeGridAdapter extends RecyclerView.Adapter<HomeGridAdapter.ViewHolder> {
 
     private Context context;
-    private List<UpdateModel> updateModelList;
+    private List<HomeGrid> homeGridList;
     private HomeGridAdapter.OnItemViewListener OnItemViewListener;
 
-    public HomeGridAdapter(Context context, List<UpdateModel> updateModelList) {
+    public HomeGridAdapter(Context context, List<HomeGrid> homeGridList) {
         this.context = context;
-        this.updateModelList = updateModelList;
+        this.homeGridList = homeGridList;
     }
 
     @NonNull
@@ -34,8 +35,10 @@ public class HomeGridAdapter extends RecyclerView.Adapter<HomeGridAdapter.ViewHo
 
     @Override
     public void onBindViewHolder(@NonNull HomeGridAdapter.ViewHolder holder, int position) {
-        if (updateModelList!=null && updateModelList.size() >0 ){
-            holder.text_grid.setText(updateModelList.get(position).getTextGrid());
+        if (homeGridList !=null && homeGridList.size() >0 ){
+
+            holder.image_grid_home.setImageDrawable(homeGridList.get(position).getDrawable());
+            holder.text_grid.setText(homeGridList.get(position).getTextGrid());
         }
     }
 
@@ -52,20 +55,22 @@ public class HomeGridAdapter extends RecyclerView.Adapter<HomeGridAdapter.ViewHo
 
     @Override
     public int getItemCount() {
-        return updateModelList.size();
+        return homeGridList.size();
     }
 
     public static class ViewHolder extends RecyclerView.ViewHolder{
 
         AppCompatTextView text_grid;
+        AppCompatImageView image_grid_home;
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             text_grid = itemView.findViewById(R.id.text_grid);
+            image_grid_home = itemView.findViewById(R.id.image_grid_home);
         }
     }
 
     public interface OnItemViewListener {
-        void selectedItem(UpdateModel updateModel);
+        void selectedItem(HomeGrid homeGrid);
     }
     public void SetOnItemClickListener(final HomeGridAdapter.OnItemViewListener OnItemViewListener) {
         this.OnItemViewListener = OnItemViewListener;
