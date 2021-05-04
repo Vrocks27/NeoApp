@@ -16,7 +16,7 @@ public abstract class BaseFragment extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = setLayoutResource(inflater, container, savedInstanceState);
-        initGUI(savedInstanceState);
+        initGUI(view,savedInstanceState);
         initData();
         return view;
     }
@@ -28,7 +28,7 @@ public abstract class BaseFragment extends Fragment {
 
     protected abstract View setLayoutResource(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState);
 
-    protected abstract void initGUI(Bundle savedInstanceState);
+    protected abstract void initGUI(View view, Bundle savedInstanceState);
 
     protected abstract void initData();
 

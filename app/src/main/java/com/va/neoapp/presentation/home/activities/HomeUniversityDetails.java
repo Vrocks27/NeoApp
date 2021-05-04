@@ -26,21 +26,23 @@ public class HomeUniversityDetails extends BaseActivity {
         mContext=this;
         viewPager = (ViewPager) findViewById(R.id.pager);
         tabLayout = (TabLayout) findViewById(R.id.tabLayout);
+
+        tabLayout.addTab(tabLayout.newTab().setText(mContext.getResources().getString(R.string.know_more)));
+        tabLayout.addTab(tabLayout.newTab().setText(mContext.getResources().getString(R.string.updates)));
+        tabLayout.addTab(tabLayout.newTab().setText(mContext.getResources().getString(R.string.courses)));
         tabLayout.setTabGravity(TabLayout.GRAVITY_FILL);
 
 
+
+        //Creating our pager adapter
         final FragmentAdapter adapter = new FragmentAdapter(mContext, getSupportFragmentManager(), tabLayout.getTabCount());
         viewPager.setAdapter(adapter);
 
-        tabLayout.setupWithViewPager(viewPager);
-
-        viewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
-
+        //Adding onTabSelectedListener to swipe views
         tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override
             public void onTabSelected(TabLayout.Tab tab) {
-                viewPager.setCurrentItem(tab.getPosition());
-
+               viewPager.setCurrentItem(tab.getPosition(),true);
             }
 
             @Override

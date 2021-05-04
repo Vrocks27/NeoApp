@@ -21,7 +21,7 @@ public class KnowMoreFragment extends BaseFragment {
     }
 
     @Override
-    protected void initGUI(Bundle savedInstanceState) {
+    protected void initGUI(View view, Bundle savedInstanceState) {
 
     }
 

@@ -23,5 +23,6 @@
     <color name="home_card_color">#6096FD</color>
     <color name="homepage_tabs_bg">#101F2F98</color>
     <color name="ratingcolor">#FFFDC827</color>
+    <color name="image_tint_color">#8c000000</color>
 
 </resources>

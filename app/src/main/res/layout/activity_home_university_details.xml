@@ -67,7 +67,8 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
-                            android:backgroundTint="@color/ratingcolor"
+                            android:clickable="false"
+                            android:progressTint="@color/ratingcolor"
                             android:numStars="5"
                             android:rating="4.6" />
 
@@ -97,7 +98,10 @@
                             android:layout_width="@dimen/padding_100dp"
                             android:layout_height="@dimen/padding_60dp"
                             android:layout_gravity="center"
-                            android:src="@drawable/default_university" />
+                            android:scaleType="fitXY"
+                            android:tint="@color/image_tint_color"
+                            android:src="@drawable/default_university"
+                            tools:ignore="UseAppTint" />
 
                         <TextView
                             android:layout_width="wrap_content"
@@ -135,28 +139,12 @@
                 app:tabMode="fixed"
                 app:tabSelectedTextColor="@color/white"
                 app:tabTextAppearance="@style/CustomTabText">
-
-                <com.google.android.material.tabs.TabItem
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/know_more" />
-
-                <com.google.android.material.tabs.TabItem
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/updates" />
-
-                <com.google.android.material.tabs.TabItem
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/courses" />
             </com.google.android.material.tabs.TabLayout>
 
             <androidx.viewpager.widget.ViewPager
                 android:id="@+id/pager"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                app:layout_behavior="@string/appbar_scrolling_view_behavior"/>
+                android:layout_height="500dp" />
 
         </LinearLayout>
     </ScrollView>
