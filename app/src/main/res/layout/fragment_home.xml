@@ -158,4 +158,11 @@
     </androidx.cardview.widget.CardView>
 
 
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/home_grid_list"
+        android:layout_margin="@dimen/padding_4dp"
+        android:padding="@dimen/padding_4dp"/>
+
 </LinearLayout>

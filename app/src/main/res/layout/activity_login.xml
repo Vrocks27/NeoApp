@@ -20,11 +20,12 @@
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_above="@+id/bottom_layout"
+        android:layout_above="@+id/layout_bottom"
         android:layout_below="@+id/top_layout"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
         android:layout_marginTop="@dimen/padding_20dp"
+        android:layout_marginBottom="@dimen/padding_4dp"
         android:orientation="vertical">
 
         <LinearLayout
@@ -45,10 +46,10 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
+                android:layout_margin="@dimen/padding_2dp"
                 android:layout_weight="1"
                 android:background="@drawable/background_border"
                 android:orientation="horizontal"
-                android:layout_margin="@dimen/padding_2dp"
                 android:padding="@dimen/padding_4dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -63,18 +64,18 @@
                     android:gravity="center"
                     android:padding="@dimen/padding_4dp"
                     android:textAlignment="center"
+                    android:visibility="gone"
                     app:ccp_arrowSize="@dimen/padding_24dp"
                     app:ccp_hideNameCode="true"
                     app:ccp_showFlag="false"
-                    android:visibility="gone"
                     app:ccp_textColor="@color/disabled_color"
                     app:ccp_textSize="@dimen/text_size_14sp" />
 
                 <androidx.appcompat.widget.AppCompatEditText
                     android:id="@+id/email_mobile_edit_text"
                     style="@style/edit_text_style"
-                    android:inputType="textEmailAddress|textNoSuggestions"
-                    android:importantForAutofill="no"/>
+                    android:importantForAutofill="no"
+                    android:inputType="textEmailAddress|textNoSuggestions" />
 
             </LinearLayout>
 
@@ -92,8 +93,8 @@
                     android:layout_gravity="center_vertical"
                     android:gravity="start"
                     android:text=""
-                    android:visibility="gone"
-                    android:textColor="@color/red_text_color" />
+                    android:textColor="@color/red_text_color"
+                    android:visibility="gone" />
 
                 <androidx.appcompat.widget.AppCompatTextView
                     android:id="@+id/text_new_user"

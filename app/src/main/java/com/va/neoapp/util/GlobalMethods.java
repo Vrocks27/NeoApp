@@ -289,6 +289,20 @@ public class GlobalMethods {
         bottom_fab_button.setBackgroundTintList(ColorStateList.valueOf(context.getResources().getColor(R.color.default_disabled)));
         text_next.setTextColor(context.getResources().getColor(R.color.disabled_color));
     }
+
+    public static void enableFabNext(Context context, FloatingActionButton bottom_fab_button) {
+        bottom_fab_button.setEnabled(true);
+        bottom_fab_button.setClickable(true);
+        bottom_fab_button.setImageTintList(ColorStateList.valueOf(context.getResources().getColor(R.color.white)));
+        bottom_fab_button.setBackgroundTintList(ColorStateList.valueOf(context.getResources().getColor(R.color.default_main_color)));
+    }
+
+    public static void disableFabNext(Context context, FloatingActionButton bottom_fab_button) {
+        bottom_fab_button.setEnabled(false);
+        bottom_fab_button.setClickable(false);
+        bottom_fab_button.setImageTintList(ColorStateList.valueOf(context.getResources().getColor(R.color.disabled_color)));
+        bottom_fab_button.setBackgroundTintList(ColorStateList.valueOf(context.getResources().getColor(R.color.default_disabled)));
+    }
   /*
 
     public static void callBackWordActivity(Context context, Class forwardClass, Bundle bundle, boolean isActivityFinish, boolean isForwardAnimation) {

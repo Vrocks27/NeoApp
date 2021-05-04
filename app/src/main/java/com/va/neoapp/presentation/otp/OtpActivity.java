@@ -14,6 +14,7 @@ import com.va.neoapp.custom.pinentry.PinEntryView;
 import com.va.neoapp.presentation.BaseActivity;
 import com.va.neoapp.presentation.home.activities.HomeActivity;
 import com.va.neoapp.presentation.onboarding.OnBoardingAct;
+import com.va.neoapp.presentation.termsnconditions.activities.TermNConditionsAct;
 import com.va.neoapp.util.GlobalMethods;
 
 public class OtpActivity extends BaseActivity {
@@ -98,7 +99,8 @@ public class OtpActivity extends BaseActivity {
 //                } else {
                // bundle.putString("emailMobile", edit_text_email.getText().toString().trim() +" or "+getMobileNumber());
                 //}
-                GlobalMethods.callForWordActivity(OtpActivity.this, HomeActivity.class, bundle, false, true);
+               // GlobalMethods.callForWordActivity(OtpActivity.this, HomeActivity.class, bundle, false, true);
+                GlobalMethods.callForWordActivity(OtpActivity.this, TermNConditionsAct.class, bundle, false, true);
             }
         });
 

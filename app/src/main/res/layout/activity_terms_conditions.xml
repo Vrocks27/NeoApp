@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <include
+            android:id="@+id/toolbar"
+            layout="@layout/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?android:attr/actionBarSize"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true" />
+
+        <!-- <androidx.core.widget.NestedScrollView
+             android:layout_width="match_parent"
+             android:layout_height="match_parent"
+             android:layout_below="@+id/toolbar"
+             android:layout_alignParentStart="true"
+             android:layout_alignParentEnd="true"
+             android:orientation="vertical">-->
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/toolbar"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:orientation="vertical"
+            android:padding="@dimen/padding_8dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/padding_2dp"
+                android:orientation="vertical">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/padding_4dp"
+                    android:fontFamily="@font/sfuitext_bold"
+                    android:padding="@dimen/padding_2dp"
+                    android:text="@string/text_terms_conditions"
+                    android:textColor="@color/default_main_color"
+                    android:textSize="@dimen/text_size_24sp" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/padding_4dp"
+                    android:fontFamily="@font/sfuitext_regularg2"
+                    android:padding="@dimen/padding_2dp"
+                    android:text="University of Oxford"
+                    android:textColor="@color/default_text_color"
+                    android:textSize="@dimen/text_size_20sp" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/padding_4dp"
+                    android:fontFamily="@font/sfuitext_regular"
+                    android:padding="@dimen/padding_2dp"
+                    android:text="Toronto Ontario"
+                    android:textColor="@color/default_text_color"
+                    android:textSize="@dimen/text_size_12sp" />
+
+            </LinearLayout>
+
+
+            <RadioGroup
+                android:id="@+id/terms_group"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="@dimen/padding_4dp"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:padding="@dimen/padding_2dp">
+
+                <RadioButton
+                    android:id="@+id/personal_space"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/padding_2dp"
+                    android:layout_weight="1"
+                    android:buttonTint="@color/default_main_color"
+                    android:fontFamily="@font/sfuitext_regularg2"
+
+                    android:padding="@dimen/padding_2dp"
+                    android:text="@string/text_isolation_personal_space"
+                    android:textSize="@dimen/text_size_14sp" />
+
+                <RadioButton
+                    android:id="@+id/university_space"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/padding_2dp"
+                    android:layout_weight="1"
+                    android:buttonTint="@color/default_main_color"
+                    android:fontFamily="@font/sfuitext_regularg2"
+                    android:padding="@dimen/padding_2dp"
+                    android:text="@string/text_isolation_university_space"
+                    android:textSize="@dimen/text_size_14sp" />
+            </RadioGroup>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/conditions_list"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="@dimen/padding_2dp"
+                android:padding="@dimen/padding_2dp" />
+
+        </LinearLayout>
+
+
+        <!-- </androidx.core.widget.NestedScrollView>-->
+
+        <!-- <include
+             layout="@layout/layout_bottom"
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:layout_alignParentStart="true"
+             android:layout_alignParentEnd="true"
+             android:layout_alignParentBottom="true"
+             android:layout_margin="@dimen/padding_4dp"
+             android:padding="@dimen/padding_2dp" />-->
+
+
+    </RelativeLayout>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab_next"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end|bottom"
+        android:layout_margin="@dimen/padding_16dp"
+        android:tint="@color/white"
+        app:tint="@color/white"
+        android:src="@drawable/ic_baseline_arrow_forward_ios_24"
+        app:backgroundTint="@color/default_main_color"
+        app:fabSize="normal"
+        app:elevation="@dimen/padding_4dp"
+        android:contentDescription="@string/app_name"/>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
