@@ -1,6 +1,5 @@
 package com.va.neoapp.presentation.home.fragments;
 
-import android.content.Context;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,18 +11,24 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager.widget.ViewPager;
 
 import com.va.neoapp.R;
+import com.va.neoapp.adapters.HomeGridAdapter;
 import com.va.neoapp.adapters.ImagesViewPagerAdapter;
+import com.va.neoapp.custom.recyclerviewitemspace.SpacesItemDecoration;
+import com.va.neoapp.models.UpdateModel;
 import com.va.neoapp.presentation.home.activities.UniversityDetailAct;
 import com.va.neoapp.util.GlobalMethods;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class HomeFragment extends Fragment {
 
-    private ViewPager viewPager;
-    private LinearLayout sliderDots;
-    private Context mContext;
+    // private Context mContext;
     private int dotscount;
     private ImageView[] dots;
 
@@ -60,11 +65,10 @@ public class HomeFragment extends Fragment {
     }
 
     private void initGUI(View view) {
-        mContext = getActivity();
-        viewPager = view.findViewById(R.id.viewpager);
-        sliderDots = view.findViewById(R.id.sliderDots);
+        ViewPager viewPager = view.findViewById(R.id.viewpager);
+        LinearLayout sliderDots = view.findViewById(R.id.sliderDots);
 
-        ImagesViewPagerAdapter viewPagerAdapter = new ImagesViewPagerAdapter(mContext);
+        ImagesViewPagerAdapter viewPagerAdapter = new ImagesViewPagerAdapter(getActivity());
         viewPagerAdapter.notifyDataSetChanged();
         viewPager.setAdapter(viewPagerAdapter);
 
@@ -72,20 +76,14 @@ public class HomeFragment extends Fragment {
         dots = new ImageView[dotscount];
 
         for (int i = 0; i < dotscount; i++) {
-
-            dots[i] = new ImageView(mContext);
+            dots[i] = new ImageView(getActivity());
             dots[i].setImageDrawable(ContextCompat.getDrawable(getContext(), R.drawable.non_active_dot));
-
             LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT);
-
             params.setMargins(8, 0, 8, 0);
-
             sliderDots.addView(dots[i], params);
-
         }
 
         dots[0].setImageDrawable(ContextCompat.getDrawable(getContext(), R.drawable.active_dot));
-
         viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override
             public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
@@ -94,13 +92,10 @@ public class HomeFragment extends Fragment {
 
             @Override
             public void onPageSelected(int position) {
-
                 for (int i = 0; i < dotscount; i++) {
                     dots[i].setImageDrawable(ContextCompat.getDrawable(getContext(), R.drawable.non_active_dot));
                 }
-
                 dots[position].setImageDrawable(ContextCompat.getDrawable(getContext(), R.drawable.active_dot));
-
             }
 
             @Override
@@ -108,6 +103,25 @@ public class HomeFragment extends Fragment {
 
             }
         });
+
+        RecyclerView home_grid_list = view.findViewById(R.id.home_grid_list);
+        GridLayoutManager layoutManager = new GridLayoutManager(getActivity(), 2);
+        home_grid_list.setLayoutManager(layoutManager);
+        home_grid_list.setNestedScrollingEnabled(true);
+//        int spacingInPixels = getResources().getDimensionPixelSize(R.dimen.padding_5dp);
+        home_grid_list.setHasFixedSize(true);
+        home_grid_list.addItemDecoration(new SpacesItemDecoration(0));
+
+        List<UpdateModel> updateModelList = new ArrayList<>();
+        updateModelList.add(new UpdateModel("Student Services Update"));
+        updateModelList.add(new UpdateModel("Health & Safety Measures"));
+        updateModelList.add(new UpdateModel("Latest News & Update"));
+        updateModelList.add(new UpdateModel("Student Life at Campus"));
+        updateModelList.add(new UpdateModel("Health & Safety Measures"));
+        updateModelList.add(new UpdateModel("Student Life at Campus"));
+        HomeGridAdapter homeGridAdapter = new HomeGridAdapter(getActivity(), updateModelList);
+        home_grid_list.setAdapter(homeGridAdapter);
+
     }
 
     private void readBundle() {

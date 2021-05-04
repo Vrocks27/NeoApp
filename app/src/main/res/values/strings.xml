@@ -19,6 +19,10 @@
     <string name="text_invalid_mobile">Invalid Mobile Number</string>
 
 
+    <string name="text_terms_conditions">Terms and Conditions</string>
+    <string name="text_isolation_personal_space">Isolation at Personal Space</string>
+    <string name="text_isolation_university_space">Isolation at University Space</string>
+
     <string name="text_home">Home</string>
     <string name="text_chat">Chat</string>
     <string name="text_support">Support</string>
@@ -44,5 +48,11 @@
     <string name="acceptance_criteria">Acceptance Criteria: </string>
     <string name="staff">Staff: </string>
     <string name="view_more">View More</string>
+
+
+
+
+    <string name="dummy_text">Lorem ipsum is a name for a common type of placeholder text. Also known as filler or dummy text, this is simply copy that serves to fill a space without actually saying anything meaningful. It\'s essentially nonsense text, but gives an idea of what real words will look like in the final product.</string>
+
 
 </resources>
