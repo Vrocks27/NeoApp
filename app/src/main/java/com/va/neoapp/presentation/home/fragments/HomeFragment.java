@@ -45,7 +45,7 @@ public class HomeFragment extends Fragment {
     }
 
     private void actionEvents(View view) {
-        view.findViewById(R.id.cardview).setOnClickListener(new View.OnClickListener() {
+        view.findViewById(R.id.tv_know_more).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 // startActivity(new Intent(getActivity(), UniversityDetailAct.class));
