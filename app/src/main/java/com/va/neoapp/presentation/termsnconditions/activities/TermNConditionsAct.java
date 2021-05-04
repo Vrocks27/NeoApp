@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.RadioGroup;
 
+import androidx.appcompat.widget.AppCompatTextView;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -22,6 +23,7 @@ public class TermNConditionsAct extends BaseActivity {
 
     private RecyclerView conditionsView;
 
+    boolean flag=false;
     @Override
     protected int setLayoutResource() {
         return R.layout.activity_terms_conditions;
@@ -31,7 +33,7 @@ public class TermNConditionsAct extends BaseActivity {
     protected void initGUI(Bundle savedInstanceState) {
         conditionsView = findViewById(R.id.conditions_list);
         conditionsView.setLayoutManager(new LinearLayoutManager(this));
-
+        disableBottomNext();
         RadioGroup terms_group = findViewById(R.id.terms_group);
         terms_group.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
@@ -41,9 +43,17 @@ public class TermNConditionsAct extends BaseActivity {
                 if (index == 0) {
                     TermsNConditionsAdapter personalAdapter = new TermsNConditionsAdapter(TermNConditionsAct.this, getPersonalSpaceData());
                     conditionsView.setAdapter(personalAdapter);
+                    flag=true;
                 } else {
                     TermsNConditionsAdapter universityAdapter = new TermsNConditionsAdapter(TermNConditionsAct.this, getUniversitySpaceData());
                     conditionsView.setAdapter(universityAdapter);
+                    flag=true;
+                }
+
+                if (flag){
+                    enableBottomNext();
+                }else {
+                    disableBottomNext();
                 }
             }
         });
@@ -105,4 +115,13 @@ public class TermNConditionsAct extends BaseActivity {
             }
         });
     }
+
+    private void disableBottomNext() {
+        GlobalMethods.disableFabNext(getBaseContext(),((FloatingActionButton) findViewById(R.id.fab_next)));
+    }
+
+    private void enableBottomNext() {
+        GlobalMethods.enableFabNext(getBaseContext(), ((FloatingActionButton) findViewById(R.id.fab_next)));
+    }
+
 }
