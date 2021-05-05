@@ -34,6 +34,7 @@ public class UniversityDetailAct extends BaseActivity {
         tabLayout.addTab(tabLayout.newTab().setText(mContext.getResources().getString(R.string.know_more)));
         tabLayout.addTab(tabLayout.newTab().setText(mContext.getResources().getString(R.string.courses)));
         tabLayout.setTabGravity(TabLayout.GRAVITY_FILL);
+        tabLayout.setSelectedTabIndicatorHeight(0);
 
 
         //Creating our pager adapter

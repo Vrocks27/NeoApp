@@ -32,6 +32,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentStart="true"
+                    android:layout_marginStart="@dimen/padding_10dp"
                     android:layout_alignParentTop="true"
                     android:orientation="vertical">
 
@@ -43,6 +44,7 @@
                         android:maxLines="1"
                         android:minLines="1"
                         android:singleLine="true"
+                        android:textSize="@dimen/text_size_20sp"
                         android:text="University of Toronto"
                         android:textColor="@color/default_text_color" />
 
@@ -67,10 +69,10 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
-                            android:clickable="false"
-                            android:progressTint="@color/ratingcolor"
                             android:numStars="5"
-                            android:rating="4.6" />
+                            style="@style/RatingBar"
+                            android:rating="4.6"
+                            android:theme="@style/RatingBar"/>
 
                         <TextView
                             android:layout_width="wrap_content"
@@ -80,9 +82,10 @@
                             android:fontFamily="@font/sfuitext_regular"
                             android:text="4.6"
                             android:textColor="@color/default_text_color"
-                            android:textSize="@dimen/text_size_18sp" />
+                            android:textSize="@dimen/text_size_14sp" />
                     </LinearLayout>
                 </LinearLayout>
+
 
                 <LinearLayout
                     android:layout_width="wrap_content"
@@ -106,7 +109,8 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_gravity="center"
+                            android:layout_gravity="start|center"
+                            android:layout_marginStart="@dimen/padding_15dp"
                             android:fontFamily="@font/sfuitext_regular"
                             android:gravity="start|center"
                             android:maxLines="2"
@@ -116,12 +120,16 @@
                     </FrameLayout>
 
                     <androidx.appcompat.widget.AppCompatImageView
-                        android:layout_width="@dimen/padding_60dp"
-                        android:layout_height="@dimen/padding_50dp"
-                        android:layout_gravity="end"
-                        android:layout_marginTop="@dimen/padding_8dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="end|center"
+                        android:paddingStart="@dimen/padding_30dp"
+                        android:paddingEnd="@dimen/padding_30dp"
+                        android:paddingTop="@dimen/padding_20dp"
+                        android:paddingBottom="@dimen/padding_20dp"
+                        android:layout_marginTop="@dimen/padding_10dp"
                         android:layout_marginBottom="@dimen/padding_8dp"
-                        app:srcCompat="@drawable/ic_phone_icon" />
+                        android:background="@drawable/ic_phone_icon" />
 
                 </LinearLayout>
             </RelativeLayout>
@@ -130,21 +138,26 @@
             <com.google.android.material.tabs.TabLayout
                 android:id="@+id/tabLayout"
                 android:layout_width="match_parent"
-                android:layout_height="?attr/actionBarSize"
+                android:layout_height="wrap_content"
                 android:layout_margin="@dimen/padding_10dp"
-                android:background="@color/homepage_tabs_bg"
+                android:background="@drawable/type_background"
                 app:tabBackground="@drawable/home_tabs"
                 app:tabGravity="fill"
-                app:tabIndicatorColor="@android:color/transparent"
+                android:layout_gravity="center"
+                android:textAlignment="center"
+                app:tabIndicatorHeight="0dp"
                 app:tabMode="fixed"
                 app:tabSelectedTextColor="@color/white"
                 app:tabTextAppearance="@style/CustomTabText">
             </com.google.android.material.tabs.TabLayout>
 
+
             <androidx.viewpager.widget.ViewPager
                 android:id="@+id/pager"
                 android:layout_width="match_parent"
                 android:layout_height="500dp" />
+
+
 
         </LinearLayout>
     </ScrollView>

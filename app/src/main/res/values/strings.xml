@@ -53,6 +53,8 @@
 
 
     <string name="dummy_text">Lorem ipsum is a name for a common type of placeholder text. Also known as filler or dummy text, this is simply copy that serves to fill a space without actually saying anything meaningful. It\'s essentially nonsense text, but gives an idea of what real words will look like in the final product.</string>
+    <string name="question">What type of visa do i need to become an academic student in Canada?</string>
+    <string name="answer">You need to appy for a Tier 4 general Visa which is applicable for any individual having attained the age of 16 years and above. Apart from this you also need to pay a surcharge of 150pounds per year for both domestic and inetrnational students.</string>
 
 
 </resources>
