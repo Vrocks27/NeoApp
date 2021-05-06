@@ -70,18 +70,18 @@ public class HomeActivity extends BaseActivity {
         tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override
             public void onTabSelected(TabLayout.Tab tab) {
-                if (tab.getPosition() == 0) {
-
-                }
-                if (tab.getPosition() == 1) {
-
-                }
-                if (tab.getPosition() == 2) {
-
-                }
-                if (tab.getPosition() == 3) {
-
-                }
+//                if (tab.getPosition() == 0) {
+//
+//                }
+//                if (tab.getPosition() == 1) {
+//
+//                }
+//                if (tab.getPosition() == 2) {
+//
+//                }
+//                if (tab.getPosition() == 3) {
+//
+//                }
             }
 
             @Override

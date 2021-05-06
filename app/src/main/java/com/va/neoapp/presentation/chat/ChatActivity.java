@@ -28,6 +28,7 @@ public class ChatActivity extends BaseActivity {
         return R.layout.activity_chat;
     }
 
+
     @Override
     protected void initGUI(Bundle savedInstanceState) {
 

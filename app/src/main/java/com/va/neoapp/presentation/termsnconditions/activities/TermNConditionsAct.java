@@ -4,7 +4,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.RadioGroup;
 
-import androidx.appcompat.widget.AppCompatTextView;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -13,7 +12,7 @@ import com.va.neoapp.R;
 import com.va.neoapp.adapters.TermsNConditionsAdapter;
 import com.va.neoapp.models.TermsConditions;
 import com.va.neoapp.presentation.BaseActivity;
-import com.va.neoapp.presentation.home.activities.HomeActivity;
+import com.va.neoapp.presentation.boarding.activities.UniversityBoardingAct;
 import com.va.neoapp.util.GlobalMethods;
 
 import java.util.ArrayList;
@@ -111,7 +110,7 @@ public class TermNConditionsAct extends BaseActivity {
         findViewById(R.id.fab_next).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                GlobalMethods.callForWordActivity(TermNConditionsAct.this, HomeActivity.class, null, false, true);
+                GlobalMethods.callForWordActivity(TermNConditionsAct.this, UniversityBoardingAct.class, null, false, true);
             }
         });
     }

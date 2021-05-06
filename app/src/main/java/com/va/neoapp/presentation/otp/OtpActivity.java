@@ -12,8 +12,6 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.va.neoapp.R;
 import com.va.neoapp.custom.pinentry.PinEntryView;
 import com.va.neoapp.presentation.BaseActivity;
-import com.va.neoapp.presentation.home.activities.HomeActivity;
-import com.va.neoapp.presentation.onboarding.OnBoardingAct;
 import com.va.neoapp.presentation.termsnconditions.activities.TermNConditionsAct;
 import com.va.neoapp.util.GlobalMethods;
 

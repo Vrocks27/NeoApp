@@ -49,6 +49,11 @@
     <string name="staff">Staff: </string>
     <string name="view_more">View More</string>
 
+    <string name="text_personal">Personal</string>
+    <string name="text_program">Program</string>
+    <string name="text_travel">Travel</string>
+    <string name="text_review">Review</string>
+    <string name="text_submit">Submit</string>
 
     <string name="dummy_text">Lorem ipsum is a name for a common type of placeholder text. Also known as filler or dummy text, this is simply copy that serves to fill a space without actually saying anything meaningful. It\'s essentially nonsense text, but gives an idea of what real words will look like in the final product.</string>
     <string name="question">What type of visa do i need to become an academic student in Canada?</string>
@@ -71,7 +76,7 @@
     <string name="state">State<font color="#FFF995AB"> *</font></string>
     <string name="postal_code">Postal Code<font color="#FFF995AB"> *</font></string>
     <string name="postalcode">Postal Code</string>
-    <string name="postal_address">Permanent Address same as Current Adress?</string>
+    <string name="postal_address">Permanent Address same as Current Address?</string>
     <string name="no">No</string>
     <string name="current_address">Current Address<font color="#FFF995AB"> *</font></string>
     <string name="university_campus">University Campus<font color="#FFF995AB"> *</font></string>
@@ -87,7 +92,7 @@
     <string name="noof_family">Number of family members</string>
     <string name="name">Name</string>
     <string name="age">Age</string>
-    <string name="require">Do you or any co-arriving members require any  special accomodations to address a documented disability , functional limitation, or special need?</string>
+    <string name="require">Do you or any co-arriving members require any  special accommodations to address a documented disability , functional limitation, or special need?</string>
     <string name="mode_of_transport">Mode of Transport<font color="#FFF995AB"> *</font></string>
     <string name="airlines">Airlines<font color="#FFF995AB"> *</font></string>
     <string name="airlines_name">Airlines Name</string>
