@@ -110,5 +110,10 @@
     <string name="hotel_address">Hotel Address<font color="#FFF995AB"> *</font></string>
     <string name="hoteladdress">Hotel Address</string>
     <string name="hotel_number">Hotel Contact Number<font color="#FFF995AB"> *</font></string>
+    <string name="final_arrival_city">Final Arrival City<font color="#FFF995AB"> *</font></string>
+    <string name="final_transport">Final Transport Mode</string>
+    <string name="transport_number">Transport Number<font color="#FFF995AB"> *</font></string>
+    <string name="modeof_transport">Mode of Transport</string>
+    <string name="any_information">Any Additional information</string>
 
 </resources>
