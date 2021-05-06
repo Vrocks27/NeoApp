@@ -77,7 +77,7 @@
             <androidx.appcompat.widget.AppCompatTextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/state"
+                android:text="@string/city"
                 android:fontFamily="@font/sfuitext_regular"
                 android:textSize="@dimen/text_size_14sp"
                 android:textColor="@color/default_text_color"/>
@@ -241,7 +241,7 @@
             <androidx.appcompat.widget.AppCompatTextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/state"
+                android:text="@string/city"
                 android:fontFamily="@font/sfuitext_regular"
                 android:textSize="@dimen/text_size_14sp"
                 android:textColor="@color/default_text_color"/>
