@@ -83,6 +83,15 @@
         <item name="android:textAlignment">center</item>
     </style>
 
+    <style name="onboardspinner"  parent="Widget.AppCompat.TextView.SpinnerItem">
+        <item name="android:background">@drawable/inventory_spinner_background</item>
+        <item name="android:textAppearance">@color/default_text_color</item>
+        <item name="fontFamily">@font/sfuitext_regular</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@color/default_text_color</item>
+        <item name="android:padding">@dimen/padding_4dp</item>
+    </style>
+
     <style name="RatingBar" parent="Widget.AppCompat.RatingBar.Indicator">
         <item name="colorControlNormal">@color/default_text_color</item>
         <item name="colorControlActivated">@color/ratingcolor</item>

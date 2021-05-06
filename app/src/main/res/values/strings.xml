@@ -50,11 +50,53 @@
     <string name="view_more">View More</string>
 
 
-
-
     <string name="dummy_text">Lorem ipsum is a name for a common type of placeholder text. Also known as filler or dummy text, this is simply copy that serves to fill a space without actually saying anything meaningful. It\'s essentially nonsense text, but gives an idea of what real words will look like in the final product.</string>
     <string name="question">What type of visa do i need to become an academic student in Canada?</string>
     <string name="answer">You need to appy for a Tier 4 general Visa which is applicable for any individual having attained the age of 16 years and above. Apart from this you also need to pay a surcharge of 150pounds per year for both domestic and inetrnational students.</string>
 
+    <string name="first_name">First Name<font color="#FFF995AB"> *</font></string>
+    <string name="firstname">First Name</string>
+    <string name="last_name">Last Name<font color="#FFF995AB"> *</font></string>
+    <string name="lastname">Last Name</string>
+    <string name="email_id">Email ID<font color="#FFF995AB"> *</font></string>
+    <string name="emailid">Email ID</string>
+    <string name="mobile_number">Mobile Number<font color="#FFF995AB"> *</font></string>
+    <string name="mobilenumber">Mobile Number</string>
+    <string name="gender">Gender<font color="#FFF995AB"> *</font></string>
+    <string name="date_of_birth">Date Of Birth<font color="#FFF995AB"> *</font></string>
+    <string name="country_of_origin">Country Of Origin<font color="#FFF995AB"> *</font></string>
+    <string name="Dateof_birth">dd/mm/yyyy</string>
+    <string name="permanent_address">Permanent Address<font color="#FFF995AB"> *</font></string>
+    <string name="Address">Address</string>
+    <string name="state">State<font color="#FFF995AB"> *</font></string>
+    <string name="postal_code">Postal Code<font color="#FFF995AB"> *</font></string>
+    <string name="postalcode">Postal Code</string>
+    <string name="postal_address">Permanent Address same as Current Adress?</string>
+    <string name="no">No</string>
+    <string name="current_address">Current Address<font color="#FFF995AB"> *</font></string>
+    <string name="university_campus">University Campus<font color="#FFF995AB"> *</font></string>
+    <string name="program_applied_to">Program Applied To<font color="#FFF995AB"> *</font></string>
+    <string name="program_intake">Program Intake<font color="#FFF995AB"> *</font></string>
+    <string name="program_name">Program Name</string>
+    <string name="programintake">Program Intake</string>
+    <string name="student_number">Student Number<font color="#FFF995AB"> *</font></string>
+    <string name="number">Number</string>
+    <string name="visa_date">Visa Issuance Date<font color="#FFF995AB"> *</font></string>
+    <string name="are_you_travel">Are you travelling by self?</string>
+    <string name="accompained_family">Accompained by Family members</string>
+    <string name="noof_family">Number of family members</string>
+    <string name="name">Name</string>
+    <string name="age">Age</string>
+    <string name="require">Do you or any co-arriving members require any  special accomodations to address a documented disability , functional limitation, or special need?</string>
+    <string name="mode_of_transport">Mode of Transport<font color="#FFF995AB"> *</font></string>
+    <string name="airlines">Airlines<font color="#FFF995AB"> *</font></string>
+    <string name="airlines_name">Airlines Name</string>
+    <string name="departure_country">Departure Country<font color="#FFF995AB"> *</font></string>
+    <string name="departure_city">Departure City<font color="#FFF995AB"> *</font></string>
+    <string name="departure_date">Departure Date<font color="#FFF995AB"> *</font></string>
+    <string name="departure_time">Departure Time<font color="#FFF995AB"> *</font></string>
+    <string name="do_you_have_fligths">Do you have any connecting flights?</string>
+    <string name="noof_flights">Number of connecting flights<font color="#FFF995AB"> *</font></string>
+    <string name="noofflight">Number of flights</string>
 
 </resources>
