@@ -135,13 +135,8 @@
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fab_next"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="end|bottom"
-        android:layout_margin="@dimen/padding_16dp"
-        android:tint="@color/white"
+        style="@style/default_fab_next_style"
         app:tint="@color/white"
-        android:src="@drawable/ic_baseline_arrow_forward_ios_24"
         app:backgroundTint="@color/default_main_color"
         app:fabSize="normal"
         app:elevation="@dimen/padding_4dp"

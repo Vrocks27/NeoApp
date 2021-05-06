@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
@@ -16,7 +17,6 @@
             android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
             android:layout_alignParentEnd="true" />
-
 
         <com.va.neoapp.custom.stepper.StepView
             android:id="@+id/step_view"
@@ -54,29 +54,15 @@
         </FrameLayout>
 
 
-        <!-- <include
-             layout="@layout/layout_bottom"
-             android:layout_width="match_parent"
-             android:layout_height="wrap_content"
-             android:layout_alignParentStart="true"
-             android:layout_alignParentEnd="true"
-             android:layout_alignParentBottom="true"
-             android:layout_margin="@dimen/padding_4dp"
-             android:padding="@dimen/padding_2dp" />-->
-
     </RelativeLayout>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fab_next"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="end|bottom"
-        android:layout_margin="@dimen/padding_16dp"
+        style="@style/default_fab_next_style"
         android:contentDescription="@string/app_name"
-        android:src="@drawable/ic_baseline_arrow_forward_ios_24"
-        android:tint="@color/white"
         app:backgroundTint="@color/default_main_color"
         app:elevation="@dimen/padding_4dp"
         app:fabSize="normal"
         app:tint="@color/white" />
+
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

@@ -15,11 +15,6 @@ import com.va.neoapp.presentation.boarding.fragments.ProgramInfoFragment;
 import com.va.neoapp.presentation.boarding.fragments.ReviewFragment;
 import com.va.neoapp.presentation.boarding.fragments.SubmitFragment;
 import com.va.neoapp.presentation.boarding.fragments.TravelFragment;
-import com.va.neoapp.presentation.home.fragments.ChatFragment;
-import com.va.neoapp.presentation.home.fragments.HomeFragment;
-import com.va.neoapp.presentation.home.fragments.ProfileFragment;
-import com.va.neoapp.presentation.home.fragments.SupportFragment;
-import com.va.neoapp.presentation.home.fragments.TagFragment;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -35,7 +30,7 @@ public class UniversityBoardingAct extends BaseActivity {
 
     @Override
     protected int setLayoutResource() {
-        return R.layout.activity_on_boarding;
+        return R.layout.activity_university_boarding;
     }
 
     @Override
