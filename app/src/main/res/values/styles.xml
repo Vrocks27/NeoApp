@@ -94,10 +94,13 @@
     <style name="onboardspinner"  parent="Widget.AppCompat.TextView.SpinnerItem">
         <item name="android:background">@drawable/inventory_spinner_background</item>
         <item name="android:textAppearance">@color/default_text_color</item>
+        <item name="android:layout_gravity">start|center</item>
+        <item name="android:gravity">start|center</item>
+        <item name="android:textAlignment">viewStart</item>
         <item name="fontFamily">@font/sfuitext_regular</item>
-        <item name="android:textSize">14sp</item>
+        <item name="android:textSize">@dimen/text_size_12sp</item>
         <item name="android:textColor">@color/default_text_color</item>
-        <item name="android:padding">@dimen/padding_4dp</item>
+        <item name="android:padding">@dimen/padding_2dp</item>
     </style>
 
     <style name="RatingBar" parent="Widget.AppCompat.RatingBar.Indicator">

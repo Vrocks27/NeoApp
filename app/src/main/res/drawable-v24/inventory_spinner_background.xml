@@ -22,7 +22,7 @@
 
             <item android:right="@dimen/padding_4dp">
 
-                <bitmap android:gravity="end|center"
+                <bitmap android:gravity="end|bottom|center_vertical"
                     android:src="@drawable/down_arrow" />
 
             </item>

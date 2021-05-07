@@ -8,7 +8,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:weightSum="2"
-        android:layout_margin="@dimen/padding_8dp"
+        android:layout_margin="@dimen/padding_4dp"
         android:orientation="horizontal">
 
         <LinearLayout
@@ -22,15 +22,20 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/mode_of_transport"
+                android:layout_marginStart="@dimen/padding_6dp"
                 android:textColor="@color/default_text_color"
                 android:singleLine="true"
                 android:fontFamily="@font/sfuitext_regular"
                 android:textSize="@dimen/text_size_14sp" />
 
             <androidx.appcompat.widget.AppCompatSpinner
+                android:id="@+id/spinner_transport"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                style="@style/onboardspinner" />
+                android:layout_gravity="center"
+                android:gravity="start|center"
+                style="@style/onboardspinner"
+                android:layout_marginTop="@dimen/padding_4dp"/>
         </LinearLayout>
 
         <LinearLayout
@@ -44,6 +49,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/airlines"
+                android:layout_marginStart="@dimen/padding_4dp"
                 android:fontFamily="@font/sfuitext_regular"
                 android:textSize="@dimen/text_size_14sp"
                 android:textColor="@color/default_text_color"/>
@@ -52,6 +58,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="@string/airlines_name"
+                android:singleLine="true"
+                android:imeOptions="actionNext"
                 android:textColorHint="@color/default_text_color"
                 android:textColor="@color/default_text_color"
                 android:textSize="@dimen/text_size_12sp"/>
@@ -76,13 +84,17 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/departure_country"
+                android:layout_marginStart="@dimen/padding_6dp"
                 android:textColor="@color/default_text_color"
                 android:singleLine="true"
                 android:fontFamily="@font/sfuitext_regular"
                 android:textSize="@dimen/text_size_14sp" />
 
             <androidx.appcompat.widget.AppCompatSpinner
+                android:id="@+id/spinner_departure_country"
                 android:layout_width="match_parent"
+                android:layout_gravity="center"
+                android:gravity="start|center"
                 android:layout_height="wrap_content"
                 style="@style/onboardspinner" />
         </LinearLayout>
@@ -98,13 +110,17 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/departure_city"
+                android:layout_marginStart="@dimen/padding_6dp"
                 android:fontFamily="@font/sfuitext_regular"
                 android:textSize="@dimen/text_size_14sp"
                 android:textColor="@color/default_text_color"/>
 
             <androidx.appcompat.widget.AppCompatSpinner
+                android:id="@+id/spinner_departure_city"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="start|center"
                 style="@style/onboardspinner" />
         </LinearLayout>
 
@@ -130,13 +146,19 @@
                 android:text="@string/departure_date"
                 android:textColor="@color/default_text_color"
                 android:singleLine="true"
+                android:layout_marginStart="@dimen/padding_6dp"
                 android:fontFamily="@font/sfuitext_regular"
                 android:textSize="@dimen/text_size_14sp" />
 
             <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/et_departure_date"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="@string/Dateof_birth"
+                android:layout_gravity="center"
+                android:gravity="start|center"
+                android:textSize="@dimen/text_size_12sp"
+                android:paddingEnd="@dimen/padding_4dp"
                 android:drawableEnd="@drawable/ic_calender"
                 android:drawablePadding="@dimen/padding_4dp"/>
         </LinearLayout>
@@ -154,11 +176,16 @@
                 android:text="@string/departure_time"
                 android:fontFamily="@font/sfuitext_regular"
                 android:textSize="@dimen/text_size_14sp"
+                android:layout_marginStart="@dimen/padding_6dp"
                 android:textColor="@color/default_text_color"/>
 
             <androidx.appcompat.widget.AppCompatSpinner
+                android:id="@+id/spinner_departure_time"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="start|center"
+                android:layout_marginTop="@dimen/padding_6dp"
                 style="@style/onboardspinner" />
         </LinearLayout>
     </LinearLayout>
@@ -182,11 +209,9 @@
         <RadioGroup
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="@dimen/padding_4dp">
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
+            android:layout_margin="@dimen/padding_4dp"
+            android:orientation="horizontal">
+
                 <RadioButton
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -194,8 +219,7 @@
                     android:fontFamily="@font/sfuitext_regular"
                     android:textSize="@dimen/text_size_14sp"
                     android:textColor="@color/default_text_color"
-                    android:layout_marginEnd="@dimen/padding_10dp"
-                    />
+                    android:layout_marginEnd="@dimen/padding_10dp"/>
 
                 <RadioButton
                     android:layout_width="wrap_content"
@@ -204,9 +228,8 @@
                     android:fontFamily="@font/sfuitext_regular"
                     android:textSize="@dimen/text_size_14sp"
                     android:textColor="@color/default_text_color"
-                    android:layout_marginStart="@dimen/padding_10dp"
-                    />
-            </LinearLayout>
+                    android:layout_marginStart="@dimen/padding_10dp"/>
+
         </RadioGroup>
     </LinearLayout>
 
@@ -229,9 +252,14 @@
             android:textSize="@dimen/text_size_14sp" />
 
         <androidx.appcompat.widget.AppCompatSpinner
+            android:id="@+id/spinner_flights"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            style="@style/onboardspinner"/>
+            style="@style/onboardspinner"
+            android:layout_gravity="center"
+            android:gravity="start|center"
+            android:layout_marginTop="@dimen/padding_4dp"
+            android:layout_marginBottom="@dimen/padding_4dp"/>
     </LinearLayout>
 
 

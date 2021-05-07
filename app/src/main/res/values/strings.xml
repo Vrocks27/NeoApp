@@ -100,7 +100,7 @@
     <string name="departure_city">Departure City<font color="#FFF995AB"> *</font></string>
     <string name="departure_date">Departure Date<font color="#FFF995AB"> *</font></string>
     <string name="departure_time">Departure Time<font color="#FFF995AB"> *</font></string>
-    <string name="do_you_have_fligths">Do you have any connecting flights?</string>
+    <string name="do_you_have_fligths">Do you have any connecting flights ?</string>
     <string name="noof_flights">Number of connecting flights<font color="#FFF995AB"> *</font></string>
     <string name="city">City<font color="#FFF995AB"> *</font></string>
     <string name="arrival_country">Arrival Country<font color="#FFF995AB"> *</font></string>

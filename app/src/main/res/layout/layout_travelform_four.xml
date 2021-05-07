@@ -30,7 +30,10 @@
             <androidx.appcompat.widget.AppCompatSpinner
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                style="@style/onboardspinner" />
+                style="@style/onboardspinner"
+                android:layout_gravity="center"
+                android:gravity="start|center"
+                android:layout_marginTop="@dimen/padding_4dp"/>
         </LinearLayout>
 
         <LinearLayout
@@ -52,14 +55,17 @@
             <androidx.appcompat.widget.AppCompatSpinner
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                style="@style/onboardspinner" />
+                style="@style/onboardspinner"
+                android:layout_gravity="center"
+                android:gravity="start|center"
+                android:layout_marginTop="@dimen/padding_4dp"/>
         </LinearLayout>
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="@dimen/padding_4dp"
+        android:layout_margin="@dimen/padding_8dp"
         android:orientation="vertical">
 
         <androidx.appcompat.widget.AppCompatTextView
@@ -75,6 +81,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/modeof_transport"
+            android:layout_marginStart="@dimen/padding_4dp"
+            android:fontFamily="@font/sfuitext_regular"
             android:textColorHint="@color/default_text_color"
             android:textColor="@color/default_text_color"
             android:textSize="@dimen/text_size_12sp"/>
@@ -98,12 +106,14 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/departure_date"
+                android:layout_marginStart="@dimen/padding_4dp"
                 android:textColor="@color/default_text_color"
                 android:singleLine="true"
                 android:fontFamily="@font/sfuitext_regular"
                 android:textSize="@dimen/text_size_14sp" />
 
             <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/et_final_departure_date"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="@string/Dateof_birth"
@@ -129,14 +139,17 @@
             <androidx.appcompat.widget.AppCompatSpinner
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                style="@style/onboardspinner" />
+                style="@style/onboardspinner"
+                android:layout_gravity="center"
+                android:gravity="start|center"
+                android:layout_marginTop="@dimen/padding_4dp"/>
         </LinearLayout>
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="@dimen/padding_4dp"
+        android:layout_margin="@dimen/padding_8dp"
         android:orientation="vertical">
 
         <androidx.appcompat.widget.AppCompatTextView
@@ -154,12 +167,16 @@
             android:layout_height="wrap_content"
             android:background="@drawable/background_border"
             android:minLines="5"
+            android:maxLines="10"
+            android:textSize="@dimen/text_size_12sp"
+            android:layout_gravity="top|start"
+            android:gravity="top|start"
+            android:textAlignment="textStart"
             android:scrollbars="vertical"
             android:scrollbarSize="@dimen/padding_4dp"
-            android:scrollbarStyle="insideInset"
             android:scrollIndicators="end"
             android:isScrollContainer="true"
-            android:layout_margin="@dimen/padding_4dp"/>
+            android:layout_margin="@dimen/padding_6dp"/>
 
     </LinearLayout>
 

@@ -21,14 +21,10 @@
             android:textSize="@dimen/text_size_14sp" />
 
         <RadioGroup
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="@dimen/padding_4dp">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
+            android:layout_margin="@dimen/padding_4dp"
+            android:orientation="horizontal">
 
                 <RadioButton
                     android:layout_width="wrap_content"
@@ -47,7 +43,6 @@
                     android:text="@string/no"
                     android:textColor="@color/default_text_color"
                     android:textSize="@dimen/text_size_14sp" />
-            </LinearLayout>
         </RadioGroup>
     </LinearLayout>
 
@@ -68,14 +63,10 @@
             android:textSize="@dimen/text_size_14sp" />
 
         <RadioGroup
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="@dimen/padding_4dp">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
+            android:layout_margin="@dimen/padding_4dp"
+            android:orientation="horizontal">
 
                 <RadioButton
                     android:layout_width="wrap_content"
@@ -94,7 +85,6 @@
                     android:text="@string/no"
                     android:textColor="@color/default_text_color"
                     android:textSize="@dimen/text_size_14sp" />
-            </LinearLayout>
         </RadioGroup>
     </LinearLayout>
 
@@ -126,6 +116,8 @@
                 android:layout_centerInParent="true"
                 android:layout_margin="@dimen/padding_4dp"
                 android:layout_weight="1"
+                android:fontFamily="@font/sfuitext_regular"
+                android:textSize="@dimen/text_size_12sp"
                 android:background="@drawable/background_border"
                 android:hint="@string/name"
                 android:inputType="text"
@@ -139,6 +131,8 @@
                 android:layout_height="wrap_content"
                 android:layout_centerInParent="true"
                 android:layout_margin="@dimen/padding_4dp"
+                android:fontFamily="@font/sfuitext_regular"
+                android:textSize="@dimen/text_size_12sp"
                 android:layout_toEndOf="@id/family_person_name"
                 android:layout_weight="1"
                 android:background="@drawable/background_border"
@@ -154,6 +148,8 @@
                 android:layout_height="wrap_content"
                 android:layout_centerInParent="true"
                 android:layout_margin="@dimen/padding_4dp"
+                android:fontFamily="@font/sfuitext_regular"
+                android:textSize="@dimen/text_size_12sp"
                 android:layout_toEndOf="@id/family_person_relation"
                 android:layout_weight="1"
                 android:background="@drawable/background_border"
@@ -190,14 +186,10 @@
             android:textSize="@dimen/text_size_14sp" />
 
         <RadioGroup
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="@dimen/padding_4dp">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
+            android:layout_margin="@dimen/padding_4dp"
+            android:orientation="horizontal">
 
                 <RadioButton
                     android:layout_width="wrap_content"
@@ -216,7 +208,7 @@
                     android:text="@string/no"
                     android:textColor="@color/default_text_color"
                     android:textSize="@dimen/text_size_14sp" />
-            </LinearLayout>
+
         </RadioGroup>
 
     </LinearLayout>

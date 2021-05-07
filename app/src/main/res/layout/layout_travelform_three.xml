@@ -2,6 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical">
 
     <LinearLayout
@@ -15,7 +16,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:layout_margin="@dimen/padding_4dp"
             android:orientation="vertical">
 
             <androidx.appcompat.widget.AppCompatTextView
@@ -23,42 +23,52 @@
                 android:layout_height="wrap_content"
                 android:textColor="@color/default_text_color"
                 android:singleLine="true"
+                android:layout_marginStart="@dimen/padding_6dp"
                 android:text="@string/arrival_country"
                 android:fontFamily="@font/sfuitext_regular"
                 android:textSize="@dimen/text_size_14sp" />
 
             <androidx.appcompat.widget.AppCompatSpinner
+                android:id="@+id/spinner_arrival_country"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                style="@style/onboardspinner" />
+                style="@style/onboardspinner"
+                android:layout_marginTop="@dimen/padding_4dp"
+                android:layout_gravity="center"
+                android:gravity="start|center"/>
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:layout_margin="@dimen/padding_4dp"
             android:orientation="vertical">
 
             <androidx.appcompat.widget.AppCompatTextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/arrival_city"
+                android:layout_marginStart="@dimen/padding_6dp"
                 android:fontFamily="@font/sfuitext_regular"
                 android:textSize="@dimen/text_size_14sp"
                 android:textColor="@color/default_text_color"/>
 
             <androidx.appcompat.widget.AppCompatSpinner
+                android:id="@+id/spinner_arrival_city"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                style="@style/onboardspinner" />
+                style="@style/onboardspinner"
+                android:layout_marginTop="@dimen/padding_4dp"
+                android:layout_gravity="center"
+                android:gravity="start|center"
+                />
         </LinearLayout>
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="@dimen/padding_4dp"
+        android:layout_margin="@dimen/padding_8dp"
         android:orientation="vertical">
 
         <androidx.appcompat.widget.AppCompatTextView
@@ -74,6 +84,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/hotelname"
+            android:fontFamily="@font/sfuitext_regular"
             android:textColorHint="@color/default_text_color"
             android:textColor="@color/default_text_color"
             android:textSize="@dimen/text_size_12sp"/>
@@ -82,7 +93,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="@dimen/padding_4dp"
+        android:layout_margin="@dimen/padding_8dp"
         android:orientation="vertical">
 
         <androidx.appcompat.widget.AppCompatTextView
@@ -98,6 +109,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/hoteladdress"
+            android:fontFamily="@font/sfuitext_regular"
             android:textColorHint="@color/default_text_color"
             android:textColor="@color/default_text_color"
             android:textSize="@dimen/text_size_12sp"/>
@@ -106,7 +118,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="@dimen/padding_4dp"
+        android:layout_margin="@dimen/padding_8dp"
         android:orientation="vertical">
 
         <androidx.appcompat.widget.AppCompatTextView
@@ -127,13 +139,28 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal">
 
-            <androidx.appcompat.widget.AppCompatSpinner
+            <!--<androidx.appcompat.widget.AppCompatSpinner
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="start|center"
                 style="@style/onboardspinner"
                 android:layout_margin="@dimen/padding_4dp"
-                android:gravity="start|center" />
+                android:gravity="start|center" />-->
+
+            <com.rilixtech.widget.countrycodepicker.CountryCodePicker
+                android:id="@+id/select_code_spinner"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_margin="@dimen/padding_4dp"
+                android:gravity="center"
+                android:padding="@dimen/padding_4dp"
+                android:textAlignment="center"
+                app:ccp_arrowSize="@dimen/padding_24dp"
+                app:ccp_hideNameCode="true"
+                app:ccp_showFlag="false"
+                app:ccp_textColor="@color/disabled_color"
+                app:ccp_textSize="@dimen/text_size_14sp" />
 
             <androidx.appcompat.widget.AppCompatEditText
                 android:layout_width="match_parent"

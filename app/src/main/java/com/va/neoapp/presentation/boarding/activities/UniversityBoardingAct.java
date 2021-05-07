@@ -15,6 +15,8 @@ import com.va.neoapp.presentation.boarding.fragments.ProgramInfoFragment;
 import com.va.neoapp.presentation.boarding.fragments.ReviewFragment;
 import com.va.neoapp.presentation.boarding.fragments.SubmitFragment;
 import com.va.neoapp.presentation.boarding.fragments.TravelFragment;
+import com.va.neoapp.presentation.home.activities.UniversityDetailAct;
+import com.va.neoapp.util.GlobalMethods;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -64,6 +66,7 @@ public class UniversityBoardingAct extends BaseActivity {
                     viewPager.setCurrentItem(currentStep);
                 } else {
                     stepView.done(true);
+                    GlobalMethods.callForWordActivity(UniversityBoardingAct.this, UniversityDetailAct.class,null,false,true);
                 }
             }
         });
@@ -71,7 +74,6 @@ public class UniversityBoardingAct extends BaseActivity {
 
     @Override
     protected void initData() {
-
 
         HomeViewPagerAdapter homeViewPagerAdapter = new HomeViewPagerAdapter(getSupportFragmentManager());
         homeViewPagerAdapter.addFrag(new PersonalInfoFragment(), getString(R.string.text_personal));
