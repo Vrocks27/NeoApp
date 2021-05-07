@@ -2,6 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical">
 
         <LinearLayout
@@ -75,6 +76,7 @@
                     android:textColor="@color/default_text_color"
                     android:textSize="@dimen/text_size_12sp" />
             </LinearLayout>
+
         </LinearLayout>
 
         <LinearLayout
@@ -132,19 +134,35 @@
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
 
-                <androidx.appcompat.widget.AppCompatSpinner
+              <!--  <androidx.appcompat.widget.AppCompatSpinner
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="start|center"
                     style="@style/onboardspinner"
                     android:layout_margin="@dimen/padding_4dp"
-                    android:gravity="start|center" />
+                    android:gravity="start|center" />-->
+
+                <com.rilixtech.widget.countrycodepicker.CountryCodePicker
+                    android:id="@+id/select_code_spinner"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_margin="@dimen/padding_4dp"
+                    android:gravity="center"
+                    android:padding="@dimen/padding_4dp"
+                    android:textAlignment="center"
+                    app:ccp_arrowSize="@dimen/padding_24dp"
+                    app:ccp_hideNameCode="true"
+                    app:ccp_showFlag="false"
+                    app:ccp_textColor="@color/disabled_color"
+                    app:ccp_textSize="@dimen/text_size_14sp" />
 
                 <androidx.appcompat.widget.AppCompatEditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="start"
+                    android:layout_gravity="center"
                     android:layout_margin="@dimen/padding_4dp"
+
                     android:gravity="start"
                     android:hint="@string/mobilenumber"
                     android:imeOptions="actionNext"
@@ -190,6 +208,7 @@
                     android:inputType="text"
                     android:textColor="@color/default_text_color"
                     android:textSize="@dimen/text_size_12sp" />
+
             </LinearLayout>
 
             <LinearLayout

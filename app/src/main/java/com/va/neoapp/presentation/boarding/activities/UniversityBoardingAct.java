@@ -83,13 +83,15 @@ public class UniversityBoardingAct extends BaseActivity {
         viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override
             public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
-               // stepView.go(position, true);
+                // stepView.go(position, true);
             }
+
             @Override
             public void onPageSelected(int position) {
-                currentStep =position;
+                currentStep = position;
                 stepView.go(position, true);
             }
+
             @Override
             public void onPageScrollStateChanged(int state) {
 
