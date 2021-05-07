@@ -28,8 +28,7 @@ public class HomeViewPagerAdapter extends FragmentPagerAdapter{
         return mFragmentList.size();
     }
 
-    public void
-    addFrag(Fragment fragment, String title) {
+    public void addFrag(Fragment fragment, String title) {
         mFragmentList.add(fragment);
         mFragmentTitleList.add(title);
     }

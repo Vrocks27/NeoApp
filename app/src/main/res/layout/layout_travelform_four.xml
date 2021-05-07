@@ -171,6 +171,8 @@
             android:textSize="@dimen/text_size_12sp"
             android:layout_gravity="top|start"
             android:gravity="top|start"
+            android:paddingTop="5dp"
+            android:paddingStart="@dimen/padding_8dp"
             android:textAlignment="textStart"
             android:scrollbars="vertical"
             android:scrollbarSize="@dimen/padding_4dp"
