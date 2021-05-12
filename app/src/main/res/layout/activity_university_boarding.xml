@@ -21,8 +21,11 @@
         <com.va.neoapp.custom.stepper.StepView
             android:id="@+id/step_view"
             android:layout_width="match_parent"
-            android:layout_height="100dp"
+            android:layout_height="@dimen/padding_120dp"
             android:layout_below="@+id/toolbar"
+            android:layout_centerInParent="true"
+            android:paddingStart="@dimen/padding_8dp"
+            android:paddingEnd="@dimen/padding_8dp"
             android:layout_alignParentStart="true"
             android:layout_alignParentEnd="true"
             android:background="@color/default_main_color"

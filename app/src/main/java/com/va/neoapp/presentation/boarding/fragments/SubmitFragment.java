@@ -198,7 +198,7 @@ public class SubmitFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 // Function call for Digital Signature
-                dialog_action(view);
+               // dialog_action(view);
 
             }
         });

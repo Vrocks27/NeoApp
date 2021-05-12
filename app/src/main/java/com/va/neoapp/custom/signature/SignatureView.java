@@ -11,7 +11,6 @@ import android.util.AttributeSet;
 import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
-import android.widget.Button;
 import android.widget.LinearLayout;
 
 import java.io.FileOutputStream;
@@ -69,13 +68,13 @@ public class SignatureView extends View {
         canvas.drawPath(path, paint);
     }
 
-    public void buttonEnable(Button button) {
+  /*  public void buttonEnable(Button button) {
         if (save) {
             button.setEnabled(true);
         }else {
             button.setEnabled(false);
         }
-    }
+    }*/
 
     @Override
     public boolean onTouchEvent(MotionEvent event) {
