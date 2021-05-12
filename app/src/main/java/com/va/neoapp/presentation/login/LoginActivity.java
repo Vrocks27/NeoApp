@@ -34,6 +34,12 @@ public class LoginActivity extends BaseActivity {
     protected void initGUI(Bundle savedInstanceState) {
         email_mobile_edit_text = findViewById(R.id.email_mobile_edit_text);
         countryCodePicker = findViewById(R.id.code_mob_spinner);
+        countryCodePicker.setPhoneNumberInputValidityListener(new CountryCodePicker.PhoneNumberInputValidityListener() {
+            @Override
+            public void onFinish(CountryCodePicker ccp, boolean isValid) {
+
+            }
+        });
         disableBottomNext();
         email_mobile_edit_text.addTextChangedListener(new TextWatcher() {
             @Override

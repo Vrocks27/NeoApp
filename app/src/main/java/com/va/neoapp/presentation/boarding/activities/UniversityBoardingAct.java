@@ -47,7 +47,7 @@ public class UniversityBoardingAct extends BaseActivity {
         stepView.setOnStepClickListener(new StepView.OnStepClickListener() {
             @Override
             public void onStepClick(int step) {
-                Toast.makeText(UniversityBoardingAct.this, "Step " + step, Toast.LENGTH_SHORT).show();
+                //Toast.makeText(UniversityBoardingAct.this, "Step " + step, Toast.LENGTH_SHORT).show();
                /* switch (step){
 
                 }*/
