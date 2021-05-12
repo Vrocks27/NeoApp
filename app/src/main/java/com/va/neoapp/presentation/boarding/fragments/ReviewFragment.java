@@ -1,5 +1,6 @@
 package com.va.neoapp.presentation.boarding.fragments;
 
+import android.content.Context;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -8,7 +9,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.va.neoapp.R;
+import com.va.neoapp.presentation.boarding.activities.UniversityBoardingAct;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -25,10 +28,14 @@ public class ReviewFragment extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
+    private static FloatingActionButton fab_next;
 
-    public ReviewFragment() {
+    public ReviewFragment(FloatingActionButton fab_next) {
         // Required empty public constructor
+        this.fab_next=fab_next;
     }
+
+    private Context mContext;
 
     /**
      * Use this factory method to create a new instance of
@@ -40,7 +47,7 @@ public class ReviewFragment extends Fragment {
      */
     // TODO: Rename and change types and number of parameters
     public static ReviewFragment newInstance(String param1, String param2) {
-        ReviewFragment fragment = new ReviewFragment();
+        ReviewFragment fragment = new ReviewFragment(fab_next);
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -60,6 +67,24 @@ public class ReviewFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_review, container, false);
+        View view = inflater.inflate(R.layout.fragment_review, container, false);
+        mContext=getActivity();
+        fab_next.setVisibility(View.GONE);
+        initGUI(view);
+        actionEvents(view);
+        setDataToSpinner();
+
+        return view;
+    }
+
+    private void initGUI(View view) {
+    }
+
+    private void actionEvents(View view) {
+
+    }
+
+    private void setDataToSpinner() {
+
     }
 }

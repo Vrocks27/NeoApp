@@ -6,6 +6,7 @@ import android.widget.Toast;
 
 import androidx.viewpager.widget.ViewPager;
 
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.va.neoapp.R;
 import com.va.neoapp.adapters.HomeViewPagerAdapter;
 import com.va.neoapp.custom.stepper.StepView;
@@ -15,8 +16,6 @@ import com.va.neoapp.presentation.boarding.fragments.ProgramInfoFragment;
 import com.va.neoapp.presentation.boarding.fragments.ReviewFragment;
 import com.va.neoapp.presentation.boarding.fragments.SubmitFragment;
 import com.va.neoapp.presentation.boarding.fragments.TravelFragment;
-import com.va.neoapp.presentation.home.activities.UniversityDetailAct;
-import com.va.neoapp.util.GlobalMethods;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -27,6 +26,7 @@ public class UniversityBoardingAct extends BaseActivity {
     private int currentStep = 0;
     private ViewPager viewPager;
     private StepView stepView;
+    public FloatingActionButton fab_next;
 
     private String[] stepTextArray = {"Personal Information", "Program Information", "Travel", "Review", "Submit"};
 
@@ -37,6 +37,7 @@ public class UniversityBoardingAct extends BaseActivity {
 
     @Override
     protected void initGUI(Bundle savedInstanceState) {
+        fab_next = (FloatingActionButton) findViewById(R.id.fab_next);
         viewPager = findViewById(R.id.on_boarding_viewpager);
         stepView = (StepView) findViewById(R.id.step_view);
 
@@ -57,7 +58,7 @@ public class UniversityBoardingAct extends BaseActivity {
             }
         });
 
-        findViewById(R.id.fab_next).setOnClickListener(new View.OnClickListener() {
+        fab_next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if (currentStep < stepView.getStepCount() - 1) {
@@ -66,7 +67,6 @@ public class UniversityBoardingAct extends BaseActivity {
                     viewPager.setCurrentItem(currentStep);
                 } else {
                     stepView.done(true);
-                    GlobalMethods.callForWordActivity(UniversityBoardingAct.this, UniversityDetailAct.class,null,false,true);
                 }
             }
         });
@@ -76,11 +76,11 @@ public class UniversityBoardingAct extends BaseActivity {
     protected void initData() {
 
         HomeViewPagerAdapter homeViewPagerAdapter = new HomeViewPagerAdapter(getSupportFragmentManager());
-        homeViewPagerAdapter.addFrag(new PersonalInfoFragment(), getString(R.string.text_personal));
-        homeViewPagerAdapter.addFrag(new ProgramInfoFragment(), getString(R.string.text_program));
-        homeViewPagerAdapter.addFrag(new TravelFragment(), getString(R.string.text_travel));
-        homeViewPagerAdapter.addFrag(new ReviewFragment(), getString(R.string.text_review));
-        homeViewPagerAdapter.addFrag(new SubmitFragment(), getString(R.string.text_submit));
+        homeViewPagerAdapter.addFrag(new PersonalInfoFragment(fab_next), getString(R.string.text_personal));
+        homeViewPagerAdapter.addFrag(new ProgramInfoFragment(fab_next), getString(R.string.text_program));
+        homeViewPagerAdapter.addFrag(new TravelFragment(fab_next), getString(R.string.text_travel));
+        homeViewPagerAdapter.addFrag(new ReviewFragment(fab_next), getString(R.string.text_review));
+        homeViewPagerAdapter.addFrag(new SubmitFragment(fab_next), getString(R.string.text_submit));
         viewPager.setAdapter(homeViewPagerAdapter);
         viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override

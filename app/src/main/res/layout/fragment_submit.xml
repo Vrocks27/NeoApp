@@ -1,16 +1,293 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".presentation.boarding.fragments.SubmitFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_gravity="center"
-        android:gravity="center"
-        android:text="Under development" />
+        android:orientation="vertical"
+        android:layout_margin="@dimen/padding_4dp"
+        android:padding="@dimen/padding_8dp">
 
-</FrameLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/padding_8dp"
+                android:fontFamily="@font/sfuitext_regular"
+                android:singleLine="true"
+                android:text="@string/isolation_at_place"
+                android:textColor="@color/default_text_color"
+                android:textSize="@dimen/text_size_14sp" />
+
+            <RadioGroup
+                android:id="@+id/isolation_group"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/padding_4dp"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/padding_10dp"
+                    android:buttonTint="@color/default_main_color"
+                    android:fontFamily="@font/sfuitext_regular"
+                    android:text="@string/yes"
+                    android:textColor="@color/default_text_color"
+                    android:textSize="@dimen/text_size_14sp" />
+
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/padding_10dp"
+                    android:buttonTint="@color/default_main_color"
+                    android:fontFamily="@font/sfuitext_regular"
+                    android:text="@string/no"
+                    android:textColor="@color/default_text_color"
+                    android:textSize="@dimen/text_size_14sp" />
+
+            </RadioGroup>
+        </LinearLayout>
+
+        <!--layout to hide and show-->
+
+        <LinearLayout
+            android:id="@+id/linear_layout_yes"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/padding_4dp"
+                android:orientation="vertical">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="start"
+                    android:layout_marginStart="@dimen/padding_4dp"
+                    android:fontFamily="@font/sfuitext_regular"
+                    android:gravity="start"
+                    android:minLines="1"
+                    android:singleLine="true"
+                    android:text="@string/upload_document_proofs"
+                    android:textColor="@color/default_text_color"
+                    android:textSize="@dimen/text_size_14sp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="start"
+                    android:layout_margin="@dimen/padding_4dp"
+                    android:gravity="start|center"
+                    android:orientation="horizontal">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/img_upload"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/padding_4dp"
+                        android:src="@drawable/ic_cloud_upload" />
+
+                    <androidx.appcompat.widget.AppCompatEditText
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/padding_30dp"
+                        android:layout_marginStart="@dimen/padding_20dp"
+                        android:layout_marginEnd="@dimen/padding_20dp"
+                        android:layout_gravity="start"
+                        android:gravity="start|center"
+                        android:paddingStart="@dimen/padding_10dp"
+                        android:background="@drawable/background_border" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/padding_4dp"
+                android:orientation="vertical">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/padding_4dp"
+                    android:fontFamily="@font/sfuitext_regular"
+                    android:text="@string/isolation_address"
+                    android:textColor="@color/default_text_color"
+                    android:textSize="@dimen/text_size_14sp" />
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/isolation_address"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/Address"
+                    android:imeOptions="actionNext"
+                    android:singleLine="true"
+                    android:textColor="@color/default_text_color"
+                    android:textColorHint="@color/default_text_color"
+                    android:textSize="@dimen/text_size_12sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="@dimen/padding_200dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/padding_4dp"
+                android:orientation="vertical">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="start"
+                    android:layout_marginStart="@dimen/padding_4dp"
+                    android:fontFamily="@font/sfuitext_regular"
+                    android:gravity="start"
+                    android:minLines="1"
+                    android:singleLine="true"
+                    android:text="@string/isolation_city"
+                    android:textColor="@color/default_text_color"
+                    android:textSize="@dimen/text_size_14sp" />
+
+                <androidx.appcompat.widget.AppCompatSpinner
+                    android:id="@+id/spinner_isolation_city"
+                    style="@style/onboardspinner"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="@dimen/padding_4dp"
+                    android:layout_marginBottom="@dimen/padding_4dp"
+                    android:gravity="start|center" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="start"
+                    android:layout_marginStart="@dimen/padding_4dp"
+                    android:fontFamily="@font/sfuitext_regular"
+                    android:gravity="start"
+                    android:minLines="1"
+                    android:singleLine="true"
+                    android:text="@string/secondary_contact"
+                    android:textColor="@color/default_text_color"
+                    android:textSize="@dimen/text_size_14sp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <com.rilixtech.widget.countrycodepicker.CountryCodePicker
+                        android:id="@+id/select_code_spinner"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        android:layout_margin="@dimen/padding_4dp"
+                        android:gravity="center"
+                        android:padding="@dimen/padding_4dp"
+                        android:textAlignment="center"
+                        app:ccp_arrowSize="@dimen/padding_24dp"
+                        app:ccp_hideNameCode="true"
+                        app:ccp_showFlag="false"
+                        app:ccp_textColor="@color/disabled_color"
+                        app:ccp_textSize="@dimen/text_size_14sp" />
+
+                    <androidx.appcompat.widget.AppCompatEditText
+                        android:id="@+id/isolation_contact"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_margin="@dimen/padding_4dp"
+                        android:gravity="start"
+                        android:hint="@string/mobilenumber"
+                        android:imeOptions="actionNext"
+                        android:inputType="phone"
+                        android:textSize="@dimen/text_size_12sp" />
+                </LinearLayout>
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_contact_university"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/padding_10dp"
+            android:fontFamily="@font/sfuitext_bold"
+            android:text="@string/text_details"
+            android:visibility="gone"
+            android:textColor="@color/default_text_color"
+            android:textSize="@dimen/text_size_14sp" />
+
+        <RadioButton
+            android:id="@+id/university_terms"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginStart="@dimen/padding_20dp"
+            android:layout_marginTop="@dimen/padding_10dp"
+            android:layout_marginEnd="@dimen/padding_10dp"
+            android:buttonTint="@color/default_main_color"
+            android:fontFamily="@font/sfuitext_regular"
+            android:gravity="start|center"
+            android:text="@string/accept_terms"
+            android:textColor="@color/default_text_color"
+            android:textSize="@dimen/text_size_14sp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            android:layout_margin="@dimen/padding_8dp"
+            android:gravity="start|center"
+            android:orientation="vertical">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/padding_4dp"
+                android:fontFamily="@font/sfuitext_regular"
+                android:text="@string/signature"
+                android:textColor="@color/default_text_color"
+                android:textSize="@dimen/text_size_14sp" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/image_signature"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/padding_4dp"
+                android:background="@drawable/background_border"
+                android:padding="@dimen/padding_40dp" />
+        </LinearLayout>
+
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/form_submit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="@dimen/padding_8dp"
+            android:background="@drawable/submit_background"
+            android:fontFamily="@font/sfuitext_semibold"
+            android:gravity="center"
+            android:text="@string/text_submit"
+            android:textSize="@dimen/text_size_14sp" />
+
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>

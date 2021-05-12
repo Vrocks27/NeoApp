@@ -16,8 +16,10 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.DatePicker;
 
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.rilixtech.widget.countrycodepicker.CountryCodePicker;
 import com.va.neoapp.R;
+import com.va.neoapp.presentation.boarding.activities.UniversityBoardingAct;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -36,13 +38,14 @@ public class TravelFragment extends Fragment {
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
+    private static FloatingActionButton fab_next;
 
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
 
-    public TravelFragment() {
-        // Required empty public constructor
+    public TravelFragment(FloatingActionButton fab_next) {
+        this.fab_next=fab_next;
     }
 
     private Context mContext;
@@ -69,7 +72,7 @@ public class TravelFragment extends Fragment {
      */
     // TODO: Rename and change types and number of parameters
     public static TravelFragment newInstance(String param1, String param2) {
-        TravelFragment fragment = new TravelFragment();
+        TravelFragment fragment = new TravelFragment(fab_next);
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -91,6 +94,7 @@ public class TravelFragment extends Fragment {
         // Inflate the layout for this fragment
         View view= inflater.inflate(R.layout.fragment_travel, container, false);
         mContext=getActivity();
+        fab_next.setVisibility(View.VISIBLE);
         initGUI(view);
         actionEvents(view);
         setDataToSpinner();

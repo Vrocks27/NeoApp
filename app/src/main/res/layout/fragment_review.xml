@@ -1,16 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".presentation.boarding.fragments.ReviewFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_gravity="center"
-        android:gravity="center"
-        android:text="Under development" />
+        android:orientation="vertical">
 
-</FrameLayout>
+        <include layout="@layout/layout_personalform_one" />
+
+        <include layout="@layout/layout_personalform_two" />
+
+        <include layout="@layout/layout_universityform_three" />
+
+        <include layout="@layout/layout_travelform_one" />
+
+        <include layout="@layout/layout_travelform_two" />
+
+        <include layout="@layout/layout_travelform_three" />
+
+        <include layout="@layout/layout_travelform_four" />
+
+
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>

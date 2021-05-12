@@ -8,8 +8,8 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:layout_marginTop="@dimen/padding_12dp">
+        android:layout_marginTop="@dimen/padding_12dp"
+        android:orientation="vertical">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -31,6 +31,7 @@
                 android:textSize="@dimen/text_size_14sp" />
 
             <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/et_permanent_address"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="start"
@@ -61,8 +62,8 @@
                 <androidx.appcompat.widget.AppCompatTextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:fontFamily="@font/sfuitext_regular"
                     android:layout_marginStart="@dimen/padding_8dp"
+                    android:fontFamily="@font/sfuitext_regular"
                     android:singleLine="true"
                     android:text="@string/state"
                     android:textColor="@color/default_text_color"
@@ -73,7 +74,7 @@
                     style="@style/onboardspinner"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/padding_4dp"/>
+                    android:layout_marginTop="@dimen/padding_4dp" />
             </LinearLayout>
 
             <LinearLayout
@@ -85,9 +86,9 @@
                 <androidx.appcompat.widget.AppCompatTextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/padding_8dp"
                     android:fontFamily="@font/sfuitext_regular"
                     android:text="@string/city"
-                    android:layout_marginStart="@dimen/padding_8dp"
                     android:textColor="@color/default_text_color"
                     android:textSize="@dimen/text_size_14sp" />
 
@@ -118,6 +119,7 @@
                 android:textSize="@dimen/text_size_14sp" />
 
             <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/et_permanent_pincode"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/padding_4dp"
@@ -135,8 +137,8 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:layout_marginTop="@dimen/text_size_12sp">
+        android:layout_marginTop="@dimen/text_size_12sp"
+        android:orientation="vertical">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -155,150 +157,173 @@
                 android:textSize="@dimen/text_size_14sp" />
 
             <RadioGroup
+                android:id="@+id/radiogroup_permanent_address"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_margin="@dimen/padding_4dp">
+                android:layout_margin="@dimen/padding_4dp"
+                android:orientation="horizontal">
 
-                    <RadioButton
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginEnd="@dimen/padding_10dp"
-                        android:fontFamily="@font/sfuitext_regular"
-                        android:text="@string/yes"
-                        android:textColor="@color/default_text_color"
-                        android:textSize="@dimen/text_size_14sp" />
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/padding_10dp"
+                    android:buttonTint="@color/default_main_color"
+                    android:fontFamily="@font/sfuitext_regular"
+                    android:text="@string/yes"
+                    android:textColor="@color/default_text_color"
+                    android:textSize="@dimen/text_size_14sp" />
 
-                    <RadioButton
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="@dimen/padding_10dp"
-                        android:fontFamily="@font/sfuitext_regular"
-                        android:text="@string/no"
-                        android:textColor="@color/default_text_color"
-                        android:textSize="@dimen/text_size_14sp" />
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/padding_10dp"
+                    android:buttonTint="@color/default_main_color"
+                    android:fontFamily="@font/sfuitext_regular"
+                    android:text="@string/no"
+                    android:textColor="@color/default_text_color"
+                    android:textSize="@dimen/text_size_14sp" />
             </RadioGroup>
         </LinearLayout>
 
-        <LinearLayout
+        <TextView
+            android:id="@+id/tv_same_address"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="@dimen/padding_8dp"
+            android:visibility="gone"
+            android:textColor="@color/default_text_color"
+            android:textSize="@dimen/text_size_14sp"
+            android:fontFamily="@font/sfuitext_semibold"
+            android:layout_margin="@dimen/padding_10dp"/>
+        <!--below layout to hide and show -->
+
+        <LinearLayout
+            android:id="@+id/layout_current_address"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:orientation="vertical">
-
-            <androidx.appcompat.widget.AppCompatTextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="start"
-                android:layout_marginStart="@dimen/padding_4dp"
-                android:fontFamily="@font/sfuitext_regular"
-                android:gravity="start"
-                android:minLines="1"
-                android:singleLine="true"
-                android:text="@string/current_address"
-                android:textColor="@color/default_text_color"
-                android:textSize="@dimen/text_size_14sp" />
-
-            <androidx.appcompat.widget.AppCompatEditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="start"
-                android:layout_marginTop="@dimen/padding_4dp"
-                android:fontFamily="@font/sfuitext_regular"
-                android:gravity="start"
-                android:hint="@string/Address"
-                android:imeOptions="actionNext"
-                android:inputType="text"
-                android:textColor="@color/default_text_color"
-                android:textColorHint="@color/default_text_color"
-                android:textSize="@dimen/text_size_12sp" />
-        </LinearLayout>
-
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="@dimen/padding_4dp"
-            android:orientation="horizontal"
-            android:weightSum="2">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
+                android:layout_margin="@dimen/padding_8dp"
                 android:orientation="vertical">
 
                 <androidx.appcompat.widget.AppCompatTextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="@dimen/padding_8dp"
+                    android:layout_gravity="start"
+                    android:layout_marginStart="@dimen/padding_4dp"
+                    android:fontFamily="@font/sfuitext_regular"
+                    android:gravity="start"
+                    android:minLines="1"
+                    android:singleLine="true"
+                    android:text="@string/current_address"
+                    android:textColor="@color/default_text_color"
+                    android:textSize="@dimen/text_size_14sp" />
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/et_current_address"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="start"
+                    android:layout_marginTop="@dimen/padding_4dp"
+                    android:fontFamily="@font/sfuitext_regular"
+                    android:gravity="start"
+                    android:hint="@string/Address"
+                    android:imeOptions="actionNext"
+                    android:inputType="text"
+                    android:textColor="@color/default_text_color"
+                    android:textColorHint="@color/default_text_color"
+                    android:textSize="@dimen/text_size_12sp" />
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/padding_4dp"
+                android:orientation="horizontal"
+                android:weightSum="2">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/padding_8dp"
+                        android:fontFamily="@font/sfuitext_regular"
+                        android:singleLine="true"
+                        android:text="@string/state"
+                        android:textColor="@color/default_text_color"
+                        android:textSize="@dimen/text_size_14sp" />
+
+                    <androidx.appcompat.widget.AppCompatSpinner
+                        android:id="@+id/current_state"
+                        style="@style/onboardspinner"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/padding_4dp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/padding_8dp"
+                        android:fontFamily="@font/sfuitext_regular"
+                        android:text="@string/city"
+                        android:textColor="@color/default_text_color"
+                        android:textSize="@dimen/text_size_14sp" />
+
+                    <androidx.appcompat.widget.AppCompatSpinner
+                        android:id="@+id/current_city"
+                        style="@style/onboardspinner"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/padding_4dp" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="@dimen/padding_200dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/padding_8dp"
+                android:layout_marginTop="@dimen/padding_8dp"
+                android:orientation="vertical">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/padding_4dp"
                     android:fontFamily="@font/sfuitext_regular"
                     android:singleLine="true"
-                    android:text="@string/state"
+                    android:text="@string/postal_code"
                     android:textColor="@color/default_text_color"
                     android:textSize="@dimen/text_size_14sp" />
 
-                <androidx.appcompat.widget.AppCompatSpinner
-                    android:id="@+id/current_state"
-                    style="@style/onboardspinner"
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/et_current_pincode"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/padding_4dp"/>
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:orientation="vertical">
-
-                <androidx.appcompat.widget.AppCompatTextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/sfuitext_regular"
-                    android:text="@string/city"
-                    android:layout_marginStart="@dimen/padding_8dp"
-                    android:textColor="@color/default_text_color"
-                    android:textSize="@dimen/text_size_14sp" />
-
-                <androidx.appcompat.widget.AppCompatSpinner
-                    android:id="@+id/current_city"
                     android:layout_marginTop="@dimen/padding_4dp"
-                    style="@style/onboardspinner"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
+                    android:fontFamily="@font/sfuitext_regular"
+                    android:hint="@string/postalcode"
+                    android:imeOptions="actionNext"
+                    android:inputType="text"
+                    android:textColor="@color/default_text_color"
+                    android:textColorHint="@color/default_text_color"
+                    android:textSize="@dimen/text_size_14sp" />
             </LinearLayout>
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="@dimen/padding_200dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/padding_8dp"
-            android:layout_marginTop="@dimen/padding_8dp"
-            android:orientation="vertical">
-
-            <androidx.appcompat.widget.AppCompatTextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/padding_4dp"
-                android:fontFamily="@font/sfuitext_regular"
-                android:singleLine="true"
-                android:text="@string/postal_code"
-                android:textColor="@color/default_text_color"
-                android:textSize="@dimen/text_size_14sp" />
-
-            <androidx.appcompat.widget.AppCompatEditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/padding_4dp"
-                android:fontFamily="@font/sfuitext_regular"
-                android:hint="@string/postalcode"
-                android:imeOptions="actionNext"
-                android:inputType="text"
-                android:textColor="@color/default_text_color"
-                android:textColorHint="@color/default_text_color"
-                android:textSize="@dimen/text_size_14sp" />
         </LinearLayout>
     </LinearLayout>
 

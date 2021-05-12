@@ -115,5 +115,17 @@
     <string name="transport_number">Transport Number<font color="#FFF995AB"> *</font></string>
     <string name="modeof_transport">Mode of Transport</string>
     <string name="any_information">Any Additional information</string>
+    <string name="isolation_at_place">Isolation at Personal Space?</string>
+    <string name="isolation_address">Isolation Address</string>
+    <string name="isolation_city">Isolation City</string>
+    <string name="secondary_contact">Secondary Contact<font color="#FFF995AB"> *</font></string>
+    <string name="accept_terms">Accept arrival Services Terms and Conditions</string>
+    <string name="signature">Signature</string>
+    <string name="text_details">The University will get in touch with you for further details<font color="#FFF995AB"> *</font></string>
+    <string name="upload_document_proofs">Upload Document of Proof<font color="#FFF995AB"> *</font></string>
+    <string name="hint_clear">clear</string>
+    <string name="hint_save">Save</string>
+    <string name="hint_cancel">Cancel</string>
+    <string name="dialog_title">Make Signature</string>
 
 </resources>

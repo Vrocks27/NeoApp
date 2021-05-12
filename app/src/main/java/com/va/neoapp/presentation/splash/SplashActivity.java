@@ -25,7 +25,7 @@ public class SplashActivity extends BaseActivity {
             @Override
             public void run() {
                 try {
-                    GlobalMethods.callForWordActivity(SplashActivity.this, LoginActivity.class, null, true, true);
+                    GlobalMethods.callForWordActivity(SplashActivity.this, UniversityBoardingAct.class, null, true, true);
                 } catch (Exception exp) {
                     exp.printStackTrace();
                 }

@@ -66,6 +66,7 @@
                     android:textSize="@dimen/text_size_14sp" />
 
                 <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/et_last_name"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="start"
@@ -100,6 +101,7 @@
                 android:textSize="@dimen/text_size_14sp" />
 
             <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/et_emailid"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="start"
@@ -159,11 +161,11 @@
                     app:ccp_textSize="@dimen/text_size_14sp" />
 
                 <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/et_mobile_number"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:layout_margin="@dimen/padding_4dp"
-
                     android:gravity="start"
                     android:hint="@string/mobilenumber"
                     android:imeOptions="actionNext"

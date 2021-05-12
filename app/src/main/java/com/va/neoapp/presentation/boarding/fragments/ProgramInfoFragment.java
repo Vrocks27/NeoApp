@@ -8,7 +8,6 @@ import android.os.Bundle;
 import androidx.appcompat.widget.AppCompatEditText;
 import androidx.appcompat.widget.AppCompatSpinner;
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentActivity;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -17,7 +16,9 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.DatePicker;
 
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.va.neoapp.R;
+import com.va.neoapp.presentation.boarding.activities.UniversityBoardingAct;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -36,18 +37,15 @@ public class ProgramInfoFragment extends Fragment {
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
+    private static FloatingActionButton fab_next;
 
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
-    public ProgramInfoFragment() {
-        // Required empty public constructor
+
+    public ProgramInfoFragment(FloatingActionButton fab_next) {
+        this.fab_next=fab_next;
     }
-
-
-
-
-
 
     private Context mContext;
     private AppCompatSpinner spinner_universties;
@@ -68,7 +66,7 @@ public class ProgramInfoFragment extends Fragment {
      */
     // TODO: Rename and change types and number of parameters
     public static ProgramInfoFragment newInstance(String param1, String param2) {
-        ProgramInfoFragment fragment = new ProgramInfoFragment();
+        ProgramInfoFragment fragment = new ProgramInfoFragment(fab_next);
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -90,7 +88,8 @@ public class ProgramInfoFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view= inflater.inflate(R.layout.fragment_program_info, container, false);
-        mContext = getActivity();
+        mContext=getActivity();
+        fab_next.setVisibility(View.VISIBLE);
         initGUI(view);
         actionEvents(view);
         setDataToSpinner();

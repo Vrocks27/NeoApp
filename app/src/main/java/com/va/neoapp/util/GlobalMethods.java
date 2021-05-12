@@ -18,6 +18,7 @@ import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Toast;
 
+import androidx.appcompat.widget.AppCompatButton;
 import androidx.appcompat.widget.AppCompatImageView;
 import androidx.appcompat.widget.AppCompatTextView;
 import androidx.core.content.ContextCompat;
@@ -62,6 +63,7 @@ public class GlobalMethods {
     public static int getScreenHeight() {
         return Resources.getSystem().getDisplayMetrics().heightPixels;
     }
+
     public static int dpToPx(float dp, Resources resources) {
         float px = TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, dp, resources.getDisplayMetrics());
         return (int) px;
@@ -79,7 +81,7 @@ public class GlobalMethods {
 
     public static void showNormalToast(Activity activity, String message, int lengthLong) {
         // if 1 = long, 0 = short
-        int length =Toast.LENGTH_SHORT; // default short
+        int length = Toast.LENGTH_SHORT; // default short
         if (lengthLong == 1) {
             length = Toast.LENGTH_LONG;
         }
@@ -103,6 +105,7 @@ public class GlobalMethods {
             return false;
         }
     }
+
     public static boolean isGPSServiceOn(Context context) {
         LocationManager locationManager = (LocationManager) context.getSystemService(Context.LOCATION_SERVICE);
         return locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER);
@@ -144,7 +147,7 @@ public class GlobalMethods {
     }
 
     public static boolean isValidInternationalMobileNumber(String mobileNumber) {
-       // send along with the +country code, if using the below pattern
+        // send along with the +country code, if using the below pattern
 //        Pattern mobilePattern = Pattern.compile("^\\+[0-9]{1,3}\\.[0-9]{4,14}(?:x.+)?$");
 //        return !(mobileNumber.length() < 6 || mobileNumber.length() > 13)
 //                && mobilePattern.matcher(mobileNumber).matches();
@@ -180,7 +183,7 @@ public class GlobalMethods {
 
         Glide.with(context).load(url)
                 .diskCacheStrategy(DiskCacheStrategy.ALL)
-               // .placeholder(R.drawable.ic_image_coming_soon)
+                // .placeholder(R.drawable.ic_image_coming_soon)
                 //.crossFade()
                 .into(viewById);
 
@@ -246,7 +249,7 @@ public class GlobalMethods {
         return dateconverted;
     }
 
-    public static void callForWordActivity(Context context, Class forwardClass, Bundle bundle , boolean isActivityFinish, boolean isForwardAnimation) {
+    public static void callForWordActivity(Context context, Class forwardClass, Bundle bundle, boolean isActivityFinish, boolean isForwardAnimation) {
         Intent myIntent = new Intent(context, forwardClass);
         if (bundle != null) {
             myIntent.putExtras(bundle);
@@ -260,6 +263,7 @@ public class GlobalMethods {
         if (isActivityFinish)
             ((Activity) context).finish();
     }
+
     public static void callFinishForBackWordActivity(Context context, boolean isForwardAnimation) {
         try {
 
@@ -303,6 +307,23 @@ public class GlobalMethods {
         bottom_fab_button.setImageTintList(ColorStateList.valueOf(context.getResources().getColor(R.color.disabled_color)));
         bottom_fab_button.setBackgroundTintList(ColorStateList.valueOf(context.getResources().getColor(R.color.default_disabled)));
     }
+
+    /*here we can use for Button*/
+    public static void enableSubmitButton(Context context, AppCompatButton bottom_fab_button) {
+        bottom_fab_button.setEnabled(true);
+        bottom_fab_button.setClickable(true);
+        bottom_fab_button.setBackgroundTintList(ColorStateList.valueOf(context.getResources().getColor(R.color.default_main_color)));
+        bottom_fab_button.setTextColor(context.getResources().getColor(R.color.white));
+    }
+    public static void disableSubmitButton(Context context, AppCompatButton bottom_fab_button) {
+        bottom_fab_button.setEnabled(false);
+        bottom_fab_button.setClickable(false);
+        bottom_fab_button.setBackgroundTintList(ColorStateList.valueOf(context.getResources().getColor(R.color.default_disabled)));
+        bottom_fab_button.setTextColor(context.getResources().getColor(R.color.default_text_color));
+    }
+
+
+
   /*
 
     public static void callBackWordActivity(Context context, Class forwardClass, Bundle bundle, boolean isActivityFinish, boolean isForwardAnimation) {
@@ -483,7 +504,6 @@ public class GlobalMethods {
     }
 
     */
-
 
 
 }
