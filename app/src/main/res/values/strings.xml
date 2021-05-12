@@ -88,7 +88,7 @@
     <string name="number">Number</string>
     <string name="visa_date">Visa Issuance Date<font color="#FFF995AB"> *</font></string>
     <string name="are_you_travel">Are you travelling by self?</string>
-    <string name="accompained_family">Accompained by Family members</string>
+    <string name="accompained_family">Accompained by Family member?</string>
     <string name="noof_family">Number of family members</string>
     <string name="name">Name</string>
     <string name="age">Age</string>
@@ -127,5 +127,9 @@
     <string name="hint_save">Save</string>
     <string name="hint_cancel">Cancel</string>
     <string name="dialog_title">Make Signature</string>
+    <string name="different_country">Are you travelling to a different country?</string>
+    <string name="country">Country 1</string>
+    <string name="city1">City 1</string>
+    <string name="please_include">(Please include all countries/cities based on your stopovers flights)</string>
 
 </resources>

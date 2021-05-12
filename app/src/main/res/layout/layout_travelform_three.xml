@@ -8,61 +8,99 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:weightSum="2"
         android:layout_margin="@dimen/padding_8dp"
-        android:orientation="horizontal">
+        android:orientation="vertical">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:orientation="vertical">
+            android:layout_margin="@dimen/padding_4dp"
+            android:orientation="horizontal">
 
             <androidx.appcompat.widget.AppCompatTextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textColor="@color/default_text_color"
                 android:singleLine="true"
-                android:layout_marginStart="@dimen/padding_6dp"
+                android:layout_weight="1"
                 android:text="@string/arrival_country"
                 android:fontFamily="@font/sfuitext_regular"
                 android:textSize="@dimen/text_size_14sp" />
 
-            <androidx.appcompat.widget.AppCompatSpinner
-                android:id="@+id/spinner_arrival_country"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                style="@style/onboardspinner"
-                android:layout_marginTop="@dimen/padding_4dp"
-                android:layout_gravity="center"
-                android:gravity="start|center"/>
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:orientation="vertical">
-
             <androidx.appcompat.widget.AppCompatTextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/arrival_city"
-                android:layout_marginStart="@dimen/padding_6dp"
+                android:layout_weight="1"
                 android:fontFamily="@font/sfuitext_regular"
-                android:textSize="@dimen/text_size_14sp"
-                android:textColor="@color/default_text_color"/>
+                android:text="@string/arrival_city"
+                android:textColor="@color/default_text_color"
+                android:textSize="@dimen/text_size_14sp"/>
+        </LinearLayout>
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/sfuitext_regular"
+            android:text="@string/please_include"
+            android:textColor="@color/default_text_color"
+            android:textSize="@dimen/text_size_14sp" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/padding_4dp"
+            android:orientation="horizontal"
+            android:weightSum="2">
 
-            <androidx.appcompat.widget.AppCompatSpinner
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/spinner_arrival_country"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="@dimen/padding_4dp"
+                android:layout_marginTop="@dimen/padding_4dp"
+                android:layout_weight="1"
+                android:background="@drawable/background_border"
+                android:gravity="start|center"
+                android:hint="@string/country"
+                android:imeOptions="actionNext"
+                android:inputType="text"
+                android:minLines="1"
+                android:padding="@dimen/padding_10dp"
+                android:singleLine="true"
+                android:textColor="@color/default_text_color"
+                android:textColorHint="@color/default_text_color"/>
+
+            <androidx.appcompat.widget.AppCompatEditText
                 android:id="@+id/spinner_arrival_city"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                style="@style/onboardspinner"
                 android:layout_marginTop="@dimen/padding_4dp"
                 android:layout_gravity="center"
                 android:gravity="start|center"
+                android:layout_margin="@dimen/padding_4dp"
+                android:layout_weight="1"
+                android:background="@drawable/background_border"
+                android:hint="@string/city1"
+                android:imeOptions="actionNext"
+                android:inputType="text"
+                android:minLines="1"
+                android:padding="@dimen/padding_10dp"
+                android:singleLine="true"
+                android:textColor="@color/default_text_color"
+                android:textColorHint="@color/default_text_color"
                 />
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="@dimen/padding_4dp"
+                android:layout_marginEnd="@dimen/padding_4dp"
+                android:src="@drawable/ic_add" />
+
         </LinearLayout>
+
+
+
     </LinearLayout>
 
     <LinearLayout

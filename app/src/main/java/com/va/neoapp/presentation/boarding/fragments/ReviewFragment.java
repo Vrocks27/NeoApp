@@ -2,16 +2,14 @@ package com.va.neoapp.presentation.boarding.fragments;
 
 import android.content.Context;
 import android.os.Bundle;
-
-import androidx.fragment.app.Fragment;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import androidx.fragment.app.Fragment;
+
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.va.neoapp.R;
-import com.va.neoapp.presentation.boarding.activities.UniversityBoardingAct;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -32,7 +30,7 @@ public class ReviewFragment extends Fragment {
 
     public ReviewFragment(FloatingActionButton fab_next) {
         // Required empty public constructor
-        this.fab_next=fab_next;
+        ReviewFragment.fab_next=fab_next;
     }
 
     private Context mContext;

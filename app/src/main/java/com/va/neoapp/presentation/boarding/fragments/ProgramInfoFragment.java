@@ -5,11 +5,6 @@ import android.app.DatePickerDialog;
 import android.content.Context;
 import android.os.Build;
 import android.os.Bundle;
-
-import androidx.appcompat.widget.AppCompatEditText;
-import androidx.appcompat.widget.AppCompatSpinner;
-import androidx.fragment.app.Fragment;
-
 import android.text.Editable;
 import android.text.TextUtils;
 import android.text.TextWatcher;
@@ -20,9 +15,12 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.DatePicker;
 
+import androidx.appcompat.widget.AppCompatEditText;
+import androidx.appcompat.widget.AppCompatSpinner;
+import androidx.fragment.app.Fragment;
+
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.va.neoapp.R;
-import com.va.neoapp.presentation.boarding.activities.UniversityBoardingAct;
 import com.va.neoapp.util.GlobalMethods;
 
 import java.text.SimpleDateFormat;
@@ -49,7 +47,7 @@ public class ProgramInfoFragment extends Fragment {
     private String mParam2;
 
     public ProgramInfoFragment(FloatingActionButton fab_next) {
-        this.fab_next = fab_next;
+        ProgramInfoFragment.fab_next = fab_next;
     }
 
     private Context mContext;

@@ -5,14 +5,6 @@ import android.app.Dialog;
 import android.content.Context;
 import android.graphics.Color;
 import android.os.Bundle;
-
-import androidx.appcompat.widget.AppCompatButton;
-import androidx.appcompat.widget.AppCompatEditText;
-import androidx.appcompat.widget.AppCompatImageView;
-import androidx.appcompat.widget.AppCompatSpinner;
-import androidx.appcompat.widget.AppCompatTextView;
-import androidx.fragment.app.Fragment;
-
 import android.os.Environment;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -25,11 +17,17 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Toast;
 
+import androidx.appcompat.widget.AppCompatButton;
+import androidx.appcompat.widget.AppCompatEditText;
+import androidx.appcompat.widget.AppCompatImageView;
+import androidx.appcompat.widget.AppCompatSpinner;
+import androidx.appcompat.widget.AppCompatTextView;
+import androidx.fragment.app.Fragment;
+
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.rilixtech.widget.countrycodepicker.CountryCodePicker;
 import com.va.neoapp.R;
 import com.va.neoapp.custom.signature.SignatureView;
-import com.va.neoapp.presentation.boarding.activities.UniversityBoardingAct;
 import com.va.neoapp.presentation.home.activities.UniversityDetailAct;
 import com.va.neoapp.util.GlobalMethods;
 
@@ -57,7 +55,7 @@ public class SubmitFragment extends Fragment {
 
     public SubmitFragment(FloatingActionButton fab_next) {
         // Required empty public constructor
-        this.fab_next=fab_next;
+        SubmitFragment.fab_next=fab_next;
     }
 
 

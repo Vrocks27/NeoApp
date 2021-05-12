@@ -4,11 +4,6 @@ import android.app.DatePickerDialog;
 import android.content.Context;
 import android.os.Build;
 import android.os.Bundle;
-
-import androidx.appcompat.widget.AppCompatEditText;
-import androidx.appcompat.widget.AppCompatSpinner;
-import androidx.fragment.app.Fragment;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,10 +11,13 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.DatePicker;
 
+import androidx.appcompat.widget.AppCompatEditText;
+import androidx.appcompat.widget.AppCompatSpinner;
+import androidx.fragment.app.Fragment;
+
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.rilixtech.widget.countrycodepicker.CountryCodePicker;
 import com.va.neoapp.R;
-import com.va.neoapp.presentation.boarding.activities.UniversityBoardingAct;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -44,16 +42,15 @@ public class TravelFragment extends Fragment {
     private String mParam1;
     private String mParam2;
 
-    public TravelFragment(FloatingActionButton fab_next) {
-        this.fab_next=fab_next;
-    }
+    private AppCompatSpinner spinner_transport,spinner_departure_time,
+            spinner_departure_country,spinner_departure_city;
 
     private Context mContext;
     private CountryCodePicker countryCodePicker;
-    private AppCompatSpinner spinner_transport,spinner_departure_time,
-            spinner_departure_country,spinner_departure_city,spinner_flights,
-            spinner_arrival_country,spinner_arrival_city;
-    private AppCompatEditText et_departure_date,et_final_departure_date;
+    private AppCompatEditText et_departure_date,et_final_departure_date,spinner_flights,spinner_arrival_country,spinner_arrival_city;
+    public TravelFragment(FloatingActionButton fab_next) {
+        TravelFragment.fab_next=fab_next;
+    }
     private int position;
     private String selectedUom;
     private String startDate;
@@ -198,7 +195,7 @@ public class TravelFragment extends Fragment {
             }
         });
 
-        /*spinner of flights*/
+       /* *//*spinner of flights*//*
         List<String> fligths = new ArrayList<>();
         fligths.add("0");
         fligths.add("1");
@@ -221,8 +218,8 @@ public class TravelFragment extends Fragment {
 
             }
         });
-
-        /*Spinner Arrival Country*/
+*/
+       /* *//*Spinner Arrival Country*//*
         List<String> arrivalCountries = new ArrayList<>();
         arrivalCountries.add("Select Country");
         arrivalCountries.add("America");
@@ -246,7 +243,7 @@ public class TravelFragment extends Fragment {
             }
         });
 
-        /*Spinner arrival city*/
+        *//*Spinner arrival city*//*
         List<String> arrivalCity = new ArrayList<>();
         arrivalCity.add("Select Country");
         arrivalCity.add("America");
@@ -269,7 +266,7 @@ public class TravelFragment extends Fragment {
 
             }
         });
-
+*/
 
     }
 
