@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical">
 
     <LinearLayout
@@ -20,11 +20,11 @@
             <androidx.appcompat.widget.AppCompatTextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textColor="@color/default_text_color"
-                android:singleLine="true"
                 android:layout_weight="1"
-                android:text="@string/arrival_country"
                 android:fontFamily="@font/sfuitext_regular"
+                android:singleLine="true"
+                android:text="@string/arrival_country"
+                android:textColor="@color/default_text_color"
                 android:textSize="@dimen/text_size_14sp" />
 
             <androidx.appcompat.widget.AppCompatTextView
@@ -34,20 +34,22 @@
                 android:fontFamily="@font/sfuitext_regular"
                 android:text="@string/arrival_city"
                 android:textColor="@color/default_text_color"
-                android:textSize="@dimen/text_size_14sp"/>
+                android:textSize="@dimen/text_size_14sp" />
         </LinearLayout>
+
         <androidx.appcompat.widget.AppCompatTextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_margin="@dimen/padding_4dp"
             android:fontFamily="@font/sfuitext_regular"
             android:text="@string/please_include"
-            android:layout_margin="@dimen/padding_2dp"
             android:textColor="@color/default_text_color"
-            android:textSize="@dimen/text_size_14sp" />
+            android:textSize="@dimen/text_size_10sp" />
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="@dimen/padding_4dp"
+            android:layout_margin="@dimen/padding_2dp"
             android:orientation="horizontal"
             android:weightSum="2">
 
@@ -60,7 +62,9 @@
                 android:layout_margin="@dimen/padding_4dp"
                 android:layout_marginTop="@dimen/padding_4dp"
                 android:layout_weight="1"
+                android:fontFamily="@font/sfuitext_regular"
                 android:background="@drawable/background_border"
+                android:textColorHint="@color/default_text_color"
                 android:gravity="start|center"
                 android:hint="@string/country"
                 android:imeOptions="actionNext"
@@ -69,18 +73,20 @@
                 android:padding="@dimen/padding_10dp"
                 android:singleLine="true"
                 android:textColor="@color/default_text_color"
-                android:textColorHint="@color/default_text_color"/>
+                android:textSize="@dimen/text_size_12sp" />
 
             <androidx.appcompat.widget.AppCompatEditText
                 android:id="@+id/spinner_arrival_city"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/padding_4dp"
                 android:layout_gravity="center"
-                android:gravity="start|center"
                 android:layout_margin="@dimen/padding_4dp"
+                android:layout_marginTop="@dimen/padding_4dp"
+                android:fontFamily="@font/sfuitext_regular"
                 android:layout_weight="1"
                 android:background="@drawable/background_border"
+                android:gravity="start|center"
+                android:textColorHint="@color/default_text_color"
                 android:hint="@string/city1"
                 android:imeOptions="actionNext"
                 android:inputType="text"
@@ -88,8 +94,8 @@
                 android:padding="@dimen/padding_10dp"
                 android:singleLine="true"
                 android:textColor="@color/default_text_color"
-                android:textColorHint="@color/default_text_color"
-                />
+                android:textSize="@dimen/text_size_12sp" />
+
             <androidx.appcompat.widget.AppCompatImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -101,6 +107,69 @@
         </LinearLayout>
 
 
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="2">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/padding_8dp"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/padding_4dp"
+                android:fontFamily="@font/sfuitext_regular"
+                android:minLines="1"
+                android:singleLine="true"
+                android:text="@string/hotel_name"
+                android:textColor="@color/default_text_color"
+                android:textSize="@dimen/text_size_14sp" />
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/sfuitext_regular"
+                android:hint="@string/hotelname"
+                android:minLines="1"
+                android:singleLine="true"
+                android:textColor="@color/default_text_color"
+                android:textColorHint="@color/default_text_color"
+                android:textSize="@dimen/text_size_12sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/padding_8dp"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/padding_4dp"
+                android:fontFamily="@font/sfuitext_regular"
+                android:text="@string/room_number"
+                android:textColor="@color/default_text_color"
+                android:textSize="@dimen/text_size_14sp"/>
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/sfuitext_regular"
+                android:hint="@string/roomnumber"
+                android:textColor="@color/default_text_color"
+                android:textColorHint="@color/default_text_color"
+                android:textSize="@dimen/text_size_12sp"/>
+        </LinearLayout>
 
     </LinearLayout>
 
@@ -113,45 +182,22 @@
         <androidx.appcompat.widget.AppCompatTextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/hotel_name"
             android:layout_marginStart="@dimen/padding_4dp"
             android:fontFamily="@font/sfuitext_regular"
-            android:textSize="@dimen/text_size_14sp"
-            android:textColor="@color/default_text_color"/>
-
-        <androidx.appcompat.widget.AppCompatEditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="@string/hotelname"
-            android:fontFamily="@font/sfuitext_regular"
-            android:textColorHint="@color/default_text_color"
-            android:textColor="@color/default_text_color"
-            android:textSize="@dimen/text_size_12sp"/>
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="@dimen/padding_8dp"
-        android:orientation="vertical">
-
-        <androidx.appcompat.widget.AppCompatTextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
             android:text="@string/hotel_address"
-            android:layout_marginStart="@dimen/padding_4dp"
-            android:fontFamily="@font/sfuitext_regular"
-            android:textSize="@dimen/text_size_14sp"
-            android:textColor="@color/default_text_color"/>
+            android:textColor="@color/default_text_color"
+            android:textSize="@dimen/text_size_14sp" />
 
         <androidx.appcompat.widget.AppCompatEditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/hoteladdress"
             android:fontFamily="@font/sfuitext_regular"
-            android:textColorHint="@color/default_text_color"
+            android:hint="@string/hoteladdress"
+            android:minLines="1"
+            android:singleLine="true"
             android:textColor="@color/default_text_color"
-            android:textSize="@dimen/text_size_12sp"/>
+            android:textColorHint="@color/default_text_color"
+            android:textSize="@dimen/text_size_12sp" />
     </LinearLayout>
 
     <LinearLayout
@@ -207,6 +253,8 @@
                 android:layout_gravity="start"
                 android:layout_margin="@dimen/padding_4dp"
                 android:gravity="start"
+                android:minLines="1"
+                android:singleLine="true"
                 android:hint="@string/mobilenumber"
                 android:imeOptions="actionNext"
                 android:inputType="phone"

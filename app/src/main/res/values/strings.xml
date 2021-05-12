@@ -131,5 +131,10 @@
     <string name="country">Country 1</string>
     <string name="city1">City 1</string>
     <string name="please_include">(Please include all countries/cities based on your stopovers flights)</string>
+    <string name="room_number">Room Number<font color="#FFF995AB"> *</font></string>
+    <string name="roomnumber">Room Number</string>
+    <string name="univeristy">(Your final arrival City)</string>
+    <string name="city_of_university">City of University</string>
+    <string name="final_mode_transport">(Your final mode of transport)</string>
 
 </resources>

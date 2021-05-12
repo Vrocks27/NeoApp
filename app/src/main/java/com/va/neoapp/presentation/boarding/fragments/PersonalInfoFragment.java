@@ -25,9 +25,6 @@ import androidx.fragment.app.Fragment;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.rilixtech.widget.countrycodepicker.CountryCodePicker;
 import com.va.neoapp.R;
-import com.va.neoapp.adapters.TermsNConditionsAdapter;
-import com.va.neoapp.presentation.boarding.activities.UniversityBoardingAct;
-import com.va.neoapp.presentation.termsnconditions.activities.TermNConditionsAct;
 import com.va.neoapp.util.GlobalMethods;
 
 import java.text.SimpleDateFormat;
@@ -250,6 +247,8 @@ public class PersonalInfoFragment extends Fragment {
             public void onTextChanged(CharSequence s, int start, int before, int count) {
                 if (TextUtils.isEmpty(s)) {
                     disableFabButton();
+                }else {
+                    enableFabButton();
                 }
             }
 
