@@ -55,6 +55,7 @@
             android:textSize="@dimen/text_size_14sp" />
 
         <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/et_program_name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="start"
@@ -86,6 +87,7 @@
             android:textSize="@dimen/text_size_14sp" />
 
         <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/et_program_intake"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="start"
@@ -117,6 +119,7 @@
             android:textSize="@dimen/text_size_14sp" />
 
         <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/et_student_number"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="start"
