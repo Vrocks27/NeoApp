@@ -44,13 +44,13 @@ public class PersonalInfoFragment extends Fragment {
 
     private String mParam1;
     private String mParam2;
-    public static FloatingActionButton fab_next;
+    private static FloatingActionButton fab_next;
     private String selectedPermanentState;
     private String selectedPermanentCity;
 
 
     public PersonalInfoFragment(FloatingActionButton fab_next) {
-        this.fab_next = fab_next;
+        PersonalInfoFragment.fab_next = fab_next;
         // Required empty public constructor
     }
 
@@ -127,7 +127,7 @@ public class PersonalInfoFragment extends Fragment {
     }
 
     private void validateFields() {
-        disbalefabButton();
+        disableFabButton();
 
         et_firstname.addTextChangedListener(new TextWatcher() {
             @Override
@@ -137,7 +137,7 @@ public class PersonalInfoFragment extends Fragment {
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
                 if (TextUtils.isEmpty(s)) {
-                    disbalefabButton();
+                    disableFabButton();
                 }
             }
 
@@ -155,7 +155,7 @@ public class PersonalInfoFragment extends Fragment {
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
                 if (TextUtils.isEmpty(s)) {
-                    disbalefabButton();
+                    disableFabButton();
                 }
             }
 
@@ -173,9 +173,9 @@ public class PersonalInfoFragment extends Fragment {
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
                 if (GlobalMethods.isValidEmailAddress(s.toString())) {
-                    disbalefabButton();
+                    disableFabButton();
                 } else {
-                    disbalefabButton();
+                    disableFabButton();
                 }
             }
 
@@ -193,9 +193,9 @@ public class PersonalInfoFragment extends Fragment {
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
                 if (GlobalMethods.isValidInternationalMobileNumber(s.toString())) {
-                    disbalefabButton();
+                    disableFabButton();
                 } else {
-                    disbalefabButton();
+                    disableFabButton();
                 }
             }
 
@@ -213,7 +213,7 @@ public class PersonalInfoFragment extends Fragment {
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
                 if (TextUtils.isEmpty(s)) {
-                    disbalefabButton();
+                    disableFabButton();
                 }
             }
 
@@ -231,7 +231,7 @@ public class PersonalInfoFragment extends Fragment {
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
                 if (TextUtils.isEmpty(s)) {
-                    disbalefabButton();
+                    disableFabButton();
                 }
             }
 
@@ -249,7 +249,7 @@ public class PersonalInfoFragment extends Fragment {
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
                 if (TextUtils.isEmpty(s)) {
-                    disbalefabButton();
+                    disableFabButton();
                 }
             }
 
@@ -270,7 +270,7 @@ public class PersonalInfoFragment extends Fragment {
         gender.add("Male");
         gender.add("Female");
 
-        ArrayAdapter arrayAdapter = new ArrayAdapter(mContext, R.layout.activity_spinner_dialogue, gender);
+        ArrayAdapter<String> arrayAdapter = new ArrayAdapter<>(mContext, R.layout.activity_spinner_dialogue, gender);
         arrayAdapter.setDropDownViewResource(R.layout.support_simple_spinner_dropdown_item);
         spinner_gender.setAdapter(arrayAdapter);
         spinner_gender.setSelection(position);
@@ -292,7 +292,7 @@ public class PersonalInfoFragment extends Fragment {
         countries.add("America");
         countries.add("Australia");
         countries.add("India");
-        ArrayAdapter arrayAdapter1 = new ArrayAdapter(mContext, R.layout.activity_spinner_dialogue, countries);
+        ArrayAdapter<String>  arrayAdapter1 = new ArrayAdapter<>(mContext, R.layout.activity_spinner_dialogue, countries);
         arrayAdapter1.setDropDownViewResource(R.layout.support_simple_spinner_dropdown_item);
         spinner_country_origin.setAdapter(arrayAdapter1);
         spinner_country_origin.setSelection(position);
@@ -315,13 +315,13 @@ public class PersonalInfoFragment extends Fragment {
         states.add("Andhra Pradesh");
         states.add("Karnataka");
         states.add("Telangana");
-        ArrayAdapter stateAdapter = new ArrayAdapter(mContext, R.layout.activity_spinner_dialogue, states);
+        ArrayAdapter<String>  stateAdapter = new ArrayAdapter<>(mContext, R.layout.activity_spinner_dialogue, states);
         stateAdapter.setDropDownViewResource(R.layout.support_simple_spinner_dropdown_item);
         spinner_states.setAdapter(stateAdapter);
         spinner_states.setSelection(position);
         stateAdapter.notifyDataSetChanged();
 
-        ArrayAdapter countrystateAdapter = new ArrayAdapter(mContext, R.layout.activity_spinner_dialogue, states);
+        ArrayAdapter<String>  countrystateAdapter = new ArrayAdapter<>(mContext, R.layout.activity_spinner_dialogue, states);
         countrystateAdapter.setDropDownViewResource(R.layout.support_simple_spinner_dropdown_item);
         country_state.setAdapter(countrystateAdapter);
         country_state.setSelection(position);
@@ -356,13 +356,13 @@ public class PersonalInfoFragment extends Fragment {
         city.add("Hyderabad");
         city.add("Bangalore");
 
-        ArrayAdapter cityAdapter = new ArrayAdapter(mContext, R.layout.activity_spinner_dialogue, city);
+        ArrayAdapter<String>  cityAdapter = new ArrayAdapter<>(mContext, R.layout.activity_spinner_dialogue, city);
         cityAdapter.setDropDownViewResource(R.layout.support_simple_spinner_dropdown_item);
         spinner_cities.setAdapter(cityAdapter);
         spinner_cities.setSelection(position);
         cityAdapter.notifyDataSetChanged();
 
-        ArrayAdapter currentcityAdapter = new ArrayAdapter(mContext, R.layout.activity_spinner_dialogue, city);
+        ArrayAdapter<String>  currentcityAdapter = new ArrayAdapter<>(mContext, R.layout.activity_spinner_dialogue, city);
         currentcityAdapter.setDropDownViewResource(R.layout.support_simple_spinner_dropdown_item);
         country_city.setAdapter(currentcityAdapter);
         country_city.setSelection(position);
@@ -390,8 +390,6 @@ public class PersonalInfoFragment extends Fragment {
 
             }
         });
-
-
     }
 
     private void actionEvents(View view) {
@@ -424,22 +422,22 @@ public class PersonalInfoFragment extends Fragment {
                     layout_current_address.setVisibility(View.GONE);
                     tv_same_address.setVisibility(View.VISIBLE);
                     String permanentAddress = et_permanent_address.getText().toString();
-                    String state = selectedPermanentState.toString();
-                    String city = selectedPermanentCity.toString();
+                    String state = selectedPermanentState;
+                    String city = selectedPermanentCity;
                     String postalcode = et_permanent_pincode.getText().toString();
 
                     if (permanentAddress == null || permanentAddress.isEmpty()
                             || state == null || state.isEmpty() || city == null || city.isEmpty() || postalcode == null || postalcode.isEmpty()) {
                         tv_same_address.setVisibility(View.GONE);
-                        disbalefabButton();
+                        disableFabButton();
                     } else {
                         tv_same_address.setText(permanentAddress + "," + state + "," + city + "," + postalcode);
                         tv_same_address.setVisibility(View.VISIBLE);
-                        enablefabButton();
+                        enableFabButton();
                     }
 
                 } else {
-                    disbalefabButton();
+                    disableFabButton();
                     layout_current_address.setVisibility(View.VISIBLE);
                     tv_same_address.setVisibility(View.GONE);
 
@@ -454,7 +452,7 @@ public class PersonalInfoFragment extends Fragment {
                         @Override
                         public void onTextChanged(CharSequence s, int start, int before, int count) {
                             if (TextUtils.isEmpty(s)){
-                                disbalefabButton();
+                                disableFabButton();
                             }
                         }
 
@@ -473,9 +471,9 @@ public class PersonalInfoFragment extends Fragment {
                         @Override
                         public void onTextChanged(CharSequence s, int start, int before, int count) {
                             if (TextUtils.isEmpty(s)){
-                                disbalefabButton();
+                                disableFabButton();
                             }else{
-                                enablefabButton();
+                                enableFabButton();
                             }
                         }
 
@@ -497,11 +495,11 @@ public class PersonalInfoFragment extends Fragment {
         datepick.setText(startDate);
     }
 
-    public void enablefabButton() {
+    public void enableFabButton() {
         GlobalMethods.enableFabNext(mContext, fab_next);
     }
 
-    public void disbalefabButton() {
+    public void disableFabButton() {
         GlobalMethods.disableFabNext(mContext, fab_next);
     }
 
