@@ -41,6 +41,7 @@
             android:layout_height="wrap_content"
             android:fontFamily="@font/sfuitext_regular"
             android:text="@string/please_include"
+            android:layout_margin="@dimen/padding_2dp"
             android:textColor="@color/default_text_color"
             android:textSize="@dimen/text_size_14sp" />
         <LinearLayout
