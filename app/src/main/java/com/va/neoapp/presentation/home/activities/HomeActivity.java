@@ -113,6 +113,7 @@ public class HomeActivity extends BaseActivity {
         homeViewPagerAdapter.addFrag(new ChatFragment(), getString(R.string.text_chat));
         viewPager.setAdapter(homeViewPagerAdapter);
 
+        viewPager.setCurrentItem(2);
         viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override
             public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
