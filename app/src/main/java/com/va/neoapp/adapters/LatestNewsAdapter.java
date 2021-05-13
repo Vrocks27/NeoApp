@@ -27,13 +27,13 @@ public class LatestNewsAdapter extends RecyclerView.Adapter<LatestNewsAdapter.My
     @NonNull
     @Override
     public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view= LayoutInflater.from(mContext).inflate(R.layout.item_latest_news,parent,false);
+        View view = LayoutInflater.from(mContext).inflate(R.layout.item_latest_news, parent, false);
         return new LatestNewsAdapter.MyViewHolder(view);
     }
 
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
-        if (latestNewModels !=null && latestNewModels.size() >0 ){
+        if (latestNewModels != null && latestNewModels.size() > 0) {
             holder.tv_news_title.setText(latestNewModels.get(position).getTitle());
             holder.tv_news_description.setText(latestNewModels.get(position).getDescription());
             holder.image_news.setImageDrawable(latestNewModels.get(position).getDrawable());
@@ -57,16 +57,14 @@ public class LatestNewsAdapter extends RecyclerView.Adapter<LatestNewsAdapter.My
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
 
-        AppCompatTextView tv_news_title,tv_news_description;
+        AppCompatTextView tv_news_title, tv_news_description;
         AppCompatImageView image_news;
 
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
-
-            tv_news_description=itemView.findViewById(R.id.tv_news_description);
-            tv_news_title=itemView.findViewById(R.id.tv_news_title);
-            image_news=itemView.findViewById(R.id.image_news);
-
+            tv_news_description = itemView.findViewById(R.id.tv_news_description);
+            tv_news_title = itemView.findViewById(R.id.tv_news_title);
+            image_news = itemView.findViewById(R.id.image_news);
         }
     }
 }

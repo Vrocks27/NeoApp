@@ -31,9 +31,9 @@ public class LatestNewsActivity extends BaseActivity {
 
     @Override
     protected void initGUI(Bundle savedInstanceState) {
-        mContext=this;
-        heading_text=findViewById(R.id.heading_text);
-        rv_latest_news=findViewById(R.id.rv_latest_news);
+        mContext = this;
+        heading_text = findViewById(R.id.heading_text);
+        rv_latest_news = findViewById(R.id.rv_latest_news);
 
         heading_text.setText("Latest New and Updates");
 
@@ -46,25 +46,27 @@ public class LatestNewsActivity extends BaseActivity {
         findViewById(R.id.toolbar_back).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                GlobalMethods.callFinishForBackWordActivity(mContext,true);
+                GlobalMethods.callFinishForBackWordActivity(mContext, true);
             }
         });
     }
 
     private void setDataToAdapter() {
 
-        List<LatestNewModel> latestNewModels=new ArrayList<>();
-        latestNewModels.add(new LatestNewModel("Title",getResources().getString(R.string.dummy_text),getResources().getDrawable(R.drawable.default_university)));
-        latestNewModels.add(new LatestNewModel("Title",getResources().getString(R.string.dummy_text),getResources().getDrawable(R.drawable.default_university)));
-        latestNewModels.add(new LatestNewModel("Title",getResources().getString(R.string.dummy_text),getResources().getDrawable(R.drawable.default_university)));
-        latestNewModels.add(new LatestNewModel("Title",getResources().getString(R.string.dummy_text),getResources().getDrawable(R.drawable.default_university)));
-        latestNewModels.add(new LatestNewModel("Title",getResources().getString(R.string.dummy_text),getResources().getDrawable(R.drawable.default_university)));
+        List<LatestNewModel> latestNewModels = new ArrayList<>();
+        latestNewModels.add(new LatestNewModel("Title", getResources().getString(R.string.dummy_text), getResources().getDrawable(R.drawable.default_university)));
+        latestNewModels.add(new LatestNewModel("Title", getResources().getString(R.string.dummy_text), getResources().getDrawable(R.drawable.default_university)));
+        latestNewModels.add(new LatestNewModel("Title", getResources().getString(R.string.dummy_text), getResources().getDrawable(R.drawable.default_university)));
+        latestNewModels.add(new LatestNewModel("Title", getResources().getString(R.string.dummy_text), getResources().getDrawable(R.drawable.default_university)));
+        latestNewModels.add(new LatestNewModel("Title", getResources().getString(R.string.dummy_text), getResources().getDrawable(R.drawable.default_university)));
 
-        LatestNewsAdapter latestNewsAdapter=new LatestNewsAdapter(mContext,latestNewModels);
-        LinearLayoutManager linearLayoutManager=new LinearLayoutManager(mContext,RecyclerView.VERTICAL,false);
+        LatestNewsAdapter latestNewsAdapter = new LatestNewsAdapter(mContext, latestNewModels);
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(mContext, RecyclerView.VERTICAL, false);
         rv_latest_news.setLayoutManager(linearLayoutManager);
         rv_latest_news.setAdapter(latestNewsAdapter);
-        latestNewsAdapter.notifyDataSetChanged();
+        //latestNewsAdapter.notifyDataSetChanged();
+
+        GlobalMethods.showDefaultFullScreenDialog(LatestNewsActivity.this,"","","" );
 
     }
 

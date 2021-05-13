@@ -4,6 +4,9 @@ import android.app.Activity;
 import android.app.Dialog;
 import android.content.Context;
 import android.graphics.Bitmap;
+import android.media.MediaScannerConnection;
+import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
 import android.util.Log;
@@ -15,6 +18,7 @@ import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.Toast;
 
 import androidx.appcompat.widget.AppCompatButton;
 import androidx.appcompat.widget.AppCompatEditText;
@@ -31,7 +35,11 @@ import com.va.neoapp.presentation.home.activities.UniversityDetailAct;
 import com.va.neoapp.util.GlobalMethods;
 
 import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.Locale;
 
@@ -179,10 +187,10 @@ public class SubmitFragment extends Fragment {
 
 
         // Method to create Directory, if the Directory doesn't exists
-        file = new File(DIRECTORY);
-        if (!file.exists()) {
-            file.mkdir();
-        }
+//        file = new File(DIRECTORY);
+//        if (!file.exists()) {
+//            file.mkdir();
+//        }
 
         view.findViewById(R.id.image_signature).setOnClickListener(new View.OnClickListener() {
             @Override
@@ -238,9 +246,66 @@ public class SubmitFragment extends Fragment {
     }
 
     private void generateFile(Bitmap bitmap) {
+        // check the permission storage
+        File directory = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES);
+        File file = new File(directory, System.currentTimeMillis() + ".png");
+        FileOutputStream out = null;
+        try {
+            out = new FileOutputStream(file);
+            if (bitmap != null) {
+                bitmap.compress(Bitmap.CompressFormat.PNG, 100, out);
+            } else {
+                throw new FileNotFoundException();
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }finally {
+            try {
+                if (out != null) {
+                    out.flush();
+                    out.close();
 
+                    if (bitmap != null) {
+
+                        Toast.makeText(getContext(), "Image saved successfully at " + file.getPath(), Toast.LENGTH_LONG).show();
+                        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.KITKAT) {
+                            new MyMediaScanner(getContext(), file);
+                        } else {
+                            ArrayList<String> toBeScanned = new ArrayList<String>();
+                            toBeScanned.add(file.getAbsolutePath());
+                            String[] toBeScannedStr = new String[toBeScanned.size()];
+                            toBeScannedStr = toBeScanned.toArray(toBeScannedStr);
+                            MediaScannerConnection.scanFile(getContext(), toBeScannedStr, null, null);
+                        }
+                    }
+                }
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
     }
 
+    private static class MyMediaScanner implements MediaScannerConnection.MediaScannerConnectionClient {
+
+        private MediaScannerConnection mSC;
+        private File file;
+
+        MyMediaScanner(Context context, File file) {
+            this.file = file;
+            mSC = new MediaScannerConnection(context, this);
+            mSC.connect();
+        }
+
+        @Override
+        public void onMediaScannerConnected() {
+            mSC.scanFile(file.getAbsolutePath(), null);
+        }
+
+        @Override
+        public void onScanCompleted(String path, Uri uri) {
+            mSC.disconnect();
+        }
+    }
     // Function for Digital Signature
     /*public void dialog_action(View view) {
 

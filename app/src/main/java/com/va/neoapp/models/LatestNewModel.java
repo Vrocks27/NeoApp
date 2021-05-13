@@ -7,6 +7,7 @@ public class LatestNewModel {
     private String title;
     private String Description;
     private Drawable drawable;
+    private String image_url;
 
     public LatestNewModel(String title, String description, Drawable drawable) {
         this.title = title;

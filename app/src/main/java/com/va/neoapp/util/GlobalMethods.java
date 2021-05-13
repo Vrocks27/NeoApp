@@ -33,23 +33,19 @@ import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.bumptech.glide.request.target.BitmapImageViewTarget;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
-//import com.va.neoapp.BuildConfig;
 import com.google.gson.Gson;
-import com.google.gson.JsonSyntaxException;
-import com.google.gson.reflect.TypeToken;
 import com.va.neoapp.R;
 
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.lang.reflect.Type;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
 import java.util.Date;
-import java.util.List;
 import java.util.regex.Pattern;
+
+//import com.va.neoapp.BuildConfig;
 
 public class GlobalMethods {
 
@@ -83,7 +79,7 @@ public class GlobalMethods {
 
     public static boolean isOnline(Context context) {
         try {
-           // return SingletonClass.getInstance().isDeviceOnline(context);
+            // return SingletonClass.getInstance().isDeviceOnline(context);
             return SingletonClass.getInstance().isConnectedToInternet(context);
         } catch (Exception e) {
             Log.e("is_online_err:", e.getMessage());
@@ -233,12 +229,12 @@ public class GlobalMethods {
         }
     }
 
-    public static  <T> T convertJsonToClass(JSONObject jsonObject, Class<T> resultClass) {
+    public static <T> T convertJsonToClass(JSONObject jsonObject, Class<T> resultClass) {
         return new Gson().fromJson(jsonObject.toString(), resultClass);
     }
 
-   /* public static  <T> T convertJsonTypeClass(JSONObject jsonObject, T result, Type ) {
-      *//*  Type listType = new TypeToken<result>() {
+    /* public static  <T> T convertJsonTypeClass(JSONObject jsonObject, T result, Type ) {
+     *//*  Type listType = new TypeToken<result>() {
         }.getType();
 
         return new Gson().fromJson(jsonObject.toString(), resultClass);
@@ -372,6 +368,7 @@ public class GlobalMethods {
         bottom_fab_button.setBackgroundTintList(ColorStateList.valueOf(context.getResources().getColor(R.color.default_main_color)));
         bottom_fab_button.setTextColor(context.getResources().getColor(R.color.white));
     }
+
     public static void disableSubmitButton(Context context, AppCompatButton bottom_fab_button) {
         bottom_fab_button.setEnabled(false);
         bottom_fab_button.setClickable(false);
@@ -380,39 +377,34 @@ public class GlobalMethods {
     }
 
 
-
-    public static void showDefaultFullScreenDialog( AppCompatActivity activity, String title, String imageUrl, String description) {
+    public static void showDefaultFullScreenDialog(AppCompatActivity activity, String title, String imageUrl, String description) {
 
         try {
             Dialog dialog = new Dialog(activity, android.R.style.Theme_Black_NoTitleBar_Fullscreen);
             dialog.setContentView(R.layout.layout_dialog_default_full_screen);
             dialog.setCancelable(true);
 
-            ((AppCompatTextView)dialog.findViewById(R.id.text_title_full_option)).setText(title);
-
-            /*((CustomTextViewMedium) dialog.findViewById(R.id.person_name)).setText(GlobalMethods.getUserFLNames(activity));
-            ((CustomTextView) dialog.findViewById(R.id.person_role_id)).setText(GlobalMethods.getUserId(activity));
-            ((CustomTextViewLight) dialog.findViewById(R.id.person_role_name)).setText(GlobalMethods.getRole_description(activity));
-            final AppCompatImageView person_profile_pic = dialog.findViewById(R.id.person_profile_pic);*/
+            ((AppCompatTextView) dialog.findViewById(R.id.text_title_full_option)).setText(title);
+            AppCompatImageView image_full_screen = dialog.findViewById(R.id.image_full_screen);
 
 
-           /* if (GlobalMethods.isNull(GlobalMethods.getISPProfilePic(activity))) {
+            /*if (GlobalMethods.isNull(imageUrl)) {
                 Glide.with(activity)
-                        .load(GlobalMethods.getISPProfilePic(activity))
+                        .load(imageUrl)
                         .asBitmap()
                         .placeholder(R.drawable.color_user_icon)
                         .error(R.drawable.color_user_icon)
                         .override(250, 250)
-                        .into(new BitmapImageViewTarget(person_profile_pic) {
+                        .into(new BitmapImageViewTarget(image_full_screen) {
                             @Override
                             protected void setResource(Bitmap resource) {
                                 RoundedBitmapDrawable circularBitmapDrawable = RoundedBitmapDrawableFactory.create(activity.getResources(), resource);
                                 circularBitmapDrawable.setCircular(true);
-                                person_profile_pic.setImageDrawable(circularBitmapDrawable);
+                                image_full_screen.setImageDrawable(circularBitmapDrawable);
                             }
                         });
             } else {
-                person_profile_pic.setImageDrawable(activity.getResources().getDrawable(R.drawable.color_user_icon));
+                image_full_screen.setImageDrawable(activity.getResources().getDrawable(R.drawable.color_user_icon));
             }*/
 
 
