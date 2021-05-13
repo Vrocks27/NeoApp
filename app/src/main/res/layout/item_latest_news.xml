@@ -61,7 +61,7 @@
                     android:ellipsize="end"
                     android:fontFamily="@font/sfuitext_regular"
                     android:maxLines="4"
-                    android:minLines="3"
+                    android:minLines="1"
                     android:textColor="@color/defaultTextColor"
                     android:textSize="@dimen/text_size_10sp" />
             </LinearLayout>
