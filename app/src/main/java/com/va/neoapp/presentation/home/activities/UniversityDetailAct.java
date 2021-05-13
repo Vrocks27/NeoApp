@@ -4,19 +4,18 @@ import android.content.Context;
 import android.os.Bundle;
 import android.view.View;
 
-import androidx.viewpager.widget.ViewPager;
-
 import com.google.android.material.tabs.TabLayout;
 import com.va.neoapp.R;
 import com.va.neoapp.adapters.HomeViewPagerAdapter;
 import com.va.neoapp.presentation.BaseActivity;
+import com.va.neoapp.presentation.NonSwipeableViewPager;
 import com.va.neoapp.presentation.home.fragments.childfragment.CoursesFragment;
 import com.va.neoapp.presentation.home.fragments.childfragment.KnowMoreFragment;
 import com.va.neoapp.util.GlobalMethods;
 
 public class UniversityDetailAct extends BaseActivity {
 
-    private ViewPager viewPager;
+    private NonSwipeableViewPager viewPager;
     private TabLayout tabLayout;
     private Context mContext;
 

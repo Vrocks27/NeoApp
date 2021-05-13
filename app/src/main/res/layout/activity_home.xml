@@ -13,7 +13,7 @@
         android:layout_alignParentEnd="true"
         android:orientation="vertical">
 
-        <androidx.viewpager.widget.ViewPager
+        <com.va.neoapp.presentation.NonSwipeableViewPager
             android:id="@+id/home_viewpager"
             android:layout_width="match_parent"
             android:layout_height="match_parent"

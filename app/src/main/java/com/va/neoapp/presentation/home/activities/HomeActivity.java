@@ -11,6 +11,7 @@ import com.google.android.material.tabs.TabLayout;
 import com.va.neoapp.R;
 import com.va.neoapp.adapters.HomeViewPagerAdapter;
 import com.va.neoapp.presentation.BaseActivity;
+import com.va.neoapp.presentation.NonSwipeableViewPager;
 import com.va.neoapp.presentation.home.fragments.ChatFragment;
 import com.va.neoapp.presentation.home.fragments.HomeFragment;
 import com.va.neoapp.presentation.home.fragments.ProfileFragment;
@@ -30,7 +31,7 @@ public class HomeActivity extends BaseActivity {
     @Override
     protected void initGUI(Bundle savedInstanceState) {
 
-        ViewPager viewPager = findViewById(R.id.home_viewpager);
+        NonSwipeableViewPager viewPager = findViewById(R.id.home_viewpager);
         readBundle();
         setupViewPager(viewPager);
         tabLayout = findViewById(R.id.tab_layout);
@@ -104,7 +105,6 @@ public class HomeActivity extends BaseActivity {
     private void setupViewPager(ViewPager viewPager) {
 
         // Fragment overviewFrag = HomeFragment.newInstance();
-
         HomeViewPagerAdapter homeViewPagerAdapter = new HomeViewPagerAdapter(getSupportFragmentManager());
         homeViewPagerAdapter.addFrag(new TagFragment(), getString(R.string.text_support));
         homeViewPagerAdapter.addFrag(new SupportFragment(), getString(R.string.text_support));
