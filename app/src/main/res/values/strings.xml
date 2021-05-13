@@ -2,6 +2,11 @@
     <string name="app_name">NeoApp</string>
     <string name="text_splash">Welcome to NeoApp</string>
 
+    <string name="error_internet_unavailable">Internet is not available, Please cross check your internet connectivity and try again</string>
+    <string name="retry">Retry</string>
+    <string name="dismiss">Dismiss</string>
+    <string name="request_failed">Request Failed</string>
+
     <string name="text_welcome">Welcome!</string>
     <string name="text_next">Next</string>
     <string name="text_sign">Sign in, to continue to your account</string>

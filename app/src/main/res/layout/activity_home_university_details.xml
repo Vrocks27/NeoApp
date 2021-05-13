@@ -151,7 +151,7 @@
             </com.google.android.material.tabs.TabLayout>
 
 
-            <com.va.neoapp.presentation.NonSwipeableViewPager
+            <com.va.neoapp.custom.NonSwipeableViewPager
                 android:id="@+id/pager"
                 android:layout_width="match_parent"
                 android:layout_height="500dp" />

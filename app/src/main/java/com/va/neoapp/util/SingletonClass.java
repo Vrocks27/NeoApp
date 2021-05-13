@@ -1,6 +1,8 @@
 package com.va.neoapp.util;
 
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.net.ConnectivityManager;
 import android.net.Network;
 import android.net.NetworkCapabilities;
@@ -23,7 +25,7 @@ public class SingletonClass {
     }
 
 
-    public static boolean isConnectingToInternet(Context mContext) {
+    public  boolean isConnectedToInternet(Context mContext) {
         if (mContext == null)
             return false;
 
@@ -52,6 +54,20 @@ public class SingletonClass {
         }
         return false;
     }
+
+    public static AlertDialog.Builder getAlertDialog(Context context, String message, String positiveButtonMessage, DialogInterface.OnClickListener positiveButtonOnClickListener,
+                                                     String negativeButtonMessage, DialogInterface.OnClickListener negativeButtonOnClickListener, boolean isCancelable) {
+        AlertDialog.Builder dlgAlert = new AlertDialog.Builder(context);
+        dlgAlert.setMessage(message);
+        if (positiveButtonMessage != null && !positiveButtonMessage.isEmpty()) {
+            dlgAlert.setPositiveButton(positiveButtonMessage, positiveButtonOnClickListener);
+        }
+        if (negativeButtonMessage != null && !negativeButtonMessage.isEmpty()) {
+            dlgAlert.setNegativeButton(negativeButtonMessage, negativeButtonOnClickListener);
+        }
+        dlgAlert.setCancelable(isCancelable);
+        return dlgAlert;
+    }
    /* public boolean isDeviceOnline(Context context) throws Exception {
         try {
 
@@ -68,7 +84,7 @@ public class SingletonClass {
         }
     }*/
 
-    /*public boolean isDeviceOnline123(Context context) throws Exception {
+    /*public boolean isDeviceOnline1(Context context) throws Exception {
         try {
             final ConnectivityManager conMgr = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
              final NetworkInfo activeNetwork = conMgr.getActiveNetworkInfo();

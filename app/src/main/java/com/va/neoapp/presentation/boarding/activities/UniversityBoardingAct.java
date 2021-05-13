@@ -2,7 +2,6 @@ package com.va.neoapp.presentation.boarding.activities;
 
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Toast;
 
 import androidx.viewpager.widget.ViewPager;
 
@@ -28,7 +27,7 @@ public class UniversityBoardingAct extends BaseActivity {
     private StepView stepView;
     public FloatingActionButton fab_next;
 
-    private String[] stepTextArray = {"Personal Information", "Program Information", "Travel", "Review", "Submit"};
+    private final String[] stepTextArray = {"Personal Information", "Program Information", "Travel", "Review", "Submit"};
 
     @Override
     protected int setLayoutResource() {
@@ -37,9 +36,9 @@ public class UniversityBoardingAct extends BaseActivity {
 
     @Override
     protected void initGUI(Bundle savedInstanceState) {
-        fab_next = (FloatingActionButton) findViewById(R.id.fab_next);
+        fab_next = findViewById(R.id.fab_next);
         viewPager = findViewById(R.id.on_boarding_viewpager);
-        stepView = (StepView) findViewById(R.id.step_view);
+        stepView = findViewById(R.id.step_view);
 
         List<String> stepList = new ArrayList<>(Arrays.asList(stepTextArray));
         stepView.setSteps(stepList);
@@ -49,7 +48,6 @@ public class UniversityBoardingAct extends BaseActivity {
             public void onStepClick(int step) {
                 //Toast.makeText(UniversityBoardingAct.this, "Step " + step, Toast.LENGTH_SHORT).show();
                /* switch (step){
-
                 }*/
                 currentStep = step;
                 viewPager.setCurrentItem(step);

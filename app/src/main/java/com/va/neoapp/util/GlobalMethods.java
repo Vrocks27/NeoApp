@@ -28,15 +28,21 @@ import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 //import com.va.neoapp.BuildConfig;
+import com.google.gson.Gson;
+import com.google.gson.JsonSyntaxException;
+import com.google.gson.reflect.TypeToken;
 import com.va.neoapp.R;
 
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.lang.reflect.Type;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 import java.util.regex.Pattern;
 
 public class GlobalMethods {
@@ -69,14 +75,14 @@ public class GlobalMethods {
         return (int) px;
     }
 
-    public static boolean isOnline(Context context) throws Exception {
-//        try {
-//            return SingletonClass.getInstance().isDeviceOnline(context);
-//        } catch (Exception e) {
-//            throw e;
-//        }
-
-        return false;
+    public static boolean isOnline(Context context) {
+        try {
+           // return SingletonClass.getInstance().isDeviceOnline(context);
+            return SingletonClass.getInstance().isConnectedToInternet(context);
+        } catch (Exception e) {
+            Log.e("is_online_err:", e.getMessage());
+            return false;
+        }
     }
 
     public static void showNormalToast(Activity activity, String message, int lengthLong) {
@@ -221,6 +227,24 @@ public class GlobalMethods {
         }
     }
 
+    public static  <T> T convertJsonToClass(JSONObject jsonObject, Class<T> resultClass) {
+        return new Gson().fromJson(jsonObject.toString(), resultClass);
+    }
+
+   /* public static  <T> T convertJsonTypeClass(JSONObject jsonObject, T result, Type ) {
+      *//*  Type listType = new TypeToken<result>() {
+        }.getType();
+
+        return new Gson().fromJson(jsonObject.toString(), resultClass);
+
+
+        List<TimeSlotDataCore> timeSlotDataCoreList = new Gson().fromJson(resultSlotData.getData(), listType);
+
+        Type listType = new TypeToken<UserInfo>() {
+        }.getType();
+        UserInfo userInfo = new Gson().fromJson(user_info, listType);*//*
+    }*/
+
     public static void setServiceType(Context context, String values) {
         SharedPreferences.Editor editor = context.getSharedPreferences(Constants.APP_PREFERENCE, Context.MODE_PRIVATE).edit();
         editor.putString("serviceType", values);
@@ -231,6 +255,33 @@ public class GlobalMethods {
         SharedPreferences prefs = context.getSharedPreferences(Constants.APP_PREFERENCE, Context.MODE_PRIVATE);
         return prefs.getString("serviceType", null);
     }
+
+    public static void setAccessToken(Context context, String token) {
+        SharedPreferences.Editor editor = context.getSharedPreferences(Constants.APP_PREFERENCE, Context.MODE_PRIVATE).edit();
+        editor.putString("accessToken", token);
+        editor.apply();
+    }
+
+    public static String getAccessToken(Context context) {
+        SharedPreferences prefs = context.getSharedPreferences(Constants.APP_PREFERENCE, Context.MODE_PRIVATE);
+        return prefs.getString("accessToken", null);
+    }
+
+    /*public static void setCart_Items(ArrayList<LineItems> list, Context context) {
+        SharedPreferences.Editor editor = context.getSharedPreferences(StaticConstants.APP_PREFERENCE, Context.MODE_PRIVATE).edit();
+        String json = new Gson().toJson(list);
+        editor.putString(StaticConstants.CART_ITEM, json);
+        editor.apply();
+    }
+
+    public static ArrayList<LineItems> getCart_ItemList(Context context) {
+        SharedPreferences prefs = context.getSharedPreferences(StaticConstants.APP_PREFERENCE, Context.MODE_PRIVATE);
+        Gson gson = new Gson();
+        String json = prefs.getString(StaticConstants.CART_ITEM, null);
+        Type type = new TypeToken<ArrayList<LineItems>>() {
+        }.getType();
+        return gson.fromJson(json, type);
+    }*/
 
     public static String convertDatToTime(String dateString) {
         SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
