@@ -1,17 +1,85 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
+<RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:id="@+id/title_top_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/text_title_option"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/padding_4dp"
+            android:padding="@dimen/padding_2dp"
+            android:layout_weight="1"
+            android:text="Do Your Signature Here.!"
+            android:fontFamily="@font/sfuitext_regular"
+            android:singleLine="true"
+            android:textColor="@color/default_text_color"
+            android:textSize="@dimen/text_size_14sp"/>
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/img_close_option"
+            android:layout_width="@dimen/padding_24dp"
+            android:layout_height="@dimen/padding_24dp"
+            android:layout_margin="@dimen/padding_4dp"
+            android:padding="@dimen/padding_2dp"
+            android:src="@drawable/ic_wrongmark_black"
+            />
+
+    </LinearLayout>
 
     <com.va.neoapp.custom.signatureview.SignatureView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
         android:id="@+id/signature_view"
-        app:enableSignature="true"
-        app:penSize="3dp"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:layout_below="@+id/title_top_bar"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
         app:backgroundColor="#ffffff"
-        app:penColor="@color/black"/>
+        app:enableSignature="true"
+        app:penColor="@color/black"
+        app:penSize="@dimen/padding_2dp"
+        android:layout_margin="@dimen/padding_2dp"
+        android:padding="@dimen/padding_2dp"/>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/bottom_button"
+        android:layout_below="@+id/signature_view"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:orientation="horizontal"
+        android:weightSum="2">
+
+        <Button
+            android:id="@+id/bt_reset"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/padding_2dp"
+            android:layout_weight="1"
+            android:padding="@dimen/padding_4dp"
+            android:text="Reset" />
+
+        <Button
+            android:id="@+id/bt_done"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/padding_2dp"
+            android:layout_weight="1"
+            android:padding="@dimen/padding_4dp"
+            android:text="Done" />
+    </LinearLayout>
+
+</RelativeLayout>

@@ -124,6 +124,7 @@ public class HomeFragment extends Fragment {
         homeGridList.add(new HomeGrid(getResources().getDrawable(R.drawable.ic_health_safety),"Health and Safety Measures"));
         homeGridList.add(new HomeGrid(getResources().getDrawable(R.drawable.ic_latest_update),"Latest News & Update"));
         homeGridList.add(new HomeGrid(getResources().getDrawable(R.drawable.ic_student_life),"Student Life at Campus"));
+
         HomeGridAdapter homeGridAdapter = new HomeGridAdapter(getActivity(), homeGridList, new HomeGridAdapter.OnItemViewListener() {
             @Override
             public void selectedItem(int homeGrid) {

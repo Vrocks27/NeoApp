@@ -388,7 +388,7 @@ public class GlobalMethods {
             dialog.setContentView(R.layout.layout_dialog_default_full_screen);
             dialog.setCancelable(true);
 
-            ((AppCompatTextView)dialog.findViewById(R.id.text_title_option)).setText(title);
+            ((AppCompatTextView)dialog.findViewById(R.id.text_title_full_option)).setText(title);
 
             /*((CustomTextViewMedium) dialog.findViewById(R.id.person_name)).setText(GlobalMethods.getUserFLNames(activity));
             ((CustomTextView) dialog.findViewById(R.id.person_role_id)).setText(GlobalMethods.getUserId(activity));

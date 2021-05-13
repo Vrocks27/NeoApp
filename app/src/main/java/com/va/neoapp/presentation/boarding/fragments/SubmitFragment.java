@@ -3,7 +3,7 @@ package com.va.neoapp.presentation.boarding.fragments;
 import android.app.Activity;
 import android.app.Dialog;
 import android.content.Context;
-import android.graphics.Color;
+import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.os.Environment;
 import android.util.Log;
@@ -15,7 +15,6 @@ import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
-import android.widget.Toast;
 
 import androidx.appcompat.widget.AppCompatButton;
 import androidx.appcompat.widget.AppCompatEditText;
@@ -27,7 +26,7 @@ import androidx.fragment.app.Fragment;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.rilixtech.widget.countrycodepicker.CountryCodePicker;
 import com.va.neoapp.R;
-import com.va.neoapp.custom.signature.SignatureView;
+import com.va.neoapp.custom.signatureview.SignatureView;
 import com.va.neoapp.presentation.home.activities.UniversityDetailAct;
 import com.va.neoapp.util.GlobalMethods;
 
@@ -55,7 +54,7 @@ public class SubmitFragment extends Fragment {
 
     public SubmitFragment(FloatingActionButton fab_next) {
         // Required empty public constructor
-        SubmitFragment.fab_next=fab_next;
+        SubmitFragment.fab_next = fab_next;
     }
 
 
@@ -70,15 +69,13 @@ public class SubmitFragment extends Fragment {
     private AppCompatSpinner spinner_isolation_city;
     private CountryCodePicker spinnerCountryCodePicker;
 
-    Button mClear, mGetSign, mCancel;
-
-    AppCompatImageView image_signature;
+    private AppCompatImageView image_signature;
 
     File file;
     Dialog dialog;
     LinearLayout mContent;
-    SignatureView mSignature;
-   // View view;
+
+    // View view;
 
     // Creating Separate Directory for saving Generated Images
     String DIRECTORY = Environment.getExternalStorageDirectory().getPath() + "/DigitSign/";
@@ -187,25 +184,65 @@ public class SubmitFragment extends Fragment {
             file.mkdir();
         }
 
-        // Dialog Function
-        dialog = new Dialog(mContext);
-        // Removing the features of Normal Dialogs
-        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
-        dialog.setContentView(R.layout.dialogue_signature);
-        dialog.setCancelable(true);
-
-        image_signature.setOnClickListener(new View.OnClickListener() {
+        view.findViewById(R.id.image_signature).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Function call for Digital Signature
-               // dialog_action(view);
-
+                showSignaturePad(image_signature);
             }
         });
     }
 
+    private void showSignaturePad(AppCompatImageView image_signature) {
+
+        try {
+            Dialog dialog = new Dialog(getContext());
+            dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+            dialog.setCancelable(false);
+            dialog.setContentView(R.layout.layout_dialog_signature);
+            dialog.getWindow().setLayout(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
+            dialog.setCanceledOnTouchOutside(false);
+
+            SignatureView signatureView = dialog.findViewById(R.id.signature_view);
+            dialog.findViewById(R.id.img_close_option).setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    dialog.dismiss();
+                }
+            });
+
+            dialog.findViewById(R.id.bt_reset).setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    signatureView.clearCanvas();
+                }
+            });
+
+            dialog.findViewById(R.id.bt_done).setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    if (!signatureView.isBitmapEmpty()) {
+                        Bitmap bitmap = signatureView.getSignatureBitmap();
+                        image_signature.setImageBitmap(bitmap);
+                        dialog.dismiss();
+                        generateFile(bitmap);
+                    }else {
+                        GlobalMethods.showNormalToast(getActivity(), "Please do the signature to proceed.", 0);
+                    }
+                }
+            });
+
+            dialog.show();
+        } catch (Exception exp) {
+            Log.e("sign_dia_exp", exp.getMessage());
+        }
+    }
+
+    private void generateFile(Bitmap bitmap) {
+
+    }
+
     // Function for Digital Signature
-    public void dialog_action(View view) {
+    /*public void dialog_action(View view) {
 
         mContent = (LinearLayout) dialog.findViewById(R.id.linearLayout);
         mSignature = new SignatureView(mContext, null);
@@ -248,7 +285,7 @@ public class SubmitFragment extends Fragment {
             }
         });
         dialog.show();
-    }
+    }*/
 
     private void setDataToSpinner() {
 
