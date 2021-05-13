@@ -5,15 +5,24 @@ import android.os.Bundle;
 import android.view.View;
 
 import androidx.appcompat.widget.AppCompatTextView;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.va.neoapp.R;
+import com.va.neoapp.adapters.LatestNewsAdapter;
+import com.va.neoapp.models.LatestNewModel;
 import com.va.neoapp.presentation.BaseActivity;
 import com.va.neoapp.util.GlobalMethods;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class LatestNewsActivity extends BaseActivity {
 
     Context mContext;
     AppCompatTextView heading_text;
+    RecyclerView rv_latest_news;
+
 
     @Override
     protected int setLayoutResource() {
@@ -24,8 +33,12 @@ public class LatestNewsActivity extends BaseActivity {
     protected void initGUI(Bundle savedInstanceState) {
         mContext=this;
         heading_text=findViewById(R.id.heading_text);
+        rv_latest_news=findViewById(R.id.rv_latest_news);
 
         heading_text.setText("Latest New and Updates");
+
+        //set Data To AdAPTER
+        setDataToAdapter();
     }
 
     @Override
@@ -37,4 +50,22 @@ public class LatestNewsActivity extends BaseActivity {
             }
         });
     }
+
+    private void setDataToAdapter() {
+
+        List<LatestNewModel> latestNewModels=new ArrayList<>();
+        latestNewModels.add(new LatestNewModel("Title",getResources().getString(R.string.dummy_text),getResources().getDrawable(R.drawable.default_university)));
+        latestNewModels.add(new LatestNewModel("Title",getResources().getString(R.string.dummy_text),getResources().getDrawable(R.drawable.default_university)));
+        latestNewModels.add(new LatestNewModel("Title",getResources().getString(R.string.dummy_text),getResources().getDrawable(R.drawable.default_university)));
+        latestNewModels.add(new LatestNewModel("Title",getResources().getString(R.string.dummy_text),getResources().getDrawable(R.drawable.default_university)));
+        latestNewModels.add(new LatestNewModel("Title",getResources().getString(R.string.dummy_text),getResources().getDrawable(R.drawable.default_university)));
+
+        LatestNewsAdapter latestNewsAdapter=new LatestNewsAdapter(mContext,latestNewModels);
+        LinearLayoutManager linearLayoutManager=new LinearLayoutManager(mContext,RecyclerView.VERTICAL,false);
+        rv_latest_news.setLayoutManager(linearLayoutManager);
+        rv_latest_news.setAdapter(latestNewsAdapter);
+        latestNewsAdapter.notifyDataSetChanged();
+
+    }
+
 }
