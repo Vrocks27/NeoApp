@@ -72,4 +72,11 @@
         <attr name="sv_nextStepCircleColor" format="color" />
     </declare-styleable>
 
+    <declare-styleable name="signature">
+        <attr name="enableSignature" format="boolean" />
+        <attr name="penSize" format="dimension"/>
+        <attr name="penColor" format="color"/>
+        <attr name="backgroundColor" format="color"/>
+    </declare-styleable>
+
 </resources>

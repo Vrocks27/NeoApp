@@ -44,7 +44,9 @@ public class HomeGridAdapter extends RecyclerView.Adapter<HomeGridAdapter.ViewHo
             holder.itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    OnItemViewListener.selectedItem(position);
+                    if ( OnItemViewListener !=null) {
+                        OnItemViewListener.selectedItem(position);
+                    }
                 }
             });
         }
@@ -60,7 +62,6 @@ public class HomeGridAdapter extends RecyclerView.Adapter<HomeGridAdapter.ViewHo
         return position;
     }
 
-
     @Override
     public int getItemCount() {
         return homeGridList.size();
@@ -70,6 +71,7 @@ public class HomeGridAdapter extends RecyclerView.Adapter<HomeGridAdapter.ViewHo
 
         AppCompatTextView text_grid;
         AppCompatImageView image_grid_home;
+
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             text_grid = itemView.findViewById(R.id.text_grid);

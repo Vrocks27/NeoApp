@@ -1,0 +1,24 @@
+{
+  "sections": [
+    {
+      "title": "What's your name",
+      "type": "form",
+      "fields": [
+        {
+          "type": "text",
+          "key": "first_name",
+          "hint": "Type your first name"
+        },
+        {
+          "type": "text",
+          "key": "last_name",
+          "hint": "Type your last name"
+        }
+      ]
+    },
+    {
+      "title": "Where do you live?",
+      "type": "map"
+    }
+  ]
+}

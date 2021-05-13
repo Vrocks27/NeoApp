@@ -31,7 +31,7 @@ import com.va.neoapp.util.GlobalMethods;
 import java.util.ArrayList;
 import java.util.List;
 
-public class HomeFragment extends Fragment implements HomeGridAdapter.OnItemViewListener {
+public class HomeFragment extends Fragment {
 
     // private Context mContext;
     private int dotscount;
@@ -124,7 +124,25 @@ public class HomeFragment extends Fragment implements HomeGridAdapter.OnItemView
         homeGridList.add(new HomeGrid(getResources().getDrawable(R.drawable.ic_health_safety),"Health and Safety Measures"));
         homeGridList.add(new HomeGrid(getResources().getDrawable(R.drawable.ic_latest_update),"Latest News & Update"));
         homeGridList.add(new HomeGrid(getResources().getDrawable(R.drawable.ic_student_life),"Student Life at Campus"));
-        HomeGridAdapter homeGridAdapter = new HomeGridAdapter(getActivity(), homeGridList,HomeFragment.this);
+        HomeGridAdapter homeGridAdapter = new HomeGridAdapter(getActivity(), homeGridList, new HomeGridAdapter.OnItemViewListener() {
+            @Override
+            public void selectedItem(int homeGrid) {
+                switch (homeGrid){
+                    case 0:
+                        GlobalMethods.callForWordActivity(context, StudentUpdateActivity.class,null,false,true);
+                        break;
+                    case 1:
+                        GlobalMethods.callForWordActivity(context, HealthNSafetyActivity.class,null,false,true);
+                        break;
+                    case 2:
+                        GlobalMethods.callForWordActivity(context, LatestNewsActivity.class,null,false,true);
+                        break;
+                    case 3:
+                        GlobalMethods.callForWordActivity(context, StudentLifeActivity.class,null,false,true);
+                        break;
+                }
+            }
+        });
         home_grid_list.setAdapter(homeGridAdapter);
 
     }
@@ -133,24 +151,6 @@ public class HomeFragment extends Fragment implements HomeGridAdapter.OnItemView
         Bundle bundle = this.getArguments();
         if (bundle != null) {
 
-        }
-    }
-
-    @Override
-    public void selectedItem(int homeGrid) {
-        switch (homeGrid){
-            case 0:
-                GlobalMethods.callForWordActivity(context, StudentUpdateActivity.class,null,false,true);
-                break;
-            case 1:
-                GlobalMethods.callForWordActivity(context, HealthNSafetyActivity.class,null,false,true);
-                break;
-            case 2:
-                GlobalMethods.callForWordActivity(context, LatestNewsActivity.class,null,false,true);
-                break;
-            case 3:
-                GlobalMethods.callForWordActivity(context, StudentLifeActivity.class,null,false,true);
-                break;
         }
     }
 }
