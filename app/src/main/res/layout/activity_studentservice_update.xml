@@ -22,11 +22,14 @@
                 android:id="@+id/tv_student_describe"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/padding_20dp"
+                android:layout_marginTop="@dimen/padding_20dp"
+                android:layout_marginEnd="@dimen/padding_10dp"
                 android:layout_gravity="start|top|center"
                 android:fontFamily="@font/sfuitext_regular"
                 android:gravity="start|top|center"
                 android:minLines="3"
-                android:layout_margin="@dimen/padding_10dp"
+                android:justificationMode="inter_word"
                 android:text="@string/student_lontext"
                 android:textAlignment="viewStart"
                 android:textColor="@color/default_text_color"
@@ -36,7 +39,8 @@
                 android:id="@+id/rv_service_updates"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_margin="@dimen/padding_10dp"/>
+                android:layout_marginStart="@dimen/padding_10dp"
+                android:layout_marginTop="@dimen/padding_10dp" />
 
         </LinearLayout>
     </androidx.core.widget.NestedScrollView>

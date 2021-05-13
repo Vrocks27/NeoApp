@@ -8,7 +8,6 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.res.ColorStateList;
 import android.content.res.Resources;
-import android.graphics.Bitmap;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.location.LocationManager;
@@ -25,12 +24,9 @@ import androidx.appcompat.widget.AppCompatButton;
 import androidx.appcompat.widget.AppCompatImageView;
 import androidx.appcompat.widget.AppCompatTextView;
 import androidx.core.content.ContextCompat;
-import androidx.core.graphics.drawable.RoundedBitmapDrawable;
-import androidx.core.graphics.drawable.RoundedBitmapDrawableFactory;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
-import com.bumptech.glide.request.target.BitmapImageViewTarget;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.gson.Gson;
@@ -192,6 +188,7 @@ public class GlobalMethods {
         Glide.with(context).load(url)
                 .diskCacheStrategy(DiskCacheStrategy.ALL)
                 // .placeholder(R.drawable.ic_image_coming_soon)
+                .error(R.drawable.default_university)
                 //.crossFade()
                 .into(viewById);
 
@@ -380,20 +377,25 @@ public class GlobalMethods {
     public static void showDefaultFullScreenDialog(AppCompatActivity activity, String title, String imageUrl, String description) {
 
         try {
-            Dialog dialog = new Dialog(activity, android.R.style.Theme_Black_NoTitleBar_Fullscreen);
+            Dialog dialog = new Dialog(activity, android.R.style.Theme_DeviceDefault_Light_NoActionBar);
             dialog.setContentView(R.layout.layout_dialog_default_full_screen);
             dialog.setCancelable(true);
 
             ((AppCompatTextView) dialog.findViewById(R.id.text_title_full_option)).setText(title);
             AppCompatImageView image_full_screen = dialog.findViewById(R.id.image_full_screen);
 
-
-            /*if (GlobalMethods.isNull(imageUrl)) {
-                Glide.with(activity)
+            if (GlobalMethods.isNull(imageUrl)) {
+                Glide.with(activity).load(imageUrl)
+                        .diskCacheStrategy(DiskCacheStrategy.ALL)
+                         /*.placeholder(R.drawable.default_university)*/
+                        //.crossFade()
+                        .error(R.drawable.default_university)
+                        .into(image_full_screen);
+               /* Glide.with(activity)
                         .load(imageUrl)
                         .asBitmap()
-                        .placeholder(R.drawable.color_user_icon)
-                        .error(R.drawable.color_user_icon)
+                        .placeholder(R.drawable.default_university)
+                        .error(R.drawable.default_university)
                         .override(250, 250)
                         .into(new BitmapImageViewTarget(image_full_screen) {
                             @Override
@@ -402,11 +404,10 @@ public class GlobalMethods {
                                 circularBitmapDrawable.setCircular(true);
                                 image_full_screen.setImageDrawable(circularBitmapDrawable);
                             }
-                        });
+                        });*/
             } else {
-                image_full_screen.setImageDrawable(activity.getResources().getDrawable(R.drawable.color_user_icon));
-            }*/
-
+                image_full_screen.setImageDrawable(activity.getResources().getDrawable(R.drawable.default_university));
+            }
 
             dialog.findViewById(R.id.image_close_option).setOnClickListener(new View.OnClickListener() {
                 @Override

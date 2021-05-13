@@ -12,16 +12,19 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.va.neoapp.R;
 import com.va.neoapp.models.LatestNewModel;
+import com.va.neoapp.util.GlobalMethods;
 
 import java.util.List;
 
 public class LatestNewsAdapter extends RecyclerView.Adapter<LatestNewsAdapter.MyViewHolder> {
     private Context mContext;
     private List<LatestNewModel> latestNewModels;
+    private LatestNewsAdapter.onItemClickListener onItemClickListener;
 
-    public LatestNewsAdapter(Context mContext, List<LatestNewModel> latestNewModels) {
+    public LatestNewsAdapter(Context mContext, List<LatestNewModel> latestNewModels,LatestNewsAdapter.onItemClickListener onItemClickListener) {
         this.mContext = mContext;
         this.latestNewModels = latestNewModels;
+        this.onItemClickListener=onItemClickListener;
     }
 
     @NonNull
@@ -36,8 +39,15 @@ public class LatestNewsAdapter extends RecyclerView.Adapter<LatestNewsAdapter.My
         if (latestNewModels != null && latestNewModels.size() > 0) {
             holder.tv_news_title.setText(latestNewModels.get(position).getTitle());
             holder.tv_news_description.setText(latestNewModels.get(position).getDescription());
-            holder.image_news.setImageDrawable(latestNewModels.get(position).getDrawable());
+            GlobalMethods.loadImageWithDefault(mContext,latestNewModels.get(position).getImage_url(),holder.image_news);
         }
+
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onItemClickListener.itemSelected(latestNewModels.get(position));
+            }
+        });
     }
 
     @Override
@@ -67,4 +77,12 @@ public class LatestNewsAdapter extends RecyclerView.Adapter<LatestNewsAdapter.My
             image_news = itemView.findViewById(R.id.image_news);
         }
     }
+
+    public interface onItemClickListener{
+        void itemSelected(LatestNewModel latestNewModel);
+    }
+
+    /*public void SetOnItemClickListener(final onItemClickListener onItemClickListener) {
+        this.onItemClickListener = onItemClickListener;
+    }*/
 }

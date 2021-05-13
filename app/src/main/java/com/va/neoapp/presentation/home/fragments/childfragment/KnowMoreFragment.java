@@ -7,7 +7,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.widget.AppCompatTextView;
+import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -16,12 +19,11 @@ import com.va.neoapp.adapters.FaqAdapter;
 import com.va.neoapp.adapters.OverViewAdapter;
 import com.va.neoapp.models.FaqModel;
 import com.va.neoapp.models.OverviewModel;
-import com.va.neoapp.presentation.BaseFragment;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class KnowMoreFragment extends BaseFragment {
+public class KnowMoreFragment extends Fragment {
 
     private Context mContext;
     private AppCompatTextView tv_faq, tv_overview;
@@ -29,17 +31,21 @@ public class KnowMoreFragment extends BaseFragment {
     private LinearLayout second_Linearlayout;
 
 
-
+    @Nullable
     @Override
-    protected View setLayoutResource(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View myView = inflater.inflate(R.layout.fragment_home_knowmore, container, false);
         mContext = getActivity();
-        initGUI(myView, savedInstanceState);
+        initGUI(myView);
+        initData();
         return myView;
     }
 
-    @Override
-    protected void initGUI(View view, Bundle savedInstanceState) {
+    private void initData() {
+
+    }
+
+    private void initGUI(View view) {
         tv_faq = view.findViewById(R.id.tv_faq);
         tv_overview = view.findViewById(R.id.tv_overview);
         rv_overview = view.findViewById(R.id.rv_overview);
@@ -102,8 +108,4 @@ public class KnowMoreFragment extends BaseFragment {
         rv_overview.setAdapter(overViewAdapter);
     }
 
-    @Override
-    protected void initData() {
-
-    }
 }

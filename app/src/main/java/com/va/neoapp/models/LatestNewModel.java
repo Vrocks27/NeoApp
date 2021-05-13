@@ -1,18 +1,15 @@
 package com.va.neoapp.models;
 
-import android.graphics.drawable.Drawable;
-
 public class LatestNewModel {
 
     private String title;
     private String Description;
-    private Drawable drawable;
     private String image_url;
 
-    public LatestNewModel(String title, String description, Drawable drawable) {
+    public LatestNewModel(String title, String description, String image_url) {
         this.title = title;
         Description = description;
-        this.drawable = drawable;
+        this.image_url = image_url;
     }
 
     public String getTitle() {
@@ -31,11 +28,11 @@ public class LatestNewModel {
         Description = description;
     }
 
-    public Drawable getDrawable() {
-        return drawable;
+    public String getImage_url() {
+        return image_url;
     }
 
-    public void setDrawable(Drawable drawable) {
-        this.drawable = drawable;
+    public void setImage_url(String image_url) {
+        this.image_url = image_url;
     }
 }

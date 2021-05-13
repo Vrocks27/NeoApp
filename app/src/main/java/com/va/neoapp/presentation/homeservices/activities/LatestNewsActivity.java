@@ -54,19 +54,24 @@ public class LatestNewsActivity extends BaseActivity {
     private void setDataToAdapter() {
 
         List<LatestNewModel> latestNewModels = new ArrayList<>();
-        latestNewModels.add(new LatestNewModel("Title", getResources().getString(R.string.dummy_text), getResources().getDrawable(R.drawable.default_university)));
-        latestNewModels.add(new LatestNewModel("Title", getResources().getString(R.string.dummy_text), getResources().getDrawable(R.drawable.default_university)));
-        latestNewModels.add(new LatestNewModel("Title", getResources().getString(R.string.dummy_text), getResources().getDrawable(R.drawable.default_university)));
-        latestNewModels.add(new LatestNewModel("Title", getResources().getString(R.string.dummy_text), getResources().getDrawable(R.drawable.default_university)));
-        latestNewModels.add(new LatestNewModel("Title", getResources().getString(R.string.dummy_text), getResources().getDrawable(R.drawable.default_university)));
+        latestNewModels.add(new LatestNewModel("Title", getResources().getString(R.string.dummy_text), ""));
+        latestNewModels.add(new LatestNewModel("Title", getResources().getString(R.string.dummy_text), ""));
+        latestNewModels.add(new LatestNewModel("Title", getResources().getString(R.string.dummy_text), ""));
+        latestNewModels.add(new LatestNewModel("Title", getResources().getString(R.string.dummy_text), ""));
+        latestNewModels.add(new LatestNewModel("Title", getResources().getString(R.string.dummy_text), ""));
 
-        LatestNewsAdapter latestNewsAdapter = new LatestNewsAdapter(mContext, latestNewModels);
+        LatestNewsAdapter latestNewsAdapter = new LatestNewsAdapter(mContext, latestNewModels, new LatestNewsAdapter.onItemClickListener() {
+            @Override
+            public void itemSelected(LatestNewModel latestNewModel) {
+                GlobalMethods.showDefaultFullScreenDialog(LatestNewsActivity.this,latestNewModel.getTitle(),latestNewModel.getImage_url(),latestNewModel.getDescription());
+            }
+        });
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(mContext, RecyclerView.VERTICAL, false);
         rv_latest_news.setLayoutManager(linearLayoutManager);
         rv_latest_news.setAdapter(latestNewsAdapter);
         //latestNewsAdapter.notifyDataSetChanged();
 
-        GlobalMethods.showDefaultFullScreenDialog(LatestNewsActivity.this,"","","" );
+      //  GlobalMethods.showDefaultFullScreenDialog(LatestNewsActivity.this,"","","" );
 
     }
 

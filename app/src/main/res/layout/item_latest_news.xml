@@ -59,6 +59,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/padding_8dp"
                     android:ellipsize="end"
+                    android:justificationMode="inter_word"
                     android:fontFamily="@font/sfuitext_regular"
                     android:maxLines="4"
                     android:minLines="1"
