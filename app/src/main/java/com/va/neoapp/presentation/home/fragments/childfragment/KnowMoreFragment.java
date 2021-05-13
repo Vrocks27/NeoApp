@@ -7,8 +7,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.appcompat.widget.AppCompatTextView;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -17,15 +15,11 @@ import com.va.neoapp.R;
 import com.va.neoapp.adapters.FaqAdapter;
 import com.va.neoapp.adapters.OverViewAdapter;
 import com.va.neoapp.models.FaqModel;
-import com.va.neoapp.models.HomeGrid;
 import com.va.neoapp.models.OverviewModel;
 import com.va.neoapp.presentation.BaseFragment;
 
 import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Iterator;
 import java.util.List;
-import java.util.ListIterator;
 
 public class KnowMoreFragment extends BaseFragment {
 
@@ -77,7 +71,6 @@ public class KnowMoreFragment extends BaseFragment {
 
 
         //set data to adapter
-
         List<FaqModel> faqModel = new ArrayList<>();
         faqModel.add(new FaqModel(mContext.getResources().getString(R.string.question),mContext.getResources().getString(R.string.answer)));
         faqModel.add(new FaqModel(mContext.getResources().getString(R.string.question),mContext.getResources().getString(R.string.answer)));

@@ -21,9 +21,10 @@ public class HomeGridAdapter extends RecyclerView.Adapter<HomeGridAdapter.ViewHo
     private List<HomeGrid> homeGridList;
     private HomeGridAdapter.OnItemViewListener OnItemViewListener;
 
-    public HomeGridAdapter(Context context, List<HomeGrid> homeGridList) {
+    public HomeGridAdapter(Context context, List<HomeGrid> homeGridList,HomeGridAdapter.OnItemViewListener onItemViewListener) {
         this.context = context;
         this.homeGridList = homeGridList;
+        this.OnItemViewListener=onItemViewListener;
     }
 
     @NonNull
@@ -39,6 +40,13 @@ public class HomeGridAdapter extends RecyclerView.Adapter<HomeGridAdapter.ViewHo
 
             holder.image_grid_home.setImageDrawable(homeGridList.get(position).getDrawable());
             holder.text_grid.setText(homeGridList.get(position).getTextGrid());
+
+            holder.itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    OnItemViewListener.selectedItem(position);
+                }
+            });
         }
     }
 
@@ -70,9 +78,9 @@ public class HomeGridAdapter extends RecyclerView.Adapter<HomeGridAdapter.ViewHo
     }
 
     public interface OnItemViewListener {
-        void selectedItem(HomeGrid homeGrid);
+        void selectedItem(int homeGrid);
     }
-    public void SetOnItemClickListener(final HomeGridAdapter.OnItemViewListener OnItemViewListener) {
+    /*public void SetOnItemClickListener(final HomeGridAdapter.OnItemViewListener OnItemViewListener) {
         this.OnItemViewListener = OnItemViewListener;
-    }
+    }*/
 }

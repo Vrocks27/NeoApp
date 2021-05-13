@@ -12,7 +12,7 @@
         android:id="@+id/home_toolbar"
         layout="@layout/toolbar"
         android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize" />
+        android:layout_height="?attr/actionBarSize"/>
 
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
@@ -142,6 +142,7 @@
                 android:background="@drawable/type_background"
                 app:tabBackground="@drawable/home_tabs"
                 app:tabGravity="fill"
+                android:elevation="@dimen/padding_8dp"
                 android:layout_gravity="center"
                 android:textAlignment="center"
                 app:tabIndicatorHeight="0dp"

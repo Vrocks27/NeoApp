@@ -1,5 +1,6 @@
 package com.va.neoapp.presentation.home.fragments;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -19,17 +20,23 @@ import com.va.neoapp.R;
 import com.va.neoapp.adapters.HomeGridAdapter;
 import com.va.neoapp.adapters.ImagesViewPagerAdapter;
 import com.va.neoapp.custom.recyclerviewitemspace.SpacesItemDecoration;
-import com.va.neoapp.presentation.home.activities.UniversityDetailAct;
-import com.va.neoapp.util.GlobalMethods;
 import com.va.neoapp.models.HomeGrid;
+import com.va.neoapp.presentation.home.activities.UniversityDetailAct;
+import com.va.neoapp.presentation.homeservices.activities.HealthNSafetyActivity;
+import com.va.neoapp.presentation.homeservices.activities.LatestNewsActivity;
+import com.va.neoapp.presentation.homeservices.activities.StudentLifeActivity;
+import com.va.neoapp.presentation.homeservices.activities.StudentUpdateActivity;
+import com.va.neoapp.util.GlobalMethods;
+
 import java.util.ArrayList;
 import java.util.List;
 
-public class HomeFragment extends Fragment {
+public class HomeFragment extends Fragment implements HomeGridAdapter.OnItemViewListener {
 
     // private Context mContext;
     private int dotscount;
     private ImageView[] dots;
+    private Context context;
 
 
     public static HomeFragment newInstance() {
@@ -40,6 +47,7 @@ public class HomeFragment extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_home, container, false);
+        context=getActivity();
         readBundle();
         initGUI(view);
         initData();
@@ -116,7 +124,7 @@ public class HomeFragment extends Fragment {
         homeGridList.add(new HomeGrid(getResources().getDrawable(R.drawable.ic_health_safety),"Health and Safety Measures"));
         homeGridList.add(new HomeGrid(getResources().getDrawable(R.drawable.ic_latest_update),"Latest News & Update"));
         homeGridList.add(new HomeGrid(getResources().getDrawable(R.drawable.ic_student_life),"Student Life at Campus"));
-        HomeGridAdapter homeGridAdapter = new HomeGridAdapter(getActivity(), homeGridList);
+        HomeGridAdapter homeGridAdapter = new HomeGridAdapter(getActivity(), homeGridList,HomeFragment.this);
         home_grid_list.setAdapter(homeGridAdapter);
 
     }
@@ -125,6 +133,24 @@ public class HomeFragment extends Fragment {
         Bundle bundle = this.getArguments();
         if (bundle != null) {
 
+        }
+    }
+
+    @Override
+    public void selectedItem(int homeGrid) {
+        switch (homeGrid){
+            case 0:
+                GlobalMethods.callForWordActivity(context, StudentUpdateActivity.class,null,false,true);
+                break;
+            case 1:
+                GlobalMethods.callForWordActivity(context, HealthNSafetyActivity.class,null,false,true);
+                break;
+            case 2:
+                GlobalMethods.callForWordActivity(context, LatestNewsActivity.class,null,false,true);
+                break;
+            case 3:
+                GlobalMethods.callForWordActivity(context, StudentLifeActivity.class,null,false,true);
+                break;
         }
     }
 }

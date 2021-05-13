@@ -29,7 +29,7 @@
         android:layout_height="@dimen/padding_60dp"
         android:background="@drawable/tab_background"
         android:layout_alignParentBottom="true"
-        android:elevation="@dimen/padding_2dp"
+        android:elevation="@dimen/padding_4dp"
         android:layout_marginLeft="@dimen/padding_12dp"
         android:layout_marginRight="@dimen/padding_12dp"
         app:tabGravity="fill"
