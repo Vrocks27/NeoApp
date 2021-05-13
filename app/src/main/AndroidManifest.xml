@@ -84,6 +84,26 @@
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustResize"/>
 
+        <activity android:name=".presentation.homeservices.activities.StudentUpdateActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize"/>
+
+        <activity android:name=".presentation.homeservices.activities.StudentLifeActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize"/>
+
+        <activity android:name=".presentation.homeservices.activities.HealthNSafetyActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize"/>
+
+        <activity android:name=".presentation.homeservices.activities.LatestNewsActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize"/>
+
     </application>
 
 </manifest>
