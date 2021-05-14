@@ -245,8 +245,22 @@ public class SubmitFragment extends Fragment {
     }
 
     private void generateFile(Bitmap bitmap) {
+        /*if (ContextCompat.checkSelfPermission(getActivity(), Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
+            RuntimePermissionUtil.requestPermission((AppCompatActivity) getActivity(), Manifest.permission.WRITE_EXTERNAL_STORAGE, 1212);
+        } else {
+        }*/
         // check the permission storage
         File directory = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES);
+//        path=Environment.getExternalStorageDirectory()+"/signature.png";
+//        file = new File(path);
+//        file.delete();
+//        file.createNewFile();
+//        FileOutputStream fos = new FileOutputStream(file);
+//        fos = new FileOutputStream(file);
+        // compress to specified format (PNG), quality - which is
+        // ignored for PNG, and out stream
+//        bitmap.compress(Bitmap.CompressFormat.PNG, 100, fos);
+//        fos.close();
         File file = new File(directory, System.currentTimeMillis() + ".png");
         FileOutputStream out = null;
         try {

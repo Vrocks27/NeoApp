@@ -27,7 +27,7 @@ public class KnowMoreFragment extends Fragment {
 
     private Context mContext;
     private AppCompatTextView tv_faq, tv_overview;
-    private RecyclerView rv_faq,rv_overview;
+    private RecyclerView rv_faq, rv_overview;
     private LinearLayout second_Linearlayout;
 
 
@@ -50,6 +50,9 @@ public class KnowMoreFragment extends Fragment {
         tv_overview = view.findViewById(R.id.tv_overview);
         rv_overview = view.findViewById(R.id.rv_overview);
         rv_faq = view.findViewById(R.id.rv_faq);
+        rv_faq.setLayoutManager(new LinearLayoutManager(mContext));
+        rv_overview.setLayoutManager(new LinearLayoutManager(mContext));
+
         second_Linearlayout = view.findViewById(R.id.second_Linearlayout);
 
         tv_overview.setOnClickListener(new View.OnClickListener() {
@@ -78,33 +81,33 @@ public class KnowMoreFragment extends Fragment {
 
         //set data to adapter
         List<FaqModel> faqModel = new ArrayList<>();
-        faqModel.add(new FaqModel(mContext.getResources().getString(R.string.question),mContext.getResources().getString(R.string.answer)));
-        faqModel.add(new FaqModel(mContext.getResources().getString(R.string.question),mContext.getResources().getString(R.string.answer)));
-        faqModel.add(new FaqModel(mContext.getResources().getString(R.string.question),mContext.getResources().getString(R.string.answer)));
-        faqModel.add(new FaqModel(mContext.getResources().getString(R.string.question),mContext.getResources().getString(R.string.answer)));
-        faqModel.add(new FaqModel(mContext.getResources().getString(R.string.question),mContext.getResources().getString(R.string.answer)));
-        faqModel.add(new FaqModel(mContext.getResources().getString(R.string.question),mContext.getResources().getString(R.string.answer)));
+        faqModel.add(new FaqModel(mContext.getResources().getString(R.string.question), mContext.getResources().getString(R.string.answer)));
+        faqModel.add(new FaqModel(mContext.getResources().getString(R.string.question), mContext.getResources().getString(R.string.answer)));
+        faqModel.add(new FaqModel(mContext.getResources().getString(R.string.question), mContext.getResources().getString(R.string.answer)));
+        faqModel.add(new FaqModel(mContext.getResources().getString(R.string.question), mContext.getResources().getString(R.string.answer)));
+        faqModel.add(new FaqModel(mContext.getResources().getString(R.string.question), mContext.getResources().getString(R.string.answer)));
+        faqModel.add(new FaqModel(mContext.getResources().getString(R.string.question), mContext.getResources().getString(R.string.answer)));
 
-        FaqAdapter faqAdapter=new FaqAdapter(mContext,faqModel);
-        LinearLayoutManager linearLayoutManager=new LinearLayoutManager(mContext,RecyclerView.VERTICAL,false);
-        rv_faq.setLayoutManager(linearLayoutManager);
-        faqAdapter.notifyDataSetChanged();
-        rv_faq.setAdapter(faqAdapter);
+        //FaqAdapter faqAdapter = new FaqAdapter(mContext, faqModel);
+      //  LinearLayoutManager linearLayoutManager = new LinearLayoutManager(mContext);
+
+        //faqAdapter.notifyDataSetChanged();
+        rv_faq.setAdapter(new FaqAdapter(mContext, faqModel));
 
 
         //set data to overview Adapter
-        List<OverviewModel> overviewModelList=new ArrayList<>();
-        overviewModelList.add(new OverviewModel(mContext.getResources().getDrawable(R.drawable.icon_university),"Year of EstablishMent","1994"));
-        overviewModelList.add(new OverviewModel(mContext.getResources().getDrawable(R.drawable.icon_staff),"Staff","1200 (approx)"));
-        overviewModelList.add(new OverviewModel(mContext.getResources().getDrawable(R.drawable.icon_criteria),"Acceptance Criteria","Profile Dependent"));
-        overviewModelList.add(new OverviewModel(mContext.getResources().getDrawable(R.drawable.icon_accomdation),"Accommodation","Yes"));
-        overviewModelList.add(new OverviewModel(mContext.getResources().getDrawable(R.drawable.icon_website),"Website","www.universitytoronto.com"));
-        overviewModelList.add(new OverviewModel(mContext.getResources().getDrawable(R.drawable.icon_mobile),"Contact Number","+011 6745487564"));
+        List<OverviewModel> overviewModelList = new ArrayList<>();
+        overviewModelList.add(new OverviewModel(mContext.getResources().getDrawable(R.drawable.icon_university), "Year of EstablishMent", "1994"));
+        overviewModelList.add(new OverviewModel(mContext.getResources().getDrawable(R.drawable.icon_staff), "Staff", "1200 (approx)"));
+        overviewModelList.add(new OverviewModel(mContext.getResources().getDrawable(R.drawable.icon_criteria), "Acceptance Criteria", "Profile Dependent"));
+        overviewModelList.add(new OverviewModel(mContext.getResources().getDrawable(R.drawable.icon_accomdation), "Accommodation", "Yes"));
+        overviewModelList.add(new OverviewModel(mContext.getResources().getDrawable(R.drawable.icon_website), "Website", "www.universitytoronto.com"));
+        overviewModelList.add(new OverviewModel(mContext.getResources().getDrawable(R.drawable.icon_mobile), "Contact Number", "+011 6745487564"));
 
-        OverViewAdapter overViewAdapter=new OverViewAdapter(mContext,overviewModelList);
-        LinearLayoutManager linearLayoutManager1=new LinearLayoutManager(mContext,RecyclerView.VERTICAL,false);
-        rv_overview.setLayoutManager(linearLayoutManager1);
-        overViewAdapter.notifyDataSetChanged();
+        OverViewAdapter overViewAdapter = new OverViewAdapter(mContext, overviewModelList);
+//        LinearLayoutManager linearLayoutManager1 = new LinearLayoutManager(mContext, RecyclerView.VERTICAL, false);
+//
+//        overViewAdapter.notifyDataSetChanged();
         rv_overview.setAdapter(overViewAdapter);
     }
 
