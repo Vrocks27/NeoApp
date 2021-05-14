@@ -217,7 +217,7 @@ public class SubmitFragment extends Fragment {
                 }
             });
 
-            dialog.findViewById(R.id.bt_reset).setOnClickListener(new View.OnClickListener() {
+            dialog.findViewById(R.id.bt_clear).setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
                     signatureView.clearCanvas();

@@ -1,7 +1,9 @@
 package com.va.neoapp.presentation.homeservices.activities;
 
+import android.app.Dialog;
 import android.content.Context;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 
 import androidx.appcompat.widget.AppCompatButton;
@@ -29,7 +31,7 @@ public class CourseInDetailsActivity extends BaseActivity {
 
     @Override
     protected void initGUI(Bundle savedInstanceState) {
-        mContext=this;
+        mContext = this;
         tv_courseName = findViewById(R.id.tv_courseName);
         tv_courseType = findViewById(R.id.tv_courseType);
         tv_coursePeriod = findViewById(R.id.tv_coursePeriod);
@@ -45,28 +47,78 @@ public class CourseInDetailsActivity extends BaseActivity {
 
         if (coursesmodels != null) {
             tv_courseName.setText(coursesmodels.getCourseName());
-            tv_courseType.setText(coursesmodels.getCourseType()+" ");
-            tv_coursePeriod.setText(" "+coursesmodels.getCoursePeriod()+" ");
-            tv_courseTimeperiod.setText(" "+coursesmodels.getCourseTimePeriod());
-            tv_courseIntake.setText("Intake: "+coursesmodels.getIntakePeriod());
-            tv_courseEligible.setText("Eligibility Criteria: "+coursesmodels.getEligibilityCriteria());
+            tv_courseType.setText(coursesmodels.getCourseType() + " ");
+            tv_coursePeriod.setText(" " + coursesmodels.getCoursePeriod() + " ");
+            tv_courseTimeperiod.setText(" " + coursesmodels.getCourseTimePeriod());
+            tv_courseIntake.setText("Intake: " + coursesmodels.getIntakePeriod());
+            tv_courseEligible.setText("Eligibility Criteria: " + coursesmodels.getEligibilityCriteria());
             tv_courseDescription.setText(coursesmodels.getCourseDescription());
         }
 
         image_cancel.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                GlobalMethods.callFinishForBackWordActivity(mContext,true);
+                GlobalMethods.callFinishForBackWordActivity(mContext, true);
             }
         });
 
         button_apply.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                GlobalMethods.callForWordActivity(mContext,SubmitApplicationActivity.class,null,false,true);
-        }
+                // GlobalMethods.callForWordActivity(mContext,SubmitApplicationActivity.class,null,false,true);
+
+                showApplicationFullDialog();
+            }
         });
 
+    }
+
+    private void showApplicationFullDialog() {
+        try {
+            Dialog dialog = new Dialog(CourseInDetailsActivity.this, android.R.style.Theme_DeviceDefault_Light_NoActionBar);
+            dialog.setContentView(R.layout.layout_course_apply);
+            dialog.setCancelable(true);
+
+           /* ((AppCompatTextView) dialog.findViewById(R.id.text_title_full_option)).setText(title);
+            ((AppCompatTextView) dialog.findViewById(R.id.tv_descriptions)).setText(description);
+            AppCompatImageView image_full_screen = dialog.findViewById(R.id.image_full_screen);*/
+
+           /* if (GlobalMethods.isNull(imageUrl)) {
+                Glide.with(activity).load(imageUrl)
+                        .diskCacheStrategy(DiskCacheStrategy.ALL)
+                        *//*.placeholder(R.drawable.default_university)*//*
+                        //.crossFade()
+                        .error(R.drawable.default_university)
+                        .into(image_full_screen);
+               *//* Glide.with(activity)
+                        .load(imageUrl)
+                        .asBitmap()
+                        .placeholder(R.drawable.default_university)
+                        .error(R.drawable.default_university)
+                        .override(250, 250)
+                        .into(new BitmapImageViewTarget(image_full_screen) {
+                            @Override
+                            protected void setResource(Bitmap resource) {
+                                RoundedBitmapDrawable circularBitmapDrawable = RoundedBitmapDrawableFactory.create(activity.getResources(), resource);
+                                circularBitmapDrawable.setCircular(true);
+                                image_full_screen.setImageDrawable(circularBitmapDrawable);
+                            }
+                        });*//*
+            } else {
+                image_full_screen.setImageDrawable(activity.getResources().getDrawable(R.drawable.default_university));
+            }
+*/
+            dialog.findViewById(R.id.image_close_option).setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    dialog.dismiss();
+                }
+            });
+            dialog.show();
+
+        } catch (Exception exp) {
+            Log.e("display_full_dia_exp", exp.getMessage());
+        }
     }
 
     @Override

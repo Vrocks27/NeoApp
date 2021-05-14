@@ -2,6 +2,8 @@ package com.va.neoapp.presentation.homeservices.activities;
 
 import android.os.Bundle;
 
+import androidx.recyclerview.widget.RecyclerView;
+
 import com.va.neoapp.R;
 import com.va.neoapp.presentation.BaseActivity;
 
@@ -14,6 +16,7 @@ public class HealthNSafetyActivity extends BaseActivity {
 
     @Override
     protected void initGUI(Bundle savedInstanceState) {
+       RecyclerView rv_health_safety = findViewById(R.id.rv_health_safety);
 
     }
 

@@ -30,7 +30,7 @@ public class StudentServiceAdapter extends RecyclerView.Adapter<StudentServiceAd
     @Override
     public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_faq, parent, false);
-        return new StudentServiceAdapter.MyViewHolder(view);
+        return new MyViewHolder(view);
     }
 
     @Override
@@ -77,7 +77,7 @@ public class StudentServiceAdapter extends RecyclerView.Adapter<StudentServiceAd
         return studentServiceUpdateModels.size();
     }
 
-    public class MyViewHolder extends RecyclerView.ViewHolder {
+    public static class MyViewHolder extends RecyclerView.ViewHolder {
 
         AppCompatTextView faq_question,faq_answer;
         AppCompatImageView image_arrow,image_uparrow;
