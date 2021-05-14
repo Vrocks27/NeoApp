@@ -1,24 +1,134 @@
 {
-  "sections": [
+  "count": 5,
+  "form": "arrival_form",
+  "stepper":[
     {
-      "title": "What's your name",
-      "type": "form",
-      "fields": [
-        {
-          "type": "text",
-          "key": "first_name",
-          "hint": "Type your first name"
-        },
-        {
-          "type": "text",
-          "key": "last_name",
-          "hint": "Type your last name"
-        }
-      ]
+      "title": "Personal Info",
+      "number": "1"
     },
     {
-      "title": "Where do you live?",
-      "type": "map"
+      "title": "Program Info",
+      "number": "2"
+    },
+    {
+      "title": "Travel",
+      "number": "3"
+    },
+    {
+      "title": "Review",
+      "number": "4"
+    },
+    {
+      "title": "Submit",
+      "number": "5"
+    }
+  ],
+  "sections": [
+    {
+      "type": "1",
+      "title": "Personal Info",
+      "fields": [
+        {
+          "type": "input_field",
+          "name": "First Name",
+          "mandatory": true,
+          "hint": "First Name",
+          "max": 10,
+          "value": "",
+          "width": 50,
+          "max_lines": 1,
+          "enabled": true,
+          "error_msg": "Enter First Name"
+        },
+        {
+          "type": "input_field",
+          "name": "Last Name",
+          "mandatory": true,
+          "hint": "Last Name",
+          "max": 10,
+          "value": "",
+          "width": 50,
+          "error_msg": "Enter Last Name"
+        },
+        {
+          "type": "input_field",
+          "orientation": "horizontal",
+          "number": 2,
+          "width": 50,
+          "option": [
+            {
+              "name": "First Name",
+              "mandatory": true,
+              "hint": "First Name",
+              "max": 10,
+              "value": "",
+              "error_msg": "Enter First Name"
+            },
+            {
+              "name": "Last Name",
+              "mandatory": true,
+              "hint": "Last Name",
+              "max": 10,
+              "value": "",
+              "error_msg": "Enter Last Name"
+            }
+          ]
+        },
+        {
+          "type": "drop_down",
+          "name": "Gender",
+          "mandatory": true,
+          "default": "Select",
+          "options": [
+            "Male", "FeMale","Others"
+          ],
+          "selection": [
+            {
+              "link": "api",
+              "type": "get",
+              "url": "http://"
+            }
+          ],
+          "value": "",
+          "error_msg": "Select the Gender"
+        },
+        {
+          "type": "date_picker",
+          "name": "Date Of Birth",
+          "mandatory": true,
+          "text": "Select DOB",
+          "format": "dd-mm-yyyy",
+          "max_date": "14-APR-2021",
+          "min_date": "14-APR-1990",
+          "value": "http://s3-sou.com/imag",
+          "error_msg": "Select the Gender"
+        },
+        {
+          "type": "radio_group",
+          "orientation": "horizontal",
+          "name": "Permanent Add. is Same",
+          "number": 2,
+          "error_msg": "Please select the address",
+          "option": [
+            {
+              "name": "Yes",
+              "mandatory": true,
+              "value": "",
+              "selected": []
+            },
+            {
+              "name": "No",
+              "mandatory": true,
+              "value": "",
+              "selected": [
+                {
+
+                }
+              ]
+            }
+          ]
+        }
+      ]
     }
   ]
 }

@@ -30,7 +30,7 @@ public class FaqAdapter extends RecyclerView.Adapter<FaqAdapter.ViewHolder> {
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_faq, parent, false);
-        return new FaqAdapter.ViewHolder(view);
+        return new ViewHolder(view);
     }
 
     @Override
@@ -67,7 +67,7 @@ public class FaqAdapter extends RecyclerView.Adapter<FaqAdapter.ViewHolder> {
         return faqModels.size();
     }
 
-    public class ViewHolder extends RecyclerView.ViewHolder{
+    public static class ViewHolder extends RecyclerView.ViewHolder{
         AppCompatTextView faq_question,faq_answer;
         AppCompatImageView image_arrow,image_uparrow;
         LinearLayout rl_layout;

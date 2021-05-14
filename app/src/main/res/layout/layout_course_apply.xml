@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <LinearLayout
+        android:id="@+id/top_title_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_margin="@dimen/padding_2dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:padding="@dimen/padding_2dp">
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/text_title_full_option"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/padding_4dp"
+            android:layout_weight="1"
+            android:fontFamily="@font/sfuitext_regular"
+            android:padding="@dimen/padding_2dp"
+            android:singleLine="true"
+            android:text=""
+            android:textColor="@color/default_text_color"
+            android:textSize="@dimen/text_size_14sp" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/image_close_option"
+            android:layout_width="@dimen/padding_24dp"
+            android:layout_height="@dimen/padding_24dp"
+            android:layout_margin="@dimen/padding_4dp"
+            android:padding="@dimen/padding_2dp"
+            android:src="@drawable/ic_wrongmark_black" />
+
+    </LinearLayout>
+
+    <ScrollView
+        android:id="@+id/scroll_below"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/top_title_bar"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="@dimen/padding_2dp"
+        android:padding="@dimen/padding_2dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_margin="@dimen/padding_2dp"
+            android:padding="@dimen/padding_2dp"
+            android:orientation="vertical">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/image_full_screen"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:layout_margin="@dimen/padding_2dp"
+                android:padding="@dimen/padding_2dp"
+                android:scaleType="fitXY"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_descriptions"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_gravity="start|center"
+                android:layout_margin="@dimen/padding_2dp"
+                android:layout_weight="1"
+                android:fontFamily="@font/sfuitext_regular"
+                android:gravity="start"
+                android:justificationMode="inter_word"
+                android:padding="@dimen/padding_2dp"
+                android:text="@string/dummy_text" />
+        </LinearLayout>
+    </ScrollView>
+
+</RelativeLayout>

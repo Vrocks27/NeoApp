@@ -17,8 +17,8 @@ import java.util.List;
 
 public class OverViewAdapter extends RecyclerView.Adapter<OverViewAdapter.ViewHolder> {
 
-    Context mContext;
-    List<OverviewModel> overviewModels;
+    private Context mContext;
+    private List<OverviewModel> overviewModels;
 
     public OverViewAdapter(Context mContext, List<OverviewModel> overviewModels) {
         this.mContext = mContext;
@@ -29,7 +29,7 @@ public class OverViewAdapter extends RecyclerView.Adapter<OverViewAdapter.ViewHo
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_overview, parent, false);
-        return new OverViewAdapter.ViewHolder(view);
+        return new ViewHolder(view);
     }
 
     @Override
@@ -44,7 +44,12 @@ public class OverViewAdapter extends RecyclerView.Adapter<OverViewAdapter.ViewHo
         return overviewModels.size();
     }
 
-    public class ViewHolder extends RecyclerView.ViewHolder {
+    @Override
+    public int getItemViewType(int position) {
+        return position;
+    }
+
+    public static class ViewHolder extends RecyclerView.ViewHolder {
 
         AppCompatImageView im_university;
         AppCompatTextView tv_name,tv_value;

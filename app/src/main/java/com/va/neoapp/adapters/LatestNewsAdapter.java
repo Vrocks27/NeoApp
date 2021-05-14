@@ -31,7 +31,7 @@ public class LatestNewsAdapter extends RecyclerView.Adapter<LatestNewsAdapter.My
     @Override
     public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(mContext).inflate(R.layout.item_latest_news, parent, false);
-        return new LatestNewsAdapter.MyViewHolder(view);
+        return new MyViewHolder(view);
     }
 
     @Override
@@ -65,7 +65,7 @@ public class LatestNewsAdapter extends RecyclerView.Adapter<LatestNewsAdapter.My
         return latestNewModels.size();
     }
 
-    public class MyViewHolder extends RecyclerView.ViewHolder {
+    public static class MyViewHolder extends RecyclerView.ViewHolder {
 
         AppCompatTextView tv_news_title, tv_news_description;
         AppCompatImageView image_news;
