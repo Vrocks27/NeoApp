@@ -10,8 +10,6 @@ import androidx.appcompat.widget.AppCompatButton;
 import androidx.appcompat.widget.AppCompatImageView;
 import androidx.appcompat.widget.AppCompatTextView;
 
-import com.bumptech.glide.Glide;
-import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.va.neoapp.R;
 import com.va.neoapp.models.Coursesmodel;
 import com.va.neoapp.presentation.BaseActivity;
