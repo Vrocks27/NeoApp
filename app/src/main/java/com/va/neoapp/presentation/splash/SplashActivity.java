@@ -8,8 +8,7 @@ import androidx.annotation.NonNull;
 
 import com.va.neoapp.R;
 import com.va.neoapp.presentation.BaseActivity;
-import com.va.neoapp.presentation.boarding.activities.UniversityBoardingAct;
-import com.va.neoapp.presentation.home.activities.HomeActivity;
+import com.va.neoapp.presentation.login.LoginActivity;
 import com.va.neoapp.util.Constants;
 import com.va.neoapp.util.GlobalMethods;
 import com.va.neoapp.util.RuntimePermissionUtil;
@@ -53,7 +52,7 @@ public class SplashActivity extends BaseActivity {
             @Override
             public void run() {
                 try {
-                    GlobalMethods.callForWordActivity(SplashActivity.this, HomeActivity.class, null, true, true);
+                    GlobalMethods.callForWordActivity(SplashActivity.this, LoginActivity.class, null, true, true);
 
                 } catch (Exception exp) {
                     exp.printStackTrace();
