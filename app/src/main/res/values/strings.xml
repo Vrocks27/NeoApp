@@ -142,5 +142,7 @@
     <string name="city_of_university">City of University</string>
     <string name="final_mode_transport">(Your final mode of transport)</string>
     <string name="student_lontext">Dear Students,  As summer 2021 semester programs and courses are primarily being delivered remotely/online, we are committed to continuing to provide many online services to support your academic and personal success. We will work hard to meet your needs by phone, online and using tools such as Blackboard or Microsoft Teams to maintain a virtual, personal connection.</string>
+    <string name="search">Search</string>
+    <string name="apply">Apply</string>
 
 </resources>

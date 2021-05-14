@@ -8,4 +8,10 @@
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"/>
 
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_student_life"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="@dimen/padding_4dp"/>
+
 </LinearLayout>

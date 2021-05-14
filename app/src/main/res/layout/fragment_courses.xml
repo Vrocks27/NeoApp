@@ -8,7 +8,6 @@
     <HorizontalScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
-
         <com.google.android.material.chip.ChipGroup
             android:id="@+id/courses_chip"
             android:layout_width="wrap_content"
@@ -20,9 +19,32 @@
             app:selectionRequired="true"
             app:singleLine="true"
             app:singleSelection="true"/>
-
     </HorizontalScrollView>
 
+  <androidx.appcompat.widget.AppCompatEditText
+      android:id="@+id/et_search"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_gravity="center"
+      android:layout_margin="@dimen/padding_10dp"
+      android:background="@drawable/type_background"
+      android:drawableEnd="@drawable/ic_search"
+      android:fontFamily="@font/sfuitext_semibold"
+      android:gravity="start|center"
+      android:hint="@string/search"
+      android:imeOptions="actionDone"
+      android:minLines="1"
+      android:padding="@dimen/padding_10dp"
+      android:singleLine="true"
+      android:textColor="@color/disabled_color"
+      android:textColorHint="@color/disabled_color"
+      android:textSize="@dimen/text_size_12sp" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_courses"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="@dimen/padding_4dp"/>
 
 
 

@@ -8,8 +8,8 @@
     <uses-permission android:name="android.permission.CALL_PHONE" />
     <uses-permission android:name="android.permission.VIBRATE" />
     <uses-permission android:name="android.permission.WAKE_LOCK" />
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
     <supports-screens
         android:anyDensity="true"
@@ -26,7 +26,6 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.NeoApp">
-
         <activity
             android:name=".presentation.splash.SplashActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
@@ -43,6 +42,10 @@
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustResize" />
+        <activity android:name=".presentation.homeservices.activities.CourseInDetailsActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize"/>
         <activity
             android:name=".presentation.chat.MessagingAct"
             android:configChanges="orientation|keyboardHidden|screenSize"
@@ -68,42 +71,46 @@
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustResize" />
-
-        <activity android:name=".presentation.termsnconditions.activities.TermNConditionsAct"
+        <activity
+            android:name=".presentation.termsnconditions.activities.TermNConditionsAct"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:screenOrientation="portrait"
-            android:windowSoftInputMode="adjustResize"/>
-
-        <activity android:name=".presentation.home.activities.UniversityDetailAct"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".presentation.home.activities.UniversityDetailAct"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:screenOrientation="portrait"
-            android:windowSoftInputMode="adjustResize"/>
-
-        <activity android:name=".presentation.boarding.activities.UniversityBoardingAct"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".presentation.boarding.activities.UniversityBoardingAct"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:screenOrientation="portrait"
-            android:windowSoftInputMode="adjustResize"/>
-
-        <activity android:name=".presentation.homeservices.activities.StudentUpdateActivity"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".presentation.homeservices.activities.StudentUpdateActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:screenOrientation="portrait"
-            android:windowSoftInputMode="adjustResize"/>
-
-        <activity android:name=".presentation.homeservices.activities.StudentLifeActivity"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".presentation.homeservices.activities.StudentLifeActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:screenOrientation="portrait"
-            android:windowSoftInputMode="adjustResize"/>
-
-        <activity android:name=".presentation.homeservices.activities.HealthNSafetyActivity"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".presentation.homeservices.activities.HealthNSafetyActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:screenOrientation="portrait"
-            android:windowSoftInputMode="adjustResize"/>
-
-        <activity android:name=".presentation.homeservices.activities.LatestNewsActivity"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".presentation.homeservices.activities.LatestNewsActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:screenOrientation="portrait"
-            android:windowSoftInputMode="adjustResize"/>
-
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".presentation.homeservices.activities.SubmitApplicationActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize" />
     </application>
 
 </manifest>

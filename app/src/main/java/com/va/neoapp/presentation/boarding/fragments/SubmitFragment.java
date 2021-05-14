@@ -14,7 +14,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
-import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
@@ -31,7 +30,7 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.rilixtech.widget.countrycodepicker.CountryCodePicker;
 import com.va.neoapp.R;
 import com.va.neoapp.custom.signatureview.SignatureView;
-import com.va.neoapp.presentation.home.activities.UniversityDetailAct;
+import com.va.neoapp.presentation.home.activities.HomeActivity;
 import com.va.neoapp.util.GlobalMethods;
 
 import java.io.File;
@@ -179,7 +178,7 @@ public class SubmitFragment extends Fragment {
                 if (!university_terms.isChecked()) {
                     GlobalMethods.showNormalToast((Activity) mContext, "Please accept arrival services terms and conditions", 1);
                 } else {
-                    GlobalMethods.callForWordActivity(mContext, UniversityDetailAct.class, null, false, true);
+                    GlobalMethods.callForWordActivity(mContext, HomeActivity.class, null, false, true);
                 }
 
             }

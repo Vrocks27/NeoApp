@@ -382,6 +382,7 @@ public class GlobalMethods {
             dialog.setCancelable(true);
 
             ((AppCompatTextView) dialog.findViewById(R.id.text_title_full_option)).setText(title);
+            ((AppCompatTextView) dialog.findViewById(R.id.tv_descriptions)).setText(description);
             AppCompatImageView image_full_screen = dialog.findViewById(R.id.image_full_screen);
 
             if (GlobalMethods.isNull(imageUrl)) {

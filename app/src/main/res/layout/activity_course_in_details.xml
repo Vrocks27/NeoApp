@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".presentation.homeservices.activities.CourseInDetailsActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/padding_8dp"
+            android:padding="@dimen/padding_6dp">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_courseName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_centerInParent="true"
+                android:fontFamily="@font/sfuitext_semibold"
+                android:minLines="1"
+                android:singleLine="true"
+                android:textColor="@color/default_main_color"
+                android:textSize="@dimen/text_size_16sp" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/image_cancel"
+                android:layout_width="@dimen/padding_24dp"
+                android:layout_height="@dimen/padding_24dp"
+                android:layout_alignParentEnd="true"
+                android:scaleType="fitXY"
+                app:srcCompat="@drawable/ic_wrongmark_black" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/padding_8dp"
+            android:padding="@dimen/padding_4dp">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_centerInParent="true"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tv_courseType"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="start|center"
+                        android:fontFamily="@font/sfuitext_semibold"
+                        android:gravity="start|center"
+                        android:minLines="1"
+                        android:singleLine="true"
+                        android:textColor="@color/default_text_color"
+                        android:textSize="@dimen/text_size_12sp" />
+
+                    <View
+                        android:layout_width="1dp"
+                        android:layout_height="@dimen/padding_10dp"
+                        android:layout_gravity="start|center"
+                        android:layout_marginStart="@dimen/padding_2dp"
+                        android:layout_marginEnd="@dimen/padding_2dp"
+                        android:background="@color/default_text_color"
+                        android:gravity="start|center" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tv_coursePeriod"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="start|center"
+                        android:fontFamily="@font/sfuitext_regularg2"
+                        android:gravity="start|center"
+                        android:minLines="1"
+                        android:singleLine="true"
+                        android:textColor="@color/default_text_color"
+                        android:textSize="@dimen/text_size_12sp" />
+
+                    <View
+                        android:layout_width="1dp"
+                        android:layout_height="@dimen/padding_10dp"
+                        android:layout_gravity="start|center"
+                        android:layout_marginStart="@dimen/padding_2dp"
+                        android:layout_marginEnd="@dimen/padding_2dp"
+                        android:background="@color/default_text_color"
+                        android:gravity="start|center" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tv_courseTimeperiod"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="start|center"
+                        android:fontFamily="@font/sfuitext_regularg2"
+                        android:gravity="start|center"
+                        android:minLines="1"
+                        android:singleLine="true"
+                        android:textColor="@color/default_text_color"
+                        android:textSize="@dimen/text_size_12sp" />
+                </LinearLayout>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tv_courseIntake"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/sfuitext_semibold"
+                    android:minLines="1"
+                    android:singleLine="true"
+                    android:textColor="@color/disabled_color" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tv_courseEligible"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_centerInParent="true"
+                    android:fontFamily="@font/sfuitext_semibold"
+                    android:minLines="1"
+                    android:singleLine="true"
+                    android:textColor="@color/disabled_color"
+                    android:textSize="@dimen/text_size_14sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerInParent="true"
+                android:orientation="horizontal">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/padding_2dp"
+                    android:padding="@dimen/padding_2dp"
+                    android:scaleType="fitXY"
+                    app:srcCompat="@drawable/ic_tag" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/padding_2dp"
+                    android:padding="@dimen/padding_2dp"
+                    android:scaleType="fitXY"
+                    app:srcCompat="@drawable/ic_share" />
+            </LinearLayout>
+
+        </RelativeLayout>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="@dimen/padding_6dp"
+                android:orientation="vertical"
+                android:padding="@dimen/padding_8dp">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tv_courseDescription"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="start|center"
+                    android:gravity="start|center"
+                    android:justificationMode="inter_word"
+                    android:textAlignment="viewStart" />
+
+            </LinearLayout>
+        </ScrollView>
+
+    </LinearLayout>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/button_apply"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerInParent="true"
+        android:layout_margin="@dimen/padding_8dp"
+        android:background="@drawable/submit_background"
+        android:fontFamily="@font/sfuitext_regular"
+        android:gravity="center"
+        android:minLines="1"
+        android:singleLine="true"
+        android:text="@string/apply"
+        android:textAlignment="center"
+        android:textAllCaps="true"
+        android:textColor="@color/white" />
+
+
+</RelativeLayout>
