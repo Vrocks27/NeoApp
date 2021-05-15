@@ -21,10 +21,10 @@ public class LatestNewsAdapter extends RecyclerView.Adapter<LatestNewsAdapter.My
     private List<LatestNewModel> latestNewModels;
     private LatestNewsAdapter.onItemClickListener onItemClickListener;
 
-    public LatestNewsAdapter(Context mContext, List<LatestNewModel> latestNewModels,LatestNewsAdapter.onItemClickListener onItemClickListener) {
+    public LatestNewsAdapter(Context mContext, List<LatestNewModel> latestNewModels, LatestNewsAdapter.onItemClickListener onItemClickListener) {
         this.mContext = mContext;
         this.latestNewModels = latestNewModels;
-        this.onItemClickListener=onItemClickListener;
+        this.onItemClickListener = onItemClickListener;
     }
 
     @NonNull
@@ -39,7 +39,7 @@ public class LatestNewsAdapter extends RecyclerView.Adapter<LatestNewsAdapter.My
         if (latestNewModels != null && latestNewModels.size() > 0) {
             holder.tv_news_title.setText(latestNewModels.get(position).getTitle());
             holder.tv_news_description.setText(latestNewModels.get(position).getDescription());
-            GlobalMethods.loadImageWithDefault(mContext,latestNewModels.get(position).getImage_url(),holder.image_news);
+            GlobalMethods.loadImageWithDefault(mContext, latestNewModels.get(position).getImage_url(), holder.image_news);
         }
 
         holder.itemView.setOnClickListener(new View.OnClickListener() {
@@ -78,7 +78,7 @@ public class LatestNewsAdapter extends RecyclerView.Adapter<LatestNewsAdapter.My
         }
     }
 
-    public interface onItemClickListener{
+    public interface onItemClickListener {
         void itemSelected(LatestNewModel latestNewModel);
     }
 

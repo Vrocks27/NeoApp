@@ -67,6 +67,17 @@ public class FaqAdapter extends RecyclerView.Adapter<FaqAdapter.ViewHolder> {
         return faqModels.size();
     }
 
+    @Override
+    public long getItemId(int position) {
+        return position;
+    }
+
+    @Override
+    public int getItemViewType(int position) {
+        return position;
+    }
+
+
     public static class ViewHolder extends RecyclerView.ViewHolder{
         AppCompatTextView faq_question,faq_answer;
         AppCompatImageView image_arrow,image_uparrow;

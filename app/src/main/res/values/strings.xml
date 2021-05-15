@@ -23,6 +23,9 @@
     <string name="text_invalid_email">Invalid Email</string>
     <string name="text_invalid_mobile">Invalid Mobile Number</string>
 
+<string name="api_key">AIzaSyB05Gmfylkajk-XxVJM13nAr5BihWcAyxw</string>
+<string name="api_auth_client_key">363481084322-0chqklidi5f4i9g0iuoglab3qsds8p92.apps.googleusercontent.com</string>
+
 
     <string name="text_terms_conditions">Terms and Conditions</string>
     <string name="text_isolation_personal_space">Isolation at Personal Space</string>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.google.android.youtube.player.YouTubePlayerView
+        android:id="@+id/youtube_player"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+    <!--
+    android:layout_alignParentTop="true"
+          android:layout_centerHorizontal="true"
+    <TextView
+          android:id="@+id/txtShare"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:drawableLeft="@drawable/share"
+          android:drawablePadding="@dimen/space_tiny_2dp"
+          android:padding="@dimen/space_vsmall_5dp"
+          android:text="@string/share"
+          android:textSize="@dimen/text_xmedium_16sp"
+          android:textColor="@color/app_color"
+          android:layout_marginBottom="@dimen/space_small_10dp"
+          android:layout_alignParentBottom="true"
+          android:layout_centerHorizontal="true"/>-->
+</androidx.constraintlayout.widget.ConstraintLayout>
